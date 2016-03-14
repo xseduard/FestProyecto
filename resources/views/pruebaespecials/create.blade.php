@@ -1,22 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-
-    <div class="row">
-        <div class="col-sm-12">
-            <h1 class="pull-left">Create New Pruebaespecial</h1>
-        </div>
-    </div>
 
   
-      @include('common.errors')
-      
-    <div class="row">
+     <div class="col-md-8">
+     @include('common.errors')
+              <!-- general form elements -->
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h2 class="box-title">Crear nuevo Pruebaespecial</h2>
+                </div><!-- /.box-header -->
+
         {!! Form::open(['route' => 'pruebaespecials.store']) !!}
-
+            <div class="box-body">
             @include('pruebaespecials.fields')
-
+            </div>
         {!! Form::close() !!}
     </div>
 </div>

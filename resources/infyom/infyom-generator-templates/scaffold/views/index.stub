@@ -19,6 +19,7 @@
         @else
             @include('$MODEL_NAME_PLURAL_CAMEL$.table')
         @endif
-        $PAGINATE$
+        @include('common.paginate', ['records' => $$MODEL_NAME_PLURAL_CAMEL$])  
+              
     </div>
 @endsection

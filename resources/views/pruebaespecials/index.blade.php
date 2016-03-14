@@ -2,17 +2,19 @@
 
 @section('content')
 
-    <div class="container">
-
-        <h1 class="pull-left">Pruebaespecials</h1>
-        <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('pruebaespecials.create') !!}">Add New</a>
-
+        <section class="content">
+        <div class="clearfix"></div>
+           @include('flash::message')
         <div class="clearfix"></div>
 
-        @include('flash::message')
-        
-
-        <div class="clearfix"></div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title">Pruebaespecials</h3>
+                   <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('pruebaespecials.create') !!}">Agregar</a>
+                </div><!-- /.box-header -->
+                <div class="box-body">
 
         @if($pruebaespecials->isEmpty())
             <div class="well text-center">No Pruebaespecials found.</div>
@@ -20,6 +22,10 @@
             @include('pruebaespecials.table')
 
         @endif
-        
-    </div>
+         @include('common.paginate', ['records' => $pruebaespecials])
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 @endsection

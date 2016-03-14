@@ -1,3 +1,3 @@
-<div class="row">
+<div class="pull-right">
     {!! $records->render() !!}
 </div>

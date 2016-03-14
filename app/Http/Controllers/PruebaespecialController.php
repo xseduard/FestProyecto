@@ -31,7 +31,7 @@ class PruebaespecialController extends AppBaseController
     public function index(Request $request)
     {
         $this->pruebaespecialRepository->pushCriteria(new RequestCriteria($request));
-        $pruebaespecials = $this->pruebaespecialRepository->all();
+        $pruebaespecials = $this->pruebaespecialRepository->paginate(2);
 
         return view('pruebaespecials.index')
             ->with('pruebaespecials', $pruebaespecials);
