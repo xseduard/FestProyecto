@@ -18,7 +18,7 @@ class Update$MODEL_NAME$Request extends Request {
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * Reglas de validación importadas desde el modelo $MODEL_NAME$.
      *
      * @return array
      */

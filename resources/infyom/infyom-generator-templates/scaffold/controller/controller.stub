@@ -60,7 +60,7 @@ class $MODEL_NAME$Controller extends AppBaseController
 
         $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->create($input);
 
-        Flash::success('$MODEL_NAME$ saved successfully.');
+        Flash::success('$MODEL_NAME$ Registrado correctamente.');
 
         return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
     }
@@ -77,7 +77,7 @@ class $MODEL_NAME$Controller extends AppBaseController
         $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->findWithoutFail($id);
 
         if (empty($$MODEL_NAME_CAMEL$)) {
-            Flash::error('$MODEL_NAME$ not found');
+            Flash::error('$MODEL_NAME$ No se encuentra en encuentra registrado');
 
             return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
         }
@@ -97,7 +97,7 @@ class $MODEL_NAME$Controller extends AppBaseController
         $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->findWithoutFail($id);
 
         if (empty($$MODEL_NAME_CAMEL$)) {
-            Flash::error('$MODEL_NAME$ not found');
+            Flash::error('$MODEL_NAME$ No se encuentra en encuentra registrado');
 
             return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
         }
@@ -118,14 +118,14 @@ class $MODEL_NAME$Controller extends AppBaseController
         $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->findWithoutFail($id);
 
         if (empty($$MODEL_NAME_CAMEL$)) {
-            Flash::error('$MODEL_NAME$ not found');
+            Flash::error('$MODEL_NAME$ No se encuentra en encuentra registrado');
 
             return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
         }
 
         $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->update($request->all(), $id);
 
-        Flash::success('$MODEL_NAME$ updated successfully.');
+        Flash::success('$MODEL_NAME$ Actualizado correctamente.');
 
         return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
     }
@@ -142,14 +142,14 @@ class $MODEL_NAME$Controller extends AppBaseController
         $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->findWithoutFail($id);
 
         if (empty($$MODEL_NAME_CAMEL$)) {
-            Flash::error('$MODEL_NAME$ not found');
+            Flash::error('$MODEL_NAME$ No se encuentra en encuentra registrado');
 
             return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
         }
 
         $this->$MODEL_NAME_CAMEL$Repository->delete($id);
 
-        Flash::success('$MODEL_NAME$ deleted successfully.');
+        Flash::success('$MODEL_NAME$ Eliminado correctamente.');
 
         return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
     }
