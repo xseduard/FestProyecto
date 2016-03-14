@@ -1,22 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="col-md-8">
+     @include('common.errors')
+              <!-- general form elements -->
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h2 class="box-title">Edit Pruebaespecial</h2>
+                </div><!-- /.box-header -->
 
-        <div class="row">
-            <div class="col-sm-12">
-                <h1 class="pull-left">Edit Pruebaespecial</h1>
-            </div>
-        </div>
-
-        @include('common.errors')
-
-        <div class="row">
-            {!! Form::model($pruebaespecial, ['route' => ['pruebaespecials.update', $pruebaespecial->id], 'method' => 'patch']) !!}
-
+        {!! Form::model($pruebaespecial, ['route' => ['pruebaespecials.update', $pruebaespecial->id], 'method' => 'patch']) !!}
+            <div class="box-body">
             @include('pruebaespecials.fields')
-
-            {!! Form::close() !!}
-        </div>
+            </div>
+        {!! Form::close() !!}
     </div>
+</div>
 @endsection
+
+
+ 

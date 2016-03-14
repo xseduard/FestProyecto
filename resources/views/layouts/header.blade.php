@@ -24,11 +24,11 @@
                     <!-- Menu toggle button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-envelope-o"></i>
-                        <span class="label label-success">4</span>
+                        <span class="label label-success">5</span>
                     </a>
 
                     <ul class="dropdown-menu">
-                        <li class="header">Tienes 4 mensajes</li>
+                        <li class="header">Tienes 5 mensajes</li>
                         <li>
                             <!-- inner menu: contains the messages -->
                             <ul class="menu">
@@ -36,15 +36,15 @@
                                     <a href="#">
                                         <div class="pull-left">
                                             <!-- User Image -->
-                                            <img src="{{ asset("/bower_components/admin-lte/dist/img/userADMIN.jpg") }}" class="img-circle" alt="User Image"/>
+                                            <img src="{{ asset("/bower_components/admin-lte/dist/img/user3-128x128.jpg") }}" class="img-circle" alt="User Image"/>
                                         </div>
                                         <!-- Message title and timestamp -->
                                         <h4>
                                             Equipo de soporte
-                                            <small><i class="fa fa-clock-o"></i> 5 minutos</small>
+                                            <small><i class="fa fa-clock-o"></i> 36 minutos</small>
                                         </h4>
                                         <!-- The message -->
-                                        <p>Why not buy a new awesome theme?</p>
+                                        <p>Cambiaras el tema?</p>
                                     </a>
                                 </li><!-- end message -->
                             </ul><!-- /.menu -->
@@ -58,10 +58,10 @@
                     <!-- Menu toggle button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-bell-o"></i>
-                        <span class="label label-warning">10</span>
+                        <span class="label label-warning">23</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="header">Tienes 10 notificaciones</li>
+                        <li class="header">Tienes 23 notificaciones</li>
                         <li>
                             <!-- Inner Menu: contains the notifications -->
                             <ul class="menu">
@@ -80,10 +80,10 @@
                     <!-- Menu Toggle Button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-flag-o"></i>
-                        <span class="label label-danger">9</span>
+                        <span class="label label-danger">99</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="header">Tienes 9 tareas</li>
+                        <li class="header">Tienes 99 tareas</li>
                         <li>
                             <!-- Inner menu: contains the tasks -->
                             <ul class="menu">
@@ -91,7 +91,7 @@
                                     <a href="#">
                                         <!-- Task title and progress text -->
                                         <h3>
-                                            Design some buttons
+                                            Diseño sistema forms
                                             <small class="pull-right">20%</small>
                                         </h3>
                                         <!-- The progress bar -->
