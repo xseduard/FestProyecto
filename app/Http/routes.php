@@ -58,4 +58,23 @@ Route::get('pruebaespecials/delete/{id}', [
     'uses' => 'PruebaespecialController@destroy',
 ]);
 
+
+
+Route::resource("unopruebas", "UnopruebaController");
+
+Route::get('unopruebas/delete/{id}', [
+    'as' => 'unopruebas.delete',
+    'uses' => 'UnopruebaController@destroy',
+]);
+
+
+Route::resource("marios", "MarioController");
+
+Route::get('marios/delete/{id}', [
+    'as' => 'marios.delete',
+    'uses' => 'MarioController@destroy',
+]);
+
+
 });
+
