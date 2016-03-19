@@ -1,22 +1,31 @@
 @extends('layouts.app')
 
+@section('customcss')
+@endsection
 @section('content')
-<div class="container">
 
-    <div class="row">
-        <div class="col-sm-12">
-            <h1 class="pull-left">Crear nuevo $MODEL_NAME$</h1>
-        </div>
-    </div>
+  
+     <div class="col-md-8">
+     @include('common.errors')
+              <!-- formulario general de create -->
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h2 class="box-title">Crear nuevo  $MODEL_NAME$</h2>
+                </div><!-- /.box-header -->
 
-    @include('common.errors')
-
-    <div class="row">
         {!! Form::open(['route' => '$MODEL_NAME_PLURAL_CAMEL$.store']) !!}
-
-            @include('$MODEL_NAME_PLURAL_CAMEL$.fields')
-
+            <div class="box-body">
+             @include('$MODEL_NAME_PLURAL_CAMEL$.fields')
+                         <!-- Submit Field -->
+              <div class="form-group col-sm-12">
+                  {!! Form::button('<span class="glyphicon glyphicon-floppy-disk" ></span> Guardar', ['class' => 'btn btn-primary']) !!}
+                  <a href="{!! route('$MODEL_NAME_PLURAL_CAMEL$.index') !!}" class="btn btn-primary"><i class="fa fa-ban"></i> Cancelar</a>
+              </div>
+            </div>
         {!! Form::close() !!}
     </div>
 </div>
 @endsection
+@section('customjs')
+@endsection
+

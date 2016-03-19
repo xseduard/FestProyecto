@@ -12,7 +12,7 @@
               <div class="box">
                 <div class="box-header">
                   <h3 class="box-title">Pruebaespecials</h3>
-                   <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('pruebaespecials.create') !!}">Agregar</a>
+                   <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('pruebaespecials.create') !!}"><i class="fa fa-plus"></i> Agregar</a>
                 </div><!-- /.box-header -->
                 <div class="box-body">
 

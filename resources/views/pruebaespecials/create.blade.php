@@ -3,7 +3,7 @@
 @section('content')
 
   
-     <div class="col-md-8">
+     <div class="col-md-12">
      @include('common.errors')
               <!-- general form elements -->
               <div class="box box-primary">
@@ -14,6 +14,11 @@
         {!! Form::open(['route' => 'pruebaespecials.store']) !!}
             <div class="box-body">
             @include('pruebaespecials.fields')
+            <!-- Submit Field -->
+<div class="form-group col-sm-12">
+    {!! Form::button('<span class="glyphicon glyphicon-floppy-disk" ></span> Guardar', ['class' => 'btn btn-success']) !!}
+    <a href="{!! route('pruebaespecials.index') !!}" class="btn btn-primary"><i class="fa fa-ban"></i> Cancelar</a>
+</div>
             </div>
         {!! Form::close() !!}
     </div>
