@@ -17,11 +17,21 @@ class Create$MODEL_NAME$Request extends Request {
         return true;
     }
 
+   public function attributes() {
+        return [
+
+         "" => "",
+         "" => "",
+    
+        ];
+
     /**
      * Reglas de validación importadas desde el modelo $MODEL_NAME$.
      *
      * @return array
      */
+     
+    }
     public function rules()
     {
         return $MODEL_NAME$::$rules;

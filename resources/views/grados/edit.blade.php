@@ -14,7 +14,7 @@
             @include('grados.fields')
             <!-- Submit Field -->
               <div class="form-group col-sm-12">
-                  {!! Form::button('<span class="glyphicon glyphicon-floppy-disk" ></span> Actualizar', ['class' => 'btn btn-primary']) !!}
+                  {!! Form::button('<span class="glyphicon glyphicon-floppy-disk" ></span> Actualizar', ['type' => 'submit', 'class' => 'btn btn-success']) !!}
                   <a href="{!! route('grados.index') !!}" class="btn btn-primary"><i class="fa fa-ban"></i> Cancelar</a>
               </div>
 
