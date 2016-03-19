@@ -76,5 +76,11 @@ Route::get('marios/delete/{id}', [
 ]);
 
 
-});
 
+Route::resource("grados", "GradoController");
+
+Route::get('grados/delete/{id}', [
+    'as' => 'grados.delete',
+    'uses' => 'GradoController@destroy',
+]);
+});
