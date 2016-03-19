@@ -101,6 +101,7 @@ class GradoController extends AppBaseController
 
             return redirect(route('grados.index'));
         }
+        
 
         return view('grados.edit')->with('grado', $grado);
     }
