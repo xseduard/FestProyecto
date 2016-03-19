@@ -18,7 +18,7 @@
              @include('$MODEL_NAME_PLURAL_CAMEL$.fields')
                          <!-- Submit Field -->
               <div class="form-group col-sm-12">
-                  {!! Form::button('<span class="glyphicon glyphicon-floppy-disk" ></span> Guardar', ['class' => 'btn btn-primary']) !!}
+                  {!! Form::button('<span class="glyphicon glyphicon-floppy-disk" ></span> Guardar', ['type' => 'submit', 'class' => 'btn btn-success']) !!}
                   <a href="{!! route('$MODEL_NAME_PLURAL_CAMEL$.index') !!}" class="btn btn-primary"><i class="fa fa-ban"></i> Cancelar</a>
               </div>
             </div>
