@@ -4,8 +4,8 @@
 
     <div class="container">
 
-        <h1 class="pull-left">$MODEL_NAME_PLURAL$</h1>
-        <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('$MODEL_NAME_PLURAL_CAMEL$.create') !!}">Agregar</a>
+        <h2 class="pull-left">$MODEL_NAME_PLURAL$</h2>
+        <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('$MODEL_NAME_PLURAL_CAMEL$.create') !!}"><i class="fa fa-plus"></i> Agregar</a>
 
         <div class="clearfix"></div>
 
