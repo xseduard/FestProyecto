@@ -51,43 +51,42 @@ Route::group(['middleware' => 'web'], function () {
 Route::group(['middleware' => ['web']], function () {
     //
 
-Route::resource("pruebaespecials", "PruebaespecialController");
+    Route::resource("pruebaespecials", "PruebaespecialController");
 
-Route::get('pruebaespecials/delete/{id}', [
-    'as' => 'pruebaespecials.delete',
-    'uses' => 'PruebaespecialController@destroy',
-]);
+    Route::get('pruebaespecials/delete/{id}', [
+        'as' => 'pruebaespecials.delete',
+        'uses' => 'PruebaespecialController@destroy',
+    ]);
 
+});
+Route::group(['middleware' => ['web']], function () {
 
+    Route::resource("unopruebas", "UnopruebaController");
 
-Route::resource("unopruebas", "UnopruebaController");
+    Route::get('unopruebas/delete/{id}', [
+        'as' => 'unopruebas.delete',
+        'uses' => 'UnopruebaController@destroy',
+    ]);
 
-Route::get('unopruebas/delete/{id}', [
-    'as' => 'unopruebas.delete',
-    'uses' => 'UnopruebaController@destroy',
-]);
+});
 
+Route::group(['middleware' => ['web']], function () {
 
-Route::resource("marios", "MarioController");
+    Route::resource("grados", "GradoController");
 
-Route::get('marios/delete/{id}', [
-    'as' => 'marios.delete',
-    'uses' => 'MarioController@destroy',
-]);
+    Route::get('grados/delete/{id}', [
+        'as' => 'grados.delete',
+        'uses' => 'GradoController@destroy',
+    ]);
 
+});
+Route::group(['middleware' => ['web']], function () {
 
+    Route::resource("academicos", "AcademicoController");
 
-Route::resource("grados", "GradoController");
+    Route::get('academicos/delete/{id}', [
+        'as' => 'academicos.delete',
+        'uses' => 'AcademicoController@destroy',
+    ]);
 
-Route::get('grados/delete/{id}', [
-    'as' => 'grados.delete',
-    'uses' => 'GradoController@destroy',
-]);
-
-Route::resource("academicos", "AcademicoController");
-
-Route::get('academicos/delete/{id}', [
-    'as' => 'academicos.delete',
-    'uses' => 'AcademicoController@destroy',
-]);
 });
