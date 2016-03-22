@@ -16,7 +16,7 @@ class CreateAcademicosTable extends Migration
         Schema::create('academicos', function(Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->enum('sexo',['F,M,I']);
+            $table->enum('sexo',['F','M','I']);
             $table->timestamps();
             $table->softDeletes();
         });
