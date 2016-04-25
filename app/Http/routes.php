@@ -70,23 +70,15 @@ Route::group(['middleware' => ['web']], function () {
 
 });
 
+
+
+
 Route::group(['middleware' => ['web']], function () {
 
-    Route::resource("grados", "GradoController");
+	Route::resource("academicos", "AcademicoController");
 
-    Route::get('grados/delete/{id}', [
-        'as' => 'grados.delete',
-        'uses' => 'GradoController@destroy',
-    ]);
-
-});
-Route::group(['middleware' => ['web']], function () {
-
-    Route::resource("academicos", "AcademicoController");
-
-    Route::get('academicos/delete/{id}', [
-        'as' => 'academicos.delete',
-        'uses' => 'AcademicoController@destroy',
-    ]);
-
+	Route::get('academicos/delete/{id}', [
+	    'as' => 'academicos.delete',
+	    'uses' => 'AcademicoController@destroy',
+	]);
 });

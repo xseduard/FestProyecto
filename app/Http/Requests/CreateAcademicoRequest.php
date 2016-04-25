@@ -17,15 +17,23 @@ class CreateAcademicoRequest extends Request {
         return true;
     }
 
+   public function attributes() {
+        return [
+
+         "" => "",
+         "" => "",
+    
+        ];
+
     /**
      * Reglas de validación importadas desde el modelo Academico.
      *
      * @return array
      */
+     
+    }
     public function rules()
     {
-
         return Academico::$rules;
-        
     }
 }

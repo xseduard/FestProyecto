@@ -1,11 +1,17 @@
-<!-- Nombre Field -->
+<!-- Idacademico Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('nombre', 'Nombre:') !!}
-    {!! Form::text('nombre', null, ['class' => 'form-control']) !!}
+    {!! Form::label('idacademico', 'Idacademico:') !!}
+    {!! Form::text('idacademico', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Nombres Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('nombres', 'Nombres:') !!}
+    {!! Form::text('nombres', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Sexo Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('sexo', 'Sexo:') !!}
-    {!! Form::select('sexo', ['F' => 'F', 'M' => 'M', 'I' => 'I'], null, ['class' => 'form-control']) !!}
+    {!! Form::text('sexo', null, ['class' => 'form-control']) !!}
 </div>

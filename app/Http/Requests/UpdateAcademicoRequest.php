@@ -17,6 +17,16 @@ class UpdateAcademicoRequest extends Request {
         return true;
     }
 
+
+    public function attributes() {
+        return [
+
+         "" => "",
+         "" => "",
+    
+        ];
+    }
+
     /**
      * Reglas de validación importadas desde el modelo Academico.
      *

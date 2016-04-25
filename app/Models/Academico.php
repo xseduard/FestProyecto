@@ -10,32 +10,19 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *      definition="Academico",
  *      required={},
  *      @SWG\Property(
- *          property="id",
- *          description="id",
- *          type="integer",
- *          format="int32"
+ *          property="idacademico",
+ *          description="idacademico",
+ *          type="string"
  *      ),
  *      @SWG\Property(
- *          property="nombre",
- *          description="nombre",
+ *          property="nombres",
+ *          description="nombres",
  *          type="string"
  *      ),
  *      @SWG\Property(
  *          property="sexo",
  *          description="sexo",
  *          type="string"
- *      ),
- *      @SWG\Property(
- *          property="created_at",
- *          description="created_at",
- *          type="string",
- *          format="date-time"
- *      ),
- *      @SWG\Property(
- *          property="updated_at",
- *          description="updated_at",
- *          type="string",
- *          format="date-time"
  *      )
  * )
  */
@@ -43,14 +30,19 @@ class Academico extends Model
 {
     use SoftDeletes;
 
-    public $table = "academicos";
+    public $table = "academico";
     
+	const CREATED_AT = 'created_at';
+	const UPDATED_AT = 'updated_at';
+
 
     protected $dates = ['deleted_at'];
 
+    protected $primaryKey = 'idacademico';
 
     public $fillable = [
-        "nombre",
+        "idacademico",
+        "nombres",
         "sexo"
     ];
 
@@ -60,7 +52,8 @@ class Academico extends Model
      * @var array
      */
     protected $casts = [
-        "nombre" => "string",
+        "idacademico" => "string",
+        "nombres" => "string",
         "sexo" => "string"
     ];
 
@@ -70,7 +63,6 @@ class Academico extends Model
      * @var array
      */
     public static $rules = [
-        "nombre" => "required",
-        "sexo" => "required"
+        
     ];
 }

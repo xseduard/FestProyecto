@@ -119,6 +119,8 @@ return [
         'swagger'   => true,
 
         'tests'     => true,
+
+        'datatables' => true,
     ],
 
     /*

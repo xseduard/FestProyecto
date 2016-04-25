@@ -57,9 +57,9 @@ class AcademicoController extends AppBaseController
     public function store(CreateAcademicoRequest $request)
     {
         $input = $request->all();
-   
+
         $academico = $this->academicoRepository->create($input);
-        
+
         Flash::success('Academico Registrado correctamente.');
 
         return redirect(route('academicos.index'));
@@ -115,7 +115,6 @@ class AcademicoController extends AppBaseController
      */
     public function update($id, UpdateAcademicoRequest $request)
     {
-        
         $academico = $this->academicoRepository->findWithoutFail($id);
 
         if (empty($academico)) {

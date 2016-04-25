@@ -1,30 +1,18 @@
-<!-- Id Field -->
+<!-- Idacademico Field -->
 <div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{!! $academico->id !!}</p>
+    {!! Form::label('idacademico', 'Idacademico:') !!}
+    <p>{!! $academico->idacademico !!}</p>
 </div>
 
-<!-- Nombre Field -->
+<!-- Nombres Field -->
 <div class="form-group">
-    {!! Form::label('nombre', 'Nombre:') !!}
-    <p>{!! $academico->nombre !!}</p>
+    {!! Form::label('nombres', 'Nombres:') !!}
+    <p>{!! $academico->nombres !!}</p>
 </div>
 
 <!-- Sexo Field -->
 <div class="form-group">
     {!! Form::label('sexo', 'Sexo:') !!}
     <p>{!! $academico->sexo !!}</p>
-</div>
-
-<!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $academico->created_at !!}</p>
-</div>
-
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $academico->updated_at !!}</p>
 </div>
 

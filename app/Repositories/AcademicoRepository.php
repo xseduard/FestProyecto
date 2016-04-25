@@ -11,8 +11,7 @@ class AcademicoRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        "nombre",
-        "sexo"
+        
     ];
 
     /**
