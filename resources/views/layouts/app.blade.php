@@ -63,7 +63,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <section class="content">
             <!-- Your Page Content Here -->
             <div class="row">
+            <div class="col-lg-10">
             @yield('content')
+            </div>
             </div>
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->

@@ -5,7 +5,7 @@
 @section('content')
 
   
-     <div class="col-md-8">
+     <div class="col-md-12">
      @include('common.errors')
               <!-- formulario general de create -->
               <div class="box box-primary">

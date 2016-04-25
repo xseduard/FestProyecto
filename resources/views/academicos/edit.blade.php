@@ -9,7 +9,7 @@
                   <h2 class="box-title">Edit Academico</h2>
                 </div><!-- /.box-header -->
 
-        {!! Form::model($academico, ['route' => ['academicos.update', $academico->id], 'method' => 'patch']) !!}
+        {!! Form::model($academico, ['route' => ['academicos.update', $academico->idacademico], 'method' => 'patch']) !!}
             <div class="box-body">
             @include('academicos.fields')
             <!-- Submit Field -->

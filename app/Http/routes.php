@@ -41,6 +41,11 @@ Route::group(['middleware' => 'web'], function () {
 |--------------------------------------------------------------------------
 */
 
+Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder');
+
+Route::get('field_template', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@fieldTemplate');
+
+Route::post('generator_builder/generate', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generate');
 
 
 Route::group(['middleware' => ['web']], function () {
@@ -73,3 +78,4 @@ Route::group(['middleware' => ['web']], function () {
 	    'uses' => 'AcademicoController@destroy',
 	]);
 });
+

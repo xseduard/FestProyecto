@@ -18,6 +18,7 @@
         "infyomlabs/core-templates": "dev-master",
         "laravelcollective/html": "5.2.*",
         "infyomlabs/swagger-generator": "dev-master",
+        "infyomlabs/generator-builder": "dev-master",
         "jlapp/swaggervel": "dev-master",
         "doctrine/dbal": "~2.3"
     },
