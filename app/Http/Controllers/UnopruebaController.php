@@ -19,6 +19,7 @@ class UnopruebaController extends AppBaseController
 
     function __construct(UnopruebaRepository $unopruebaRepo)
     {
+        $this->middleware('auth');
         $this->unopruebaRepository = $unopruebaRepo;
     }
 

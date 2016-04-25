@@ -26,11 +26,20 @@ else {
 
 
 
+function ActivarMenu() {
 
+     var paginaURL = window.location.href.substr(window.location.href
+.lastIndexOf("/")+1);
+     $("#navegacion ul li").each(function(){
+          if($(this).attr("ruta") == paginaURL || $(this).attr("ruta") == '' )
+          $(this).addClass("active");
+
+     })
+}
 
 
 function main(){
  $(document).on('click', '#btn-eliminar', alertEliminar);
-
+ActivarMenu();
 }
 $(document).on('ready', main);

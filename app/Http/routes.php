@@ -14,9 +14,7 @@ Route::get('admin', function () {
     return view('admin_template');
 });
 */
-Route::get('/', function () {
-    return view('welcome');
-});
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -28,12 +26,9 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
-
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
+    Route::get('/', function () {return view('auth.login');});
     Route::get('/admin', 'InicialController@index');
     Route::get('/home', 'HomeController@index');
     Route::get('/forma', 'formaController@index');
@@ -49,8 +44,6 @@ Route::group(['middleware' => 'web'], function () {
 
 
 Route::group(['middleware' => ['web']], function () {
-    //
-
     Route::resource("pruebaespecials", "PruebaespecialController");
 
     Route::get('pruebaespecials/delete/{id}', [
@@ -60,7 +53,6 @@ Route::group(['middleware' => ['web']], function () {
 
 });
 Route::group(['middleware' => ['web']], function () {
-
     Route::resource("unopruebas", "UnopruebaController");
 
     Route::get('unopruebas/delete/{id}', [
@@ -74,7 +66,6 @@ Route::group(['middleware' => ['web']], function () {
 
 
 Route::group(['middleware' => ['web']], function () {
-
 	Route::resource("academicos", "AcademicoController");
 
 	Route::get('academicos/delete/{id}', [

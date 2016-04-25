@@ -1,12 +1,10 @@
 <!-- Left side column. contains the sidebar -->
 
-@if (Auth::guest())
-                        
-@else
+
 <aside class="main-sidebar">
 
     <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
+    <section class="sidebar", id="navegacion">
 
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
@@ -35,12 +33,14 @@
         <ul class="sidebar-menu">
             <li class="header">MENU</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="#"><span>Link Activo</span></a></li>
-            <li><a href="{{ url('/home') }}"><span>Home</span></a></li>
-            <li><a href="{{ url('/admin') }}"><span>Admin</span></a></li>
-            <li><a href="{{ url('/forma') }}"><span>Formas</span></a></li>
-            <li><a href="{{ url('/home') }}"><span>Home</span></a></li>
-            <li><a href="{{ url('/home') }}"><span>Home</span></a></li>
+            <li ruta="home"><a href="{{ url('/home') }}"><span>Inicio</span></a></li>
+            <li ruta="academicos"><a href="{{ url('/academicos') }}"><span>Academicos</span></a></li>
+            <li ruta="admin"><a href="{{ url('/admin') }}"><span>Admin</span></a></li>
+            <li ruta="forma"><a href="{{ url('/forma') }}"><span>Formas</span></a></li>
+            <li ruta="pruebaespecials"><a href="{{ url('/pruebaespecials') }}"><span>Pruebas</span></a></li>
+            <li ruta="unopruebas"><a href="{{ url('/unopruebas') }}"><span>Pruebas 2</span></a></li>
+           <!-- <li class="active"><a href="#"><span>Link Activo</span></a></li>
+            
             <li class="treeview">
                 <a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
@@ -48,8 +48,8 @@
                     <li><a href="#">Link in level 2</a></li>
                 </ul>
             </li>
+            -->
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
 </aside>
-@endif

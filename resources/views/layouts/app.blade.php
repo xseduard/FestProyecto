@@ -39,8 +39,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     @include('layouts.header')
 
     <!-- Sidebar -->
+    @if (Auth::guest())
+                        
+@else
     @include('layouts.sidebar')
-
+@endif
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->

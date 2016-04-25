@@ -19,6 +19,7 @@ class PruebaespecialController extends AppBaseController
 
     function __construct(PruebaespecialRepository $pruebaespecialRepo)
     {
+        $this->middleware('auth');
         $this->pruebaespecialRepository = $pruebaespecialRepo;
     }
 
