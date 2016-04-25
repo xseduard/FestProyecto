@@ -10,7 +10,7 @@
             <td>{!! $academico->nombres !!}</td>
             <td>{!! $academico->sexo !!}</td>
             <td>
-                {!! Form::open(['route' => ['academicos.destroy', $academico->idacademico], 'method' => 'delete']) !!}
+                {!! Form::open(['route' => ['academicos.destroy', $academico->idacademico], 'method' => 'delete', 'id' => 'formEliminar']) !!}
                 <div class='btn-group'>
                     <a href="{!! route('academicos.show', [$academico->idacademico]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
                     <a href="{!! route('academicos.edit', [$academico->idacademico]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
