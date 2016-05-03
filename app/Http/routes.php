@@ -79,3 +79,27 @@ Route::group(['middleware' => ['web']], function () {
 	]);
 });
 
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("programas", "ProgramaController");
+
+	Route::get('programas/delete/{id}', [
+	    'as' => 'programas.delete',
+	    'uses' => 'ProgramaController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("ponencias", "PonenciaController");
+
+	Route::get('ponencias/delete/{id}', [
+	    'as' => 'ponencias.delete',
+	    'uses' => 'PonenciaController@destroy',
+	]);
+});

@@ -35,6 +35,7 @@
             <!-- Optionally, you can add icons to the links -->
             <li ruta="home"><a href="{{ url('/home') }}"><span>Inicio</span></a></li>
             <li ruta="academicos"><a href="{{ url('/academicos') }}"><span>Academicos</span></a></li>
+            <li ruta="programas"><a href="{{ url('/programas') }}"><span>Programas</span></a></li>
             <li ruta="admin"><a href="{{ url('/admin') }}"><span>Admin</span></a></li>
             <li ruta="forma"><a href="{{ url('/forma') }}"><span>Formas</span></a></li>
             <li ruta="pruebaespecials"><a href="{{ url('/pruebaespecials') }}"><span>Pruebas</span></a></li>
