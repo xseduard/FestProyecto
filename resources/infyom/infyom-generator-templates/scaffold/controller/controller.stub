@@ -60,7 +60,7 @@ class $MODEL_NAME$Controller extends AppBaseController
 
         $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->create($input);
 
-        Flash::success('$MODEL_NAME$ Registrado correctamente.');
+        Flash::success('$MODEL_NAME$ registrado correctamente.');
 
         return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
     }
@@ -125,7 +125,7 @@ class $MODEL_NAME$Controller extends AppBaseController
 
         $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->update($request->all(), $id);
 
-        Flash::success('$MODEL_NAME$ Actualizado correctamente.');
+        Flash::success('$MODEL_NAME$ actualizado correctamente.');
 
         return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
     }
@@ -149,7 +149,7 @@ class $MODEL_NAME$Controller extends AppBaseController
 
         $this->$MODEL_NAME_CAMEL$Repository->delete($id);
 
-        Flash::success('$MODEL_NAME$ Eliminado correctamente.');
+        Flash::success('$MODEL_NAME$ eliminado correctamente.');
 
         return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
     }

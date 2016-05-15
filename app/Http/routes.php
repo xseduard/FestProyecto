@@ -69,19 +69,6 @@ Route::group(['middleware' => ['web']], function () {
 
 
 
-
-Route::group(['middleware' => ['web']], function () {
-	Route::resource("academicos", "AcademicoController");
-
-	Route::get('academicos/delete/{id}', [
-	    'as' => 'academicos.delete',
-	    'uses' => 'AcademicoController@destroy',
-	]);
-});
-
-
-
-
 Route::group(['middleware' => ['web']], function () {
 
 	Route::resource("programas", "ProgramaController");
@@ -96,10 +83,250 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::group(['middleware' => ['web']], function () {
 
+	Route::resource("academicos", "AcademicoController");
+
+	Route::get('academicos/delete/{id}', [
+	    'as' => 'academicos.delete',
+	    'uses' => 'AcademicoController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("docentes", "DocenteController");
+
+	Route::get('docentes/delete/{id}', [
+	    'as' => 'docentes.delete',
+	    'uses' => 'DocenteController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("estudiantes", "EstudianteController");
+
+	Route::get('estudiantes/delete/{id}', [
+	    'as' => 'estudiantes.delete',
+	    'uses' => 'EstudianteController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("grupoInvestigacions", "GrupoInvestigacionController");
+
+	Route::get('grupoInvestigacions/delete/{id}', [
+	    'as' => 'grupoInvestigacions.delete',
+	    'uses' => 'GrupoInvestigacionController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("semilleros", "SemilleroController");
+
+	Route::get('semilleros/delete/{id}', [
+	    'as' => 'semilleros.delete',
+	    'uses' => 'SemilleroController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("trabajoGrados", "TrabajoGradoController");
+
+	Route::get('trabajoGrados/delete/{id}', [
+	    'as' => 'trabajoGrados.delete',
+	    'uses' => 'TrabajoGradoController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
 	Route::resource("ponencias", "PonenciaController");
 
 	Route::get('ponencias/delete/{id}', [
 	    'as' => 'ponencias.delete',
 	    'uses' => 'PonenciaController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("eventoCs", "EventoCController");
+
+	Route::get('eventoCs/delete/{id}', [
+	    'as' => 'eventoCs.delete',
+	    'uses' => 'EventoCController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("productoGrupos", "ProductoGrupoController");
+
+	Route::get('productoGrupos/delete/{id}', [
+	    'as' => 'productoGrupos.delete',
+	    'uses' => 'ProductoGrupoController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("proyectoAulas", "ProyectoAulaController");
+
+	Route::get('proyectoAulas/delete/{id}', [
+	    'as' => 'proyectoAulas.delete',
+	    'uses' => 'ProyectoAulaController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("lineaIs", "LineaIController");
+
+	Route::get('lineaIs/delete/{id}', [
+	    'as' => 'lineaIs.delete',
+	    'uses' => 'LineaIController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("proyectos", "ProyectoController");
+
+	Route::get('proyectos/delete/{id}', [
+	    'as' => 'proyectos.delete',
+	    'uses' => 'ProyectoController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("rOfreces", "ROfreceController");
+
+	Route::get('rOfreces/delete/{id}', [
+	    'as' => 'rOfreces.delete',
+	    'uses' => 'ROfreceController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("rCoordinasems", "RCoordinasemController");
+
+	Route::get('rCoordinasems/delete/{id}', [
+	    'as' => 'rCoordinasems.delete',
+	    'uses' => 'RCoordinasemController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("rDesarrollas", "RDesarrollaController");
+
+	Route::get('rDesarrollas/delete/{id}', [
+	    'as' => 'rDesarrollas.delete',
+	    'uses' => 'RDesarrollaController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("rIntegras", "RIntegraController");
+
+	Route::get('rIntegras/delete/{id}', [
+	    'as' => 'rIntegras.delete',
+	    'uses' => 'RIntegraController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("rEstudias", "REstudiaController");
+
+	Route::get('rEstudias/delete/{id}', [
+	    'as' => 'rEstudias.delete',
+	    'uses' => 'REstudiaController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("rArbitras", "RArbitraController");
+
+	Route::get('rArbitras/delete/{id}', [
+	    'as' => 'rArbitras.delete',
+	    'uses' => 'RArbitraController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("rRealizas", "RRealizaController");
+
+	Route::get('rRealizas/delete/{id}', [
+	    'as' => 'rRealizas.delete',
+	    'uses' => 'RRealizaController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("rCoordinas", "RCoordinaController");
+
+	Route::get('rCoordinas/delete/{id}', [
+	    'as' => 'rCoordinas.delete',
+	    'uses' => 'RCoordinaController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("rSuscribes", "RSuscribeController");
+
+	Route::get('rSuscribes/delete/{id}', [
+	    'as' => 'rSuscribes.delete',
+	    'uses' => 'RSuscribeController@destroy',
 	]);
 });

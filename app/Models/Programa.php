@@ -5,33 +5,12 @@ namespace App\Models;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-/**
- * @SWG\Definition(
- *      definition="Programa",
- *      required={},
- *      @SWG\Property(
- *          property="idprograma",
- *          description="idprograma",
- *          type="string"
- *      ),
- *      @SWG\Property(
- *          property="nombre",
- *          description="nombre",
- *          type="string"
- *      ),
- *      @SWG\Property(
- *          property="duracion",
- *          description="duracion",
- *          type="integer",
- *          format="int32"
- *      )
- * )
- */
+
 class Programa extends Model
 {
     use SoftDeletes;
 
-    public $table = "programa";
+    public $table = "tprogramas";
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
@@ -39,13 +18,12 @@ class Programa extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $primaryKey = 'idprograma';
 
     public $fillable = [
-        'idprograma',
+        'codigo',
         'nombre',
         'duracion',
-
+        'deleted_at'
     ];
 
     /**
@@ -54,9 +32,11 @@ class Programa extends Model
      * @var array
      */
     protected $casts = [
-        'idprograma' => 'string',
+        'id' => 'integer',
+        'codigo' => 'string',
         'nombre' => 'string',
-        'duracion' => 'integer'
+        'duracion' => 'integer',
+        'deleted_at' => 'datetime'
     ];
 
     /**

@@ -1,7 +1,13 @@
-<!-- Titulop Field -->
+<!-- Id Field -->
 <div class="form-group">
-    {!! Form::label('titulop', 'Titulop:') !!}
-    <p>{!! $ponencia->titulop !!}</p>
+    {!! Form::label('id', 'Id:') !!}
+    <p>{!! $ponencia->id !!}</p>
+</div>
+
+<!-- Titulo Field -->
+<div class="form-group">
+    {!! Form::label('titulo', 'Titulo:') !!}
+    <p>{!! $ponencia->titulo !!}</p>
 </div>
 
 <!-- Periodo Field -->
@@ -16,10 +22,10 @@
     <p>{!! $ponencia->fecha !!}</p>
 </div>
 
-<!-- País Field -->
+<!-- Pais Field -->
 <div class="form-group">
-    {!! Form::label('país', 'País:') !!}
-    <p>{!! $ponencia->país !!}</p>
+    {!! Form::label('pais', 'Pais:') !!}
+    <p>{!! $ponencia->pais !!}</p>
 </div>
 
 <!-- Ciudad Field -->
@@ -34,15 +40,33 @@
     <p>{!! $ponencia->institucion !!}</p>
 </div>
 
-<!-- Paginaw Field -->
+<!-- Pagina Field -->
 <div class="form-group">
-    {!! Form::label('paginaw', 'Paginaw:') !!}
-    <p>{!! $ponencia->paginaw !!}</p>
+    {!! Form::label('pagina', 'Pagina:') !!}
+    <p>{!! $ponencia->pagina !!}</p>
 </div>
 
-<!-- Idprograma Field -->
+<!-- Created At Field -->
 <div class="form-group">
-    {!! Form::label('idprograma', 'Idprograma:') !!}
-    <p>{!! $ponencia->idprograma !!}</p>
+    {!! Form::label('created_at', 'Created At:') !!}
+    <p>{!! $ponencia->created_at !!}</p>
+</div>
+
+<!-- Updated At Field -->
+<div class="form-group">
+    {!! Form::label('updated_at', 'Updated At:') !!}
+    <p>{!! $ponencia->updated_at !!}</p>
+</div>
+
+<!-- Deleted At Field -->
+<div class="form-group">
+    {!! Form::label('deleted_at', 'Deleted At:') !!}
+    <p>{!! $ponencia->deleted_at !!}</p>
+</div>
+
+<!-- Id Programa Field -->
+<div class="form-group">
+    {!! Form::label('id_programa', 'Id Programa:') !!}
+    <p>{!! $ponencia->id_programa !!}</p>
 </div>
 

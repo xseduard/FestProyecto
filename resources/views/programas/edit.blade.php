@@ -9,7 +9,7 @@
                   <h2 class="box-title">Edit Programa</h2>
                 </div><!-- /.box-header -->
 
-        {!! Form::model($programa, ['route' => ['programas.update', $programa->LLAVE_PRIMARIA], 'method' => 'patch']) !!}
+        {!! Form::model($programa, ['route' => ['programas.update', $programa->id], 'method' => 'patch']) !!}
             <div class="box-body">
             @include('programas.fields')
             <!-- Submit Field -->

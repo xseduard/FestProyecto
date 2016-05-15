@@ -9,7 +9,7 @@
                   <h2 class="box-title">Edit Ponencia</h2>
                 </div><!-- /.box-header -->
 
-        {!! Form::model($ponencia, ['route' => ['ponencias.update', $ponencia->LLAVE_PRIMARIA], 'method' => 'patch']) !!}
+        {!! Form::model($ponencia, ['route' => ['ponencias.update', $ponencia->id], 'method' => 'patch']) !!}
             <div class="box-body">
             @include('ponencias.fields')
             <!-- Submit Field -->

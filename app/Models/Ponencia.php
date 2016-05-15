@@ -5,12 +5,65 @@ namespace App\Models;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-
+/**
+ * @SWG\Definition(
+ *      definition="Ponencia",
+ *      required={},
+ *      @SWG\Property(
+ *          property="id",
+ *          description="id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="titulo",
+ *          description="titulo",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="periodo",
+ *          description="periodo",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="fecha",
+ *          description="fecha",
+ *          type="string",
+ *          format="date"
+ *      ),
+ *      @SWG\Property(
+ *          property="pais",
+ *          description="pais",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="ciudad",
+ *          description="ciudad",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="institucion",
+ *          description="institucion",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="pagina",
+ *          description="pagina",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="id_programa",
+ *          description="id_programa",
+ *          type="integer",
+ *          format="int32"
+ *      )
+ * )
+ */
 class Ponencia extends Model
 {
     use SoftDeletes;
 
-    public $table = "ponencia";
+    public $table = "tponencias";
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
@@ -18,17 +71,17 @@ class Ponencia extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $primaryKey = 'titulop';
 
     public $fillable = [
-        'titulop',
+        'titulo',
         'periodo',
         'fecha',
-        'país',
+        'pais',
         'ciudad',
         'institucion',
-        'paginaw',
-        'idprograma'
+        'pagina',
+        'deleted_at',
+        'id_programa'
     ];
 
     /**
@@ -37,14 +90,16 @@ class Ponencia extends Model
      * @var array
      */
     protected $casts = [
-        'titulop' => 'string',
+        'id' => 'integer',
+        'titulo' => 'string',
         'periodo' => 'string',
         'fecha' => 'date',
-        'país' => 'string',
+        'pais' => 'string',
         'ciudad' => 'string',
         'institucion' => 'string',
-        'paginaw' => 'string',
-        'idprograma' => 'string'
+        'pagina' => 'string',
+        'deleted_at' => 'datetime',
+        'id_programa' => 'integer'
     ];
 
     /**

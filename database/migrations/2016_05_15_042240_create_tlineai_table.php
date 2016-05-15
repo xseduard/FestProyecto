@@ -1,23 +1,20 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
-class Createttrabajo_gradosTable extends Migration
+class CreateTlineaiTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
+   public function up()
     {
-        Schema::create('ttrabajo_grados', function(Blueprint $table) {
+          Schema::create('tlineai', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('titulo');
-            $table->integer('nivel');
-            $table->string('periodo', 8);
+            $table->string('descripcion');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +27,6 @@ class Createttrabajo_gradosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('ttrabajo_grados');
+            Schema::drop('tlineai');
     }
 }

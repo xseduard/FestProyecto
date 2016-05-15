@@ -19,9 +19,7 @@ class AcademicoController extends AppBaseController
 
     function __construct(AcademicoRepository $academicoRepo)
     {
-        $this->middleware('auth');
         $this->academicoRepository = $academicoRepo;
-
     }
 
     /**
@@ -62,7 +60,7 @@ class AcademicoController extends AppBaseController
 
         $academico = $this->academicoRepository->create($input);
 
-        Flash::success('Academico Registrado correctamente.');
+        Flash::success('Academico registrado correctamente.');
 
         return redirect(route('academicos.index'));
     }
@@ -127,7 +125,7 @@ class AcademicoController extends AppBaseController
 
         $academico = $this->academicoRepository->update($request->all(), $id);
 
-        Flash::success('Academico Actualizado correctamente.');
+        Flash::success('Academico actualizado correctamente.');
 
         return redirect(route('academicos.index'));
     }
@@ -151,7 +149,7 @@ class AcademicoController extends AppBaseController
 
         $this->academicoRepository->delete($id);
 
-        Flash::success('Academico Eliminado correctamente.');
+        Flash::success('Academico eliminado correctamente.');
 
         return redirect(route('academicos.index'));
     }

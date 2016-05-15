@@ -1,24 +1,30 @@
 <table class="table table-responsive" id="ponencias-table">
     <thead>
+        <th>Titulo</th>
         <th>Periodo</th>
         <th>Fecha</th>
-        <th>País</th>
+        <th>Pais</th>
         <th>Ciudad</th>
         <th>Institucion</th>
-        <th>Paginaw</th>
-        <th>Idprograma</th>
+        <th>Pagina</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+        <th>Id Programa</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
     @foreach($ponencias as $ponencia)
         <tr>
+            <td>{!! $ponencia->titulo !!}</td>
             <td>{!! $ponencia->periodo !!}</td>
             <td>{!! $ponencia->fecha !!}</td>
-            <td>{!! $ponencia->país !!}</td>
+            <td>{!! $ponencia->pais !!}</td>
             <td>{!! $ponencia->ciudad !!}</td>
             <td>{!! $ponencia->institucion !!}</td>
-            <td>{!! $ponencia->paginaw !!}</td>
-            <td>{!! $ponencia->idprograma !!}</td>
+            <td>{!! $ponencia->pagina !!}</td>
+            <td>{!! $ponencia->created_at !!}</td>
+            <td>{!! $ponencia->updated_at !!}</td>
+            <td>{!! $ponencia->id_programa !!}</td>
             <td>
                 {!! Form::open(['route' => ['ponencias.destroy', $ponencia->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

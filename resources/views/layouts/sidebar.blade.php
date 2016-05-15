@@ -36,6 +36,38 @@
             <li ruta="home"><a href="{{ url('/home') }}"><span>Inicio</span></a></li>
             <li ruta="academicos"><a href="{{ url('/academicos') }}"><span>Academicos</span></a></li>
             <li ruta="programas"><a href="{{ url('/programas') }}"><span>Programas</span></a></li>
+            <li ruta="docentes"><a href="{{ url('/docentes') }}"><span>Docentes</span></a></li>
+            <li ruta="estudiantes"><a href="{{ url('/estudiantes') }}"><span>Estudiantes</span></a></li>
+            <li ruta="eventoCs"><a href="{{ url('/eventoCs') }}"><span>Enventos</span></a></li>
+            <li ruta="grupoInvestigacions"><a href="{{ url('/grupoInvestigacions') }}"><span>Grupos de investigación</span></a></li>
+            <li ruta="lineaIs"><a href="{{ url('/lineaIs') }}"><span>Lineas de investigación</span></a></li>
+            <li ruta="ponencias"><a href="{{ url('/ponencias') }}"><span>Ponencias</span></a></li>
+            <li ruta="productoGrupos"><a href="{{ url('/productoGrupos') }}"><span>Productos de grupo</span></a></li>
+            <li ruta="programas"><a href="{{ url('/programas') }}"><span>Programas</span></a></li>
+            <li ruta="proyectoAulas"><a href="{{ url('/proyectoAulas') }}"><span>Proyecto de aulas</span></a></li>
+            <li ruta="proyectos"><a href="{{ url('/proyectos') }}"><span>Proyectos</span></a></li>
+            <li ruta="semilleros"><a href="{{ url('/semilleros') }}"><span>Semilleros</span></a></li>
+            <li ruta="trabajoGrados"><a href="{{ url('/trabajoGrados') }}"><span>Trabajos de Grado</span></a></li>
+
+            <li class="treeview">
+                <a href="#"><span>Tablas relacionales</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li ruta="rArbitras"><a href="{{ url('/rArbitras') }}"><span>Arbitra</span></a></li>
+                    <li ruta="rCoordinas"><a href="{{ url('/rCoordinas') }}"><span>Coordina</span></a></li>
+                    <li ruta="rCoordinasems"><a href="{{ url('/rCoordinasems') }}"><span>Coordinasem</span></a></li>
+                    <li ruta="rDesarrollas"><a href="{{ url('/rDesarrollas') }}"><span>Desarrolla</span></a></li>
+                    <li ruta="rEstudias"><a href="{{ url('/rEstudias') }}"><span>Estudia</span></a></li>
+                    <li ruta="rIntegras"><a href="{{ url('/rIntegras') }}"><span>Integra</span></a></li>
+                    <li ruta="rOfreces"><a href="{{ url('/rOfreces') }}"><span>Ofrece</span></a></li>
+                    <li ruta="rRealizas"><a href="{{ url('/rRealizas') }}"><span>Realiza</span></a></li>
+                    <li ruta="rSuscribes"><a href="{{ url('/rSuscribes') }}"><span>Suscribe</span></a></li>
+                </ul>
+            </li>
+
+            
+
+
+
             <li ruta="admin"><a href="{{ url('/admin') }}"><span>Admin</span></a></li>
             <li ruta="forma"><a href="{{ url('/forma') }}"><span>Formas</span></a></li>
             <li ruta="pruebaespecials"><a href="{{ url('/pruebaespecials') }}"><span>Pruebas</span></a></li>

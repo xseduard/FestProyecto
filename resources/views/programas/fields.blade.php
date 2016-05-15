@@ -1,7 +1,9 @@
-<!-- Idprograma Field -->
+
+
+<!-- Codigo Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('idprograma', 'Idprograma:') !!}
-    {!! Form::text('idprograma', null, ['class' => 'form-control']) !!}
+    {!! Form::label('codigo', 'Codigo:') !!}
+    {!! Form::text('codigo', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Nombre Field -->
@@ -15,3 +17,5 @@
     {!! Form::label('duracion', 'Duracion:') !!}
     {!! Form::number('duracion', null, ['class' => 'form-control']) !!}
 </div>
+
+

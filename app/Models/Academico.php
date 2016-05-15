@@ -10,13 +10,19 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *      definition="Academico",
  *      required={},
  *      @SWG\Property(
- *          property="idacademico",
- *          description="idacademico",
+ *          property="id",
+ *          description="id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="cedula",
+ *          description="cedula",
  *          type="string"
  *      ),
  *      @SWG\Property(
- *          property="nombres",
- *          description="nombres",
+ *          property="nombre",
+ *          description="nombre",
  *          type="string"
  *      ),
  *      @SWG\Property(
@@ -30,20 +36,20 @@ class Academico extends Model
 {
     use SoftDeletes;
 
-    public $table = "academico";
+    public $table = "tacademicos";
     
-	const CREATED_AT = 'created_at';
-	const UPDATED_AT = 'updated_at';
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
 
 
     protected $dates = ['deleted_at'];
 
-    protected $primaryKey = 'idacademico';
 
     public $fillable = [
-        "idacademico",
-        "nombres",
-        "sexo"
+        'cedula',
+        'nombre',
+        'sexo',
+        'deleted_at'
     ];
 
     /**
@@ -52,9 +58,11 @@ class Academico extends Model
      * @var array
      */
     protected $casts = [
-        "idacademico" => "string",
-        "nombres" => "string",
-        "sexo" => "string"
+        'id' => 'integer',
+        'cedula' => 'string',
+        'nombre' => 'string',
+        'sexo' => 'string',
+        'deleted_at' => 'datetime'
     ];
 
     /**
@@ -63,6 +71,6 @@ class Academico extends Model
      * @var array
      */
     public static $rules = [
-        
+        'cedula' => 'unique:tacademicos,cedula',
     ];
 }

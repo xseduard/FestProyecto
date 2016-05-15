@@ -60,7 +60,7 @@ class PonenciaController extends AppBaseController
 
         $ponencia = $this->ponenciaRepository->create($input);
 
-        Flash::success('Ponencia Registrado correctamente.');
+        Flash::success('Ponencia registrado correctamente.');
 
         return redirect(route('ponencias.index'));
     }
@@ -125,7 +125,7 @@ class PonenciaController extends AppBaseController
 
         $ponencia = $this->ponenciaRepository->update($request->all(), $id);
 
-        Flash::success('Ponencia Actualizado correctamente.');
+        Flash::success('Ponencia actualizado correctamente.');
 
         return redirect(route('ponencias.index'));
     }
@@ -149,7 +149,7 @@ class PonenciaController extends AppBaseController
 
         $this->ponenciaRepository->delete($id);
 
-        Flash::success('Ponencia Eliminado correctamente.');
+        Flash::success('Ponencia eliminado correctamente.');
 
         return redirect(route('ponencias.index'));
     }

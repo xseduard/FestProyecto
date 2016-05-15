@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use Illuminate\Http\Request;
-use App\DataTables\ProgramaDataTable;
 use App\Http\Requests\CreateProgramaRequest;
 use App\Http\Requests\UpdateProgramaRequest;
 use App\Repositories\ProgramaRepository;
+use Illuminate\Http\Request;
 use Flash;
 use InfyOm\Generator\Controller\AppBaseController;
 use Prettus\Repository\Criteria\RequestCriteria;
@@ -18,7 +17,7 @@ class ProgramaController extends AppBaseController
     /** @var  ProgramaRepository */
     private $programaRepository;
 
-    public function __construct(ProgramaRepository $programaRepo)
+    function __construct(ProgramaRepository $programaRepo)
     {
         $this->programaRepository = $programaRepo;
     }
@@ -26,14 +25,12 @@ class ProgramaController extends AppBaseController
     /**
      * Display a listing of the Programa.
      *
-     * @param ProgramaDataTable $programaDataTable
+     * @param Request $request
      * @return Response
      */
     public function index(Request $request)
     {
-        //return $programaDataTable->render('programas.index');
-
-         $this->programaRepository->pushCriteria(new RequestCriteria($request));
+        $this->programaRepository->pushCriteria(new RequestCriteria($request));
         $programas = $this->programaRepository->paginate(10);
 
         return view('programas.index')
@@ -63,7 +60,7 @@ class ProgramaController extends AppBaseController
 
         $programa = $this->programaRepository->create($input);
 
-        Flash::success('Programa almacenado correctamente.');
+        Flash::success('Programa Registrado correctamente.');
 
         return redirect(route('programas.index'));
     }
@@ -80,7 +77,7 @@ class ProgramaController extends AppBaseController
         $programa = $this->programaRepository->findWithoutFail($id);
 
         if (empty($programa)) {
-            Flash::error('Programa no se encuentra en el sistema');
+            Flash::error('Programa No se encuentra en encuentra registrado');
 
             return redirect(route('programas.index'));
         }
@@ -100,7 +97,7 @@ class ProgramaController extends AppBaseController
         $programa = $this->programaRepository->findWithoutFail($id);
 
         if (empty($programa)) {
-            Flash::error('Programa no se encuentra en el sistema');
+            Flash::error('Programa No se encuentra en encuentra registrado');
 
             return redirect(route('programas.index'));
         }
@@ -121,7 +118,7 @@ class ProgramaController extends AppBaseController
         $programa = $this->programaRepository->findWithoutFail($id);
 
         if (empty($programa)) {
-            Flash::error('Programa no se encuentra en el sistema');
+            Flash::error('Programa No se encuentra en encuentra registrado');
 
             return redirect(route('programas.index'));
         }
@@ -145,14 +142,14 @@ class ProgramaController extends AppBaseController
         $programa = $this->programaRepository->findWithoutFail($id);
 
         if (empty($programa)) {
-            Flash::error('Programa no se encuentra en el sistema');
+            Flash::error('Programa No se encuentra en encuentra registrado');
 
             return redirect(route('programas.index'));
         }
 
         $this->programaRepository->delete($id);
 
-        Flash::success('Programa eliminado correctamente.');
+        Flash::success('Programa Eliminado correctamente.');
 
         return redirect(route('programas.index'));
     }
