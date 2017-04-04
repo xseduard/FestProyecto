@@ -1,48 +1,66 @@
 <!-- Id Field -->
 <div class="form-group">
     {!! Form::label('id', 'Id:') !!}
-    <p>{!! $semillero->id !!}</p>
+    <p>{!! $semilleros->id !!}</p>
 </div>
 
 <!-- Nombre Field -->
 <div class="form-group">
     {!! Form::label('nombre', 'Nombre:') !!}
-    <p>{!! $semillero->nombre !!}</p>
+    <p>{!! $semilleros->nombre !!}</p>
 </div>
 
-<!-- Sigla Field -->
+<!-- Facultad Field -->
 <div class="form-group">
-    {!! Form::label('sigla', 'Sigla:') !!}
-    <p>{!! $semillero->sigla !!}</p>
+    {!! Form::label('facultad', 'Facultad:') !!}
+    <p>{!! $semilleros->facultad !!}</p>
 </div>
 
-<!-- Fecha Vinculacion Field -->
+<!-- Grupo De Investigacion Field -->
 <div class="form-group">
-    {!! Form::label('fecha_vinculacion', 'Fecha Vinculacion:') !!}
-    <p>{!! $semillero->fecha_vinculacion !!}</p>
+    {!! Form::label('grupo_de_investigacion', 'Grupo De Investigacion:') !!}
+    <p>{!! $semilleros->grupo_de_investigacion !!}</p>
+</div>
+
+<!-- Fecha De Creacion Field -->
+<div class="form-group">
+    {!! Form::label('fecha_de_creacion', 'Fecha De Creacion:') !!}
+    <p>{!! $semilleros->fecha_de_creacion !!}</p>
+</div>
+
+<!-- Docente Asesor Field -->
+<div class="form-group">
+    {!! Form::label('docente_asesor', 'Docente Asesor:') !!}
+    <p>{!! $semilleros->docente_asesor !!}</p>
+</div>
+
+<!-- Estudiante Lider Field -->
+<div class="form-group">
+    {!! Form::label('estudiante_lider', 'Estudiante Lider:') !!}
+    <p>{!! $semilleros->estudiante_lider !!}</p>
+</div>
+
+<!-- Programa Field -->
+<div class="form-group">
+    {!! Form::label('programa', 'Programa:') !!}
+    <p>{!! $semilleros->programa !!}</p>
+</div>
+
+<!-- Code Miembros Field -->
+<div class="form-group">
+    {!! Form::label('code_miembros', 'Code Miembros:') !!}
+    <p>{!! $semilleros->code_miembros !!}</p>
 </div>
 
 <!-- Created At Field -->
 <div class="form-group">
     {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $semillero->created_at !!}</p>
+    <p>{!! $semilleros->created_at !!}</p>
 </div>
 
 <!-- Updated At Field -->
 <div class="form-group">
     {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $semillero->updated_at !!}</p>
-</div>
-
-<!-- Deleted At Field -->
-<div class="form-group">
-    {!! Form::label('deleted_at', 'Deleted At:') !!}
-    <p>{!! $semillero->deleted_at !!}</p>
-</div>
-
-<!-- Id Programa Field -->
-<div class="form-group">
-    {!! Form::label('id_programa', 'Id Programa:') !!}
-    <p>{!! $semillero->id_programa !!}</p>
+    <p>{!! $semilleros->updated_at !!}</p>
 </div>
 

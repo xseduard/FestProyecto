@@ -15,12 +15,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Ionicons -->
     {!! Html::style('/bower_components/ionicons/css/ionicons.min.css') !!}
     <!-- Theme style -->
-    {!! Html::style('/bower_components/admin-lte/dist/css/AdminLTE.min.css') !!}
+    {!! Html::style('/bower_components/admin-lte/dist/css/AdminLTE.css') !!}
     <!-- AdminLTE Skins.
     -->
     {!! Html::style('/bower_components/admin-lte/dist/css/skins/skin-green.min.css') !!}
 
     {!! Html::style('../resources/assets/css/main.css') !!}
+
+    {!! Html::style('/bower_components/radio-buttons/awesome-bootstrap-checkbox.css') !!}
 
     <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css">
 
@@ -60,11 +62,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </section>
 
         <!-- Main content -->
-        <section class="content">
+        <section class="content" >
             <!-- Your Page Content Here -->
-            <div class="row">
-            <div class="col-lg-10">
-            @yield('content')
+            <div class="row"> 
+             <div class="col-lg-12">
+                @yield('content-ppal')
+             </div>
+                      
+            <div class="col-lg-9">
+                @yield('content')
+            </div>
+             <div class="col-lg-3">
+                @yield('content-right')
             </div>
             </div>
         </section><!-- /.content -->

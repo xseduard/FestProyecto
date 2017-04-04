@@ -10,7 +10,7 @@
               <!-- formulario general de create -->
               <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h2 class="box-title">Crear nuevo  Semillero</h2>
+                  <h2 class="box-title">Crear nuevo  Semilleros</h2>
                 </div><!-- /.box-header -->
 
         {!! Form::open(['route' => 'semilleros.store']) !!}

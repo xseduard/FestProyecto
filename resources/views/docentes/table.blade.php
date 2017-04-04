@@ -14,11 +14,11 @@
             <td>{!! $docente->updated_at !!}</td>
             <td>{!! $docente->id_academico !!}</td>
             <td>
-                {!! Form::open(['route' => ['docentes.destroy', $docente->id], 'method' => 'delete']) !!}
+                {!! Form::open(['route' => ['docentes.destroy', $docente->id], 'method' => 'delete', 'id' => 'formEliminar']) !!}
                 <div class='btn-group'>
                     <a href="{!! route('docentes.show', [$docente->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
                     <a href="{!! route('docentes.edit', [$docente->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
-                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'id' => 'btn-eliminar']) !!}
                 </div>
                 {!! Form::close() !!}
             </td>

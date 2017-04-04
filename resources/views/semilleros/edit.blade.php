@@ -6,10 +6,10 @@
               <!-- general form elements -->
               <div class="box box-success">
                 <div class="box-header with-border">
-                  <h2 class="box-title">Edit Semillero</h2>
+                  <h2 class="box-title">Edit Semilleros</h2>
                 </div><!-- /.box-header -->
 
-        {!! Form::model($semillero, ['route' => ['semilleros.update', $semillero->id], 'method' => 'patch']) !!}
+        {!! Form::model($semilleros, ['route' => ['semilleros.update', $semilleros->id], 'method' => 'patch']) !!}
             <div class="box-body">
             @include('semilleros.fields')
             <!-- Submit Field -->

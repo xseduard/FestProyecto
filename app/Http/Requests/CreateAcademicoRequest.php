@@ -34,6 +34,10 @@ class CreateAcademicoRequest extends Request {
     }
     public function rules()
     {
-        return Academico::$rules;
+        
+        //,
+        return ['cedula' => 'unique:tacademicos,cedula'];
+        //Academico::$rules;
+
     }
 }

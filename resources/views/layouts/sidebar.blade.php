@@ -34,9 +34,22 @@
             <li class="header">MENU</li>
             <!-- Optionally, you can add icons to the links -->
             <li ruta="home"><a href="{{ url('/home') }}"><span>Inicio</span></a></li>
+            <li ruta="proyectoInvestigacions"><a href="{{ url('/proyectoInvestigacions') }}"><span>Proyecto Investigaciòn</span></a></li>
+            <li ruta="nodos"><a href="{{ url('/nodos') }}"><span>Departamentos</span></a></li>
+            <li ruta="pais"><a href="{{ url('/pais') }}"><span>Pais</span></a></li>
+            <li ruta="universidades"><a href="{{ url('/universidades') }}"><span>Universidades</span></a></li>
+            <li ruta="semilleros"><a href="{{ url('/semilleros') }}"><span>Semilleros</span></a></li>
+            <li ruta="eStudiantes"><a href="{{ url('/eStudiantes') }}"><span>Estudiantes</span></a></li>
+            <li ruta="nivelformacions"><a href="{{ url('/nivelformacions') }}"><span>Nivel Formacion</span></a></li>
+            <li ruta="asignaturas"><a href="{{ url('/asignaturas') }}"><span>Asignaturas</span></a></li>
+            <li ruta="areainvestigacions"><a href="{{ url('/areainvestigacions') }}"><span>Area de investigacion</span></a></li>
+            <li ruta="subareas"><a href="{{ url('/subareas') }}"><span>Subareas</span></a></li>
+            
             <li ruta="academicos"><a href="{{ url('/academicos') }}"><span>Academicos</span></a></li>
+
             <li ruta="programas"><a href="{{ url('/programas') }}"><span>Programas</span></a></li>
             <li ruta="docentes"><a href="{{ url('/docentes') }}"><span>Docentes</span></a></li>
+            <li ruta="doncencias"><a href="{{ url('/doncencias') }}"><span>doncencias</span></a></li>
             <li ruta="estudiantes"><a href="{{ url('/estudiantes') }}"><span>Estudiantes</span></a></li>
             <li ruta="eventoCs"><a href="{{ url('/eventoCs') }}"><span>Enventos</span></a></li>
             <li ruta="grupoInvestigacions"><a href="{{ url('/grupoInvestigacions') }}"><span>Grupos de investigación</span></a></li>

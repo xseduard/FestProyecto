@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Input;
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -330,3 +330,164 @@ Route::group(['middleware' => ['web']], function () {
 	    'uses' => 'RSuscribeController@destroy',
 	]);
 });
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("doncencias", "DoncenciaController");
+
+	Route::get('doncencias/delete/{id}', [
+	    'as' => 'doncencias.delete',
+	    'uses' => 'DoncenciaController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("proyectoInvestigacions", "ProyectoInvestigacionController");
+
+	Route::get('proyectoInvestigacions/delete/{id}', [
+	    'as' => 'proyectoInvestigacions.delete',
+	    'uses' => 'ProyectoInvestigacionController@destroy',
+	]);
+
+	Route::get('proyectoInvestigacions/inconsulta', [
+	    'as' => 'proyectoInvestigacions.inconsulta',
+	    'uses' => 'ProyectoInvestigacionController@inconsulta',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("pais", "PaisController");
+
+	Route::get('pais/delete/{id}', [
+	    'as' => 'pais.delete',
+	    'uses' => 'PaisController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("nodos", "NodoController");
+
+	Route::get('nodos/delete/{id}', [
+	    'as' => 'nodos.delete',
+	    'uses' => 'NodoController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("universidades", "UniversidadesController");
+
+	Route::get('universidades/delete/{id}', [
+	    'as' => 'universidades.delete',
+	    'uses' => 'UniversidadesController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("semilleros", "SemillerosController");
+
+	Route::get('semilleros/delete/{id}', [
+	    'as' => 'semilleros.delete',
+	    'uses' => 'SemillerosController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("proyectoCategorias", "ProyectoCategoriaController");
+
+	Route::get('proyectoCategorias/delete/{id}', [
+	    'as' => 'proyectoCategorias.delete',
+	    'uses' => 'ProyectoCategoriaController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("eStudiantes", "EStudiantesController");
+
+	Route::get('eStudiantes/delete/{id}', [
+	    'as' => 'eStudiantes.delete',
+	    'uses' => 'EStudiantesController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("nivelformacions", "NivelformacionController");
+
+	Route::get('nivelformacions/delete/{id}', [
+	    'as' => 'nivelformacions.delete',
+	    'uses' => 'NivelformacionController@destroy',
+	]);
+});
+
+
+
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("asignaturas", "AsignaturasController");
+
+	Route::get('asignaturas/delete/{id}', [
+	    'as' => 'asignaturas.delete',
+	    'uses' => 'AsignaturasController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("areainvestigacions", "AreainvestigacionController");
+
+	Route::get('areainvestigacions/delete/{id}', [
+	    'as' => 'areainvestigacions.delete',
+	    'uses' => 'AreainvestigacionController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("subareas", "SubareaController");
+
+	Route::get('subareas/delete/{id}', [
+	    'as' => 'subareas.delete',
+	    'uses' => 'SubareaController@destroy',
+	]);
+});
+
+Route::post('/upload', function(){
+     if(Input::hasFile('archivo')) {
+          Input::file('archivo')
+               ->move('carpetaProyectos','proyecto');
+     }
+     //return Redirect::back('/proyectoInvestigacions');
+      return redirect('/proyectoInvestigacions');
+ });

@@ -71,6 +71,6 @@ class Academico extends Model
      * @var array
      */
     public static $rules = [
-        'cedula' => 'unique:tacademicos,cedula',
+        
     ];
 }
