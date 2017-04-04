@@ -67,4 +67,12 @@ class Docente extends Model
     public static $rules = [
         'id_academico' => 'unique:tdocentes,id_academico'
     ];
+
+   public function academico()
+    {
+        return $this->hasOne('App\Academico','id_academico');
+    }
+    
 }
+
+ 

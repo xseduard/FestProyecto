@@ -32,7 +32,10 @@ class DocenteController extends AppBaseController
     {
         $this->docenteRepository->pushCriteria(new RequestCriteria($request));
         $docentes = $this->docenteRepository->paginate(10);
-
+/*
+        $docentes2= $this->docenteRepository->with('academico')->first();
+        dd($docentes2);
+*/
         return view('docentes.index')
             ->with('docentes', $docentes);
     }
