@@ -25,7 +25,11 @@ class RoutesGenerator
         $this->commandData = $commandData;
         $this->path = $commandData->config->pathRoutes;
         $this->routeContents = file_get_contents($this->path);
-        $this->routesTemplate = TemplateUtil::getTemplate('scaffold.routes.routes', 'laravel-generator');
+        if (!empty($this->commandData->config->prefixes['route'])) {
+            $this->routesTemplate = TemplateUtil::getTemplate('scaffold.routes.prefix_routes', 'laravel-generator');
+        } else {
+            $this->routesTemplate = TemplateUtil::getTemplate('scaffold.routes.routes', 'laravel-generator');
+        }
         $this->routesTemplate = TemplateUtil::fillTemplate($this->commandData->dynamicVars, $this->routesTemplate);
     }
 
@@ -40,6 +44,8 @@ class RoutesGenerator
     public function rollback()
     {
         if (Str::contains($this->routeContents, $this->routesTemplate)) {
+            $this->routeContents = str_replace($this->routesTemplate, '', $this->routeContents);
+            file_put_contents($this->path, $this->routeContents);
             $this->commandData->commandComment('scaffold routes deleted');
         }
     }

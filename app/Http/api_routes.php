@@ -41,3 +41,18 @@ Route::resource("asignaturas", "AsignaturasAPIController");
 Route::resource("areainvestigacions", "AreainvestigacionAPIController");
 
 Route::resource("subareas", "SubareaAPIController");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

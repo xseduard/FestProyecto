@@ -2,14 +2,11 @@
 
 namespace Prettus\Repository\Generators;
 
-use Illuminate\Console\AppNamespaceDetectorTrait;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
 
 abstract class Generator
 {
-
-    use AppNamespaceDetectorTrait;
 
     /**
      * The filesystem instance.
@@ -78,7 +75,13 @@ abstract class Generator
      */
     public function getStub()
     {
-        return (new Stub(__DIR__ . '/Stubs/' . $this->stub . '.stub', $this->getReplacements()))->render();
+        $path = config('repository.generator.stubsOverridePath', __DIR__);
+
+        if(!file_exists($path . '/Stubs/' . $this->stub . '.stub')){
+            $path = __DIR__;
+        }
+
+        return (new Stub($path . '/Stubs/' . $this->stub . '.stub', $this->getReplacements()))->render();
     }
 
 
@@ -136,8 +139,19 @@ abstract class Generator
 
         return Str::studly(str_replace(' ', '/', ucwords(str_replace('/', ' ', $name))));
     }
+    
+    
+   /**
+     * Get application namespace
+     * 
+     * @return string
+     */
+    public function getAppNamespace()
+    {
+        return \Illuminate\Container\Container::getInstance()->getNamespace();
+    }
 
-
+    
     /**
      * Get class name.
      *
@@ -205,13 +219,19 @@ abstract class Generator
             case ('provider' === $class):
                 $path = config('repository.generator.paths.provider', 'RepositoryServiceProvider');
                 break;
+            case ('criteria' === $class):
+                $path = config('repository.generator.paths.criteria', 'Criteria');
+                break;
             default:
                 $path = '';
         }
 
         if ($directoryPath) {
             $path = str_replace('\\', '/', $path);
+        } else {
+            $path = str_replace('/', '\\', $path);
         }
+        
 
         return $path;
     }

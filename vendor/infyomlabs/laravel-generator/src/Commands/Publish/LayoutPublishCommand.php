@@ -71,30 +71,30 @@ class LayoutPublishCommand extends PublishBaseCommand
     private function getLaravel51Views()
     {
         return [
-            'layouts/app.stub'     => 'layouts/app.blade.php',
-            'layouts/sidebar.stub' => 'layouts/sidebar.blade.php',
-            'layouts/menu.stub'    => 'layouts/menu.blade.php',
-            'layouts/home.stub'    => 'home.blade.php',
-            'auth/login.stub'      => 'auth/login.blade.php',
-            'auth/register.stub'   => 'auth/register.blade.php',
-            'auth/email.stub'      => 'auth/password.blade.php',
-            'auth/reset.stub'      => 'auth/reset.blade.php',
-            'emails/password.stub' => 'emails/password.blade.php',
+            'layouts/app'     => 'layouts/app.blade.php',
+            'layouts/sidebar' => 'layouts/sidebar.blade.php',
+            'layouts/menu'    => 'layouts/menu.blade.php',
+            'layouts/home'    => 'home.blade.php',
+            'auth/login'      => 'auth/login.blade.php',
+            'auth/register'   => 'auth/register.blade.php',
+            'auth/email'      => 'auth/password.blade.php',
+            'auth/reset'      => 'auth/reset.blade.php',
+            'emails/password' => 'emails/password.blade.php',
         ];
     }
 
     private function getLaravel52Views()
     {
         return [
-            'layouts/app.stub'     => 'layouts/app.blade.php',
-            'layouts/sidebar.stub' => 'layouts/sidebar.blade.php',
-            'layouts/menu.stub'    => 'layouts/menu.blade.php',
-            'layouts/home.stub'    => 'home.blade.php',
-            'auth/login.stub'      => 'auth/login.blade.php',
-            'auth/register.stub'   => 'auth/register.blade.php',
-            'auth/email.stub'      => 'auth/passwords/email.blade.php',
-            'auth/reset.stub'      => 'auth/passwords/reset.blade.php',
-            'emails/password.stub' => 'auth/emails/password.blade.php',
+            'layouts/app'     => 'layouts/app.blade.php',
+            'layouts/sidebar' => 'layouts/sidebar.blade.php',
+            'layouts/menu'    => 'layouts/menu.blade.php',
+            'layouts/home'    => 'home.blade.php',
+            'auth/login'      => 'auth/login.blade.php',
+            'auth/register'   => 'auth/register.blade.php',
+            'auth/email'      => 'auth/passwords/email.blade.php',
+            'auth/reset'      => 'auth/passwords/reset.blade.php',
+            'emails/password' => 'auth/emails/password.blade.php',
         ];
     }
 
@@ -108,7 +108,7 @@ class LayoutPublishCommand extends PublishBaseCommand
         $files = $this->getViews();
 
         foreach ($files as $stub => $blade) {
-            $sourceFile = base_path('vendor/infyomlabs/'.$templateType.'/templates/scaffold/'.$stub);
+            $sourceFile = TemplateUtil::getTemplateFilePath('scaffold/'.$stub, $templateType);
             $destinationFile = $viewsPath.$blade;
             $this->publishFile($sourceFile, $destinationFile, $blade);
         }
@@ -117,6 +117,12 @@ class LayoutPublishCommand extends PublishBaseCommand
     private function updateRoutes()
     {
         $path = config('infyom.laravel_generator.path.routes', app_path('Http/routes.php'));
+
+        $prompt = 'Existing routes.php file detected. Should we add standard routes? (y|N) :';
+        if (file_exists($path) && !$this->confirmOverwrite($path, $prompt)) {
+            return;
+        }
+
         $routeContents = file_get_contents($path);
 
         $routesTemplate = TemplateUtil::getTemplate('routes.auth', 'laravel-generator');
@@ -142,12 +148,8 @@ class LayoutPublishCommand extends PublishBaseCommand
 
         $fileName = 'HomeController.php';
 
-        if (file_exists($controllerPath.$fileName)) {
-            $answer = $this->ask('Do you want to overwrite '.$fileName.'? (y|N) :', false);
-
-            if (strtolower($answer) != 'y' and strtolower($answer) != 'yes') {
-                return;
-            }
+        if (file_exists($controllerPath.$fileName) && !$this->confirmOverwrite($fileName)) {
+            return;
         }
 
         FileUtil::createFile($controllerPath, $fileName, $templateData);

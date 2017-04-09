@@ -14,6 +14,7 @@
 
     <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.1/css/bootstrap-toggle.min.css">
 
     <!-- DataTable Bootstrap -->
     <link href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css" rel="stylesheet">
@@ -102,9 +103,15 @@
         <div class="container-fluid">
 
             <div class="row">
-                <div class="col-lg-12">
+            @if (Config::has('infyom.laravel_generator.add_on.menu.enabled')) 
+                <div class="col-md-9 col-md-offset-3">
                     @yield('content')
                 </div>
+            @else
+                <div class="col-md-12">
+                    @yield('content')
+                </div>
+            @endif
             </div>
         </div>
     </div>
@@ -115,6 +122,7 @@
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.1/js/bootstrap-toggle.min.js"></script>
 
     <!-- Datatables -->
     <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>

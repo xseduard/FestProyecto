@@ -2,6 +2,7 @@
 
 namespace InfyOm\Generator\Commands\Publish;
 
+use Illuminate\Support\Str;
 use InfyOm\Generator\Utils\FileUtil;
 use InfyOm\Generator\Utils\TemplateUtil;
 
@@ -53,6 +54,11 @@ class GeneratorPublishCommand extends PublishBaseCommand
     {
         $path = config('infyom.laravel_generator.path.routes', app_path('Http/routes.php'));
 
+        $prompt = 'Existing routes.php file detected. Should we add an API group to the file? (y|N) :';
+        if (file_exists($path) && !$this->confirmOverwrite($path, $prompt)) {
+            return;
+        }
+
         $routeContents = file_get_contents($path);
 
         $template = 'api.routes.api_routes_group';
@@ -87,14 +93,16 @@ class GeneratorPublishCommand extends PublishBaseCommand
 
         $controllerPath = config('infyom.laravel_generator.path.controller', app_path('Http/Controllers/'));
 
+        $pathPrefix = config('infyom.laravel_generator.prefixes.path');
+
+        if (!empty($pathPrefix)) {
+            $controllerPath .= Str::title($pathPrefix).'/';
+        }
+
         $fileName = 'AppBaseController.php';
 
-        if (file_exists($controllerPath.$fileName)) {
-            $answer = $this->ask('Do you want to overwrite '.$fileName.'? (y|N) :', false);
-
-            if (strtolower($answer) != 'y' and strtolower($answer) != 'yes') {
-                return;
-            }
+        if (file_exists($controllerPath.$fileName) && !$this->confirmOverwrite($fileName)) {
+            return;
         }
 
         FileUtil::createFile($controllerPath, $fileName, $templateData);
@@ -113,17 +121,22 @@ class GeneratorPublishCommand extends PublishBaseCommand
     {
         $apiVersion = config('infyom.laravel_generator.api_version', 'v1');
         $apiPrefix = config('infyom.laravel_generator.api_prefix', 'api');
-        $apiNamespace = config(
-            'infyom.laravel_generator.namespace.api_controller',
-            'App\Http\Controllers\API'
-        );
 
         $templateData = str_replace('$API_VERSION$', $apiVersion, $templateData);
-        $templateData = str_replace('$NAMESPACE_API_CONTROLLER$', $apiNamespace, $templateData);
         $templateData = str_replace('$API_PREFIX$', $apiPrefix, $templateData);
+        $templateData = str_replace('$NAMESPACE_APP$', $this->getLaravel()->getNamespace(), $templateData);
+
+        $controllerNamespace = config('infyom.laravel_generator.namespace.controller');
+
+        $pathPrefix = config('infyom.laravel_generator.prefixes.path');
+
+        if (!empty($pathPrefix)) {
+            $controllerNamespace .= '\\'.Str::title($pathPrefix);
+        }
+
         $templateData = str_replace(
             '$NAMESPACE_CONTROLLER$',
-            config('infyom.laravel_generator.namespace.controller'), $templateData
+            $controllerNamespace, $templateData
         );
 
         return $templateData;
