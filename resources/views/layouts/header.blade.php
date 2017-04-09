@@ -2,7 +2,7 @@
 <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo"><b>Fest</b>Proyecto</a>
+    <a href="{{ url('/home') }}" class="logo"><b>CUN</b>Proyectos</a>
 
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">

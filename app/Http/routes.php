@@ -32,6 +32,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/admin', 'InicialController@index');
     Route::get('/home', 'HomeController@index');
     Route::get('/forma', 'formaController@index');
+    Route::get('/index2', 'HomeController@index');
 });
 
 
@@ -46,4 +47,10 @@ Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorB
 Route::get('field_template', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@fieldTemplate');
 
 Route::post('generator_builder/generate', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generate');
+
+
+
+
+
+
 
