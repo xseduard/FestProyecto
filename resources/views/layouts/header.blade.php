@@ -44,7 +44,7 @@
                                             <small><i class="fa fa-clock-o"></i> 36 minutos</small>
                                         </h4>
                                         <!-- The message -->
-                                        <p>Cambiaras el tema?</p>
+                                        <p>nuevos cambios para ss?</p>
                                     </a>
                                 </li><!-- end message -->
                             </ul><!-- /.menu -->
@@ -112,21 +112,33 @@
                 </li>
                 <!-- User Account Menu -->
 
-
                 <li class="dropdown user user-menu">
                     <!-- Menu Toggle Button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <!-- The user image in the navbar-->
-                        <img src="{{ asset("/bower_components/admin-lte/dist/img/userADMIN.jpg") }}" class="user-image" alt="User Image"/>
+                        <img src="                        
+                            @if (Auth::user()->role=='administrador')
+                                {{asset('/bower_components/admin-lte/dist/img/userADMIN.jpg')}}
+                            @else
+                                {{asset('/bower_components/admin-lte/dist/img/user4-128x128.jpg')}}
+                            @endif
+
+                        " class="user-image" alt="User Image"/>
                         <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                        <span class="hidden-xs">{{ Auth::user()->name }}</span>
+                        <span class="hidden-xs">{{ Auth::user()->nombres  }}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- The user image in the menu -->
                         <li class="user-header">
-                            <img src="{{ asset("/bower_components/admin-lte/dist/img/userADMIN.jpg") }}" class="img-circle" alt="User Image" />
+                            <img src="
+                            @if (Auth::user()->role=='administrador')
+                                {{asset('/bower_components/admin-lte/dist/img/userADMIN.jpg')}}
+                            @else
+                                {{asset('/bower_components/admin-lte/dist/img/user4-128x128.jpg')}}
+                            @endif
+                            " class="img-circle" alt="User Image" />
                             <p>
-                                {{ Auth::user()->name }} - Web Developer 
+                                {{ Auth::user()->nombres, Auth::user()->apellidos }} - {{ Auth::user()->role }} 
                                 {{ Auth::user()->email }}
                                 <small>Miembro desde {{ Auth::user()->created_at }}.</small>
                             </p>

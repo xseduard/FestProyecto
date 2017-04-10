@@ -9,21 +9,46 @@
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {!! csrf_field() !!}
-
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">Nombre</label>
+                        <div class="form-group{{ $errors->has('cedula') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Cedula</label>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                <input type="text" class="form-control" name="cedula" value="{{ old('cedula') }}">
 
-                                @if ($errors->has('name'))
+                                @if ($errors->has('cedula'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('cedula') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group{{ $errors->has('nombres') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Nombres</label>
 
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="nombres" value="{{ old('nombres') }}">
+
+                                @if ($errors->has('nombres'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('nombres') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('apellidos') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Apellidos</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="apellidos" value="{{ old('apellidos') }}">
+
+                                @if ($errors->has('apellidos'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('apellidos') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">E-Mail</label>
 

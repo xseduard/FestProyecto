@@ -29,10 +29,10 @@
   <body class="hold-transition login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="../../index2.html"><b>Fest</b>Proyecto</a>
+        <a href="../../index2.html"><b>CUN</b>Proyecto</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
-        <p class="login-box-msg">Inicia sesion con tu cuenta Fest</p>
+        <p class="login-box-msg">Inicia sesion con tu cedula si aún no tienes usuario personalizado</p>
     
 
 
@@ -40,15 +40,15 @@
 
                         {!! csrf_field() !!}
                 <div class="box-body">
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">E-Mail</label>
+                        <div class="form-group{{ $errors->has('cedula') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Usuario</label>
 
                             <div class="col-md-7">
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <input type="text" class="form-control" name="cedula" value="{{ old('cedula') }}">
 
-                                @if ($errors->has('email'))
+                                @if ($errors->has('cedula'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('cedula') }}</strong>
                                     </span>
                                 @endif
                             </div>

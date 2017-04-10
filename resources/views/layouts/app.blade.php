@@ -18,7 +18,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     {!! Html::style('/bower_components/admin-lte/dist/css/AdminLTE.css') !!}
     <!-- AdminLTE Skins.
     -->
-    {!! Html::style('/bower_components/admin-lte/dist/css/skins/skin-green.min.css') !!}
+    {!! Html::style('/bower_components/admin-lte/dist/css/skins/_all-skins.min.css') !!}
 
     {!! Html::style('../resources/assets/css/main.css') !!}
 
@@ -34,7 +34,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <![endif]-->
      @yield('customcss')
 </head>
-<body class="skin-green">
+<body class="skin-purple">
 <div class="wrapper">
 
     <!-- Header -->
