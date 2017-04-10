@@ -42,6 +42,8 @@ return [
         'schema_files'      => base_path('resources/model_schemas/'),
 
         'templates_dir'     => base_path('resources/infyom/infyom-generator-templates/'),
+
+        'modelJs'           => base_path('resources/assets/js/models/'),
     ],
 
     /*
@@ -75,7 +77,7 @@ return [
     |
     */
 
-    'templates'         => 'core-templates',
+    'templates'         => 'adminlte-templates',
 
     /*
     |--------------------------------------------------------------------------
@@ -138,7 +140,7 @@ return [
 
     'add_on' => [
 
-        'swagger'       => true,
+        'swagger'       => false,
 
         'tests'         => true,
 
@@ -146,7 +148,7 @@ return [
 
         'menu'          => [
 
-            'enabled'       => false,
+            'enabled'       => true,
 
             'menu_file'     => 'layouts/menu.blade.php',
         ],
@@ -169,5 +171,13 @@ return [
 
         'deleted_at'    => 'deleted_at',
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Save model files to `App/Models` when use `--prefix`. see #208
+    |--------------------------------------------------------------------------
+    |
+    */
+    'ignore_model_prefix' => false,
 
 ];

@@ -15,7 +15,7 @@
         "phpunit/phpunit": "~4.0",
         "symfony/css-selector": "2.8.*|3.0.*",
         "symfony/dom-crawler": "2.8.*|3.0.*",
-        "infyomlabs/laravel-generator": "dev-master",
+        "infyomlabs/laravel-generator": "5.2.x-dev",
         "infyomlabs/core-templates": "dev-master",
         "laravelcollective/html": "5.2.*",
         "infyomlabs/swagger-generator": "dev-master",
