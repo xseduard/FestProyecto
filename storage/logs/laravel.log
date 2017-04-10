@@ -21427,3 +21427,6 @@ Stack trace:
 #78 C:\xampp\htdocs\FestProyecto\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #79 C:\xampp\htdocs\FestProyecto\server.php(21): require_once('C:\\xampp\\htdocs...')
 #80 {main}  
+[2017-04-10 12:00:13] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Maximum execution time of 60 seconds exceeded' in C:\xampp\htdocs\FestProyecto\vendor\symfony\console\Output\Output.php:145
+Stack trace:
+#0 {main}  

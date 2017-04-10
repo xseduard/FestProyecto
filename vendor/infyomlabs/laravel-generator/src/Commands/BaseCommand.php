@@ -51,7 +51,7 @@ class BaseCommand extends Command
         $this->commandData->modelName = $this->argument('model');
 
         $this->commandData->initCommandData();
-        $this->commandData->getFields();
+        $this->commandData->getInputFields();
     }
 
     public function generateCommonItems()
@@ -168,24 +168,16 @@ class BaseCommand extends Command
     {
         $fileFields = [];
 
-        foreach ($this->commandData->fields as $field) {
+        foreach ($this->commandData->inputFields as $field) {
             $fileFields[] = [
-                'name'        => $field->name,
-                'dbType'      => $field->dbInput,
-                'htmlType'    => $field->htmlInput,
-                'validations' => $field->validations,
-                'searchable'  => $field->isSearchable,
-                'fillable'    => $field->isFillable,
-                'primary'     => $field->isPrimary,
-                'inForm'      => $field->inForm,
-                'inIndex'     => $field->inIndex,
-            ];
-        }
-
-        foreach ($this->commandData->relations as $relation) {
-            $fileFields[] = [
-                'type'     => 'relation',
-                'relation' => $relation->type.','.implode(',', $relation->inputs),
+                'fieldInput'  => $field['fieldInput'],
+                'htmlType'    => $field['htmlType'],
+                'validations' => $field['validations'],
+                'searchable'  => $field['searchable'],
+                'fillable'    => $field['fillable'],
+                'primary'     => $field['primary'],
+                'inForm'      => $field['inForm'],
+                'inIndex'     => $field['inIndex'],
             ];
         }
 
@@ -235,7 +227,6 @@ class BaseCommand extends Command
             ['skip', null, InputOption::VALUE_REQUIRED, 'Skip Specific Items to Generate (migration,model,controllers,api_controller,scaffold_controller,repository,requests,api_requests,scaffold_requests,routes,api_routes,scaffold_routes,views,tests,menu,dump-autoload)'],
             ['datatables', null, InputOption::VALUE_REQUIRED, 'Override datatables settings'],
             ['views', null, InputOption::VALUE_REQUIRED, 'Specify only the views you want generated: index,create,edit,show'],
-            ['relations', null, InputOption::VALUE_NONE, 'Specify if you want to pass relationships for fields'],
         ];
     }
 

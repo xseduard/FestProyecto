@@ -36,7 +36,6 @@ class GeneratorConfig
     public $pathRequest;
     public $pathRoutes;
     public $pathViews;
-    public $modelJsPath;
 
     /* Model Names */
     public $mName;
@@ -45,12 +44,6 @@ class GeneratorConfig
     public $mCamelPlural;
     public $mSnake;
     public $mSnakePlural;
-    public $mDashed;
-    public $mDashedPlural;
-    public $mSlash;
-    public $mSlashPlural;
-    public $mHuman;
-    public $mHumanPlural;
 
     public $forceMigrate;
 
@@ -73,13 +66,9 @@ class GeneratorConfig
         'skip',
         'datatables',
         'views',
-        'relations',
     ];
 
     public $tableName;
-
-    /** @var string */
-    protected $primaryName;
 
     /* Generator AddOns */
     public $addOns;
@@ -98,7 +87,6 @@ class GeneratorConfig
         $this->preparePrefixes();
         $this->loadPaths();
         $this->prepareTableName();
-        $this->preparePrimaryName();
         $this->loadNamespaces($commandData);
         $commandData = $this->loadDynamicVariables($commandData);
     }
@@ -112,12 +100,8 @@ class GeneratorConfig
         }
 
         $this->nsApp = $commandData->commandObj->getLaravel()->getNamespace();
-        $this->nsApp = substr($this->nsApp, 0, strlen($this->nsApp) - 1);
         $this->nsRepository = config('infyom.laravel_generator.namespace.repository', 'App\Repositories').$prefix;
         $this->nsModel = config('infyom.laravel_generator.namespace.model', 'App\Models').$prefix;
-        if (config('infyom.laravel_generator.ignore_model_prefix', false)) {
-            $this->nsModel = config('infyom.laravel_generator.namespace.model', 'App\Models');
-        }
         $this->nsDataTables = config('infyom.laravel_generator.namespace.datatables', 'App\DataTables').$prefix;
         $this->nsModelExtend = config(
             'infyom.laravel_generator.model_extend_class',
@@ -156,9 +140,6 @@ class GeneratorConfig
         ).$prefix;
 
         $this->pathModel = config('infyom.laravel_generator.path.model', app_path('Models/')).$prefix;
-        if (config('infyom.laravel_generator.ignore_model_prefix', false)) {
-            $this->pathModel = config('infyom.laravel_generator.path.model', app_path('Models/'));
-        }
 
         $this->pathDataTables = config('infyom.laravel_generator.path.datatables', app_path('DataTables/')).$prefix;
 
@@ -190,12 +171,7 @@ class GeneratorConfig
         $this->pathViews = config(
             'infyom.laravel_generator.path.views',
             base_path('resources/views/')
-        ).$viewPrefix.$this->mSnakePlural.'/';
-
-        $this->modelJsPath = config(
-                'infyom.laravel_generator.path.modelsJs',
-                base_path('resources/assets/js/models/')
-        );
+        ).$viewPrefix.$this->mCamelPlural.'/';
     }
 
     public function loadDynamicVariables(CommandData &$commandData)
@@ -215,7 +191,6 @@ class GeneratorConfig
         $commandData->addDynamicVariable('$NAMESPACE_REQUEST_BASE$', $this->nsRequestBase);
 
         $commandData->addDynamicVariable('$TABLE_NAME$', $this->tableName);
-        $commandData->addDynamicVariable('$PRIMARY_KEY_NAME$', $this->primaryName);
 
         $commandData->addDynamicVariable('$MODEL_NAME$', $this->mName);
         $commandData->addDynamicVariable('$MODEL_NAME_CAMEL$', $this->mCamel);
@@ -223,12 +198,6 @@ class GeneratorConfig
         $commandData->addDynamicVariable('$MODEL_NAME_PLURAL_CAMEL$', $this->mCamelPlural);
         $commandData->addDynamicVariable('$MODEL_NAME_SNAKE$', $this->mSnake);
         $commandData->addDynamicVariable('$MODEL_NAME_PLURAL_SNAKE$', $this->mSnakePlural);
-        $commandData->addDynamicVariable('$MODEL_NAME_DASHED$', $this->mDashed);
-        $commandData->addDynamicVariable('$MODEL_NAME_PLURAL_DASHED$', $this->mDashedPlural);
-        $commandData->addDynamicVariable('$MODEL_NAME_SLASH$', $this->mSlash);
-        $commandData->addDynamicVariable('$MODEL_NAME_PLURAL_SLASH$', $this->mSlashPlural);
-        $commandData->addDynamicVariable('$MODEL_NAME_HUMAN$', $this->mHuman);
-        $commandData->addDynamicVariable('$MODEL_NAME_PLURAL_HUMAN$', $this->mHumanPlural);
 
         if (!empty($this->prefixes['route'])) {
             $commandData->addDynamicVariable('$ROUTE_NAMED_PREFIX$', $this->prefixes['route'].'.');
@@ -278,15 +247,6 @@ class GeneratorConfig
         }
     }
 
-    public function preparePrimaryName()
-    {
-        if ($this->getOption('primary')) {
-            $this->primaryName = $this->getOption('primary');
-        } else {
-            $this->primaryName = 'id';
-        }
-    }
-
     public function prepareModelNames()
     {
         $this->mPlural = Str::plural($this->mName);
@@ -294,12 +254,6 @@ class GeneratorConfig
         $this->mCamelPlural = Str::camel($this->mPlural);
         $this->mSnake = Str::snake($this->mName);
         $this->mSnakePlural = Str::snake($this->mPlural);
-        $this->mDashed = str_replace('_', '-', Str::snake($this->mSnake));
-        $this->mDashedPlural = str_replace('_', '-', Str::snake($this->mSnakePlural));
-        $this->mSlash = str_replace('_', '/', Str::snake($this->mSnake));
-        $this->mSlashPlural = str_replace('_', '/', Str::snake($this->mSnakePlural));
-        $this->mHuman = title_case(str_replace('_', ' ', Str::snake($this->mSnake)));
-        $this->mHumanPlural = title_case(str_replace('_', ' ', Str::snake($this->mSnakePlural)));
     }
 
     public function prepareOptions(CommandData &$commandData)

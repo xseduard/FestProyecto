@@ -4457,17 +4457,17 @@
     },
     {
         "name": "infyomlabs/laravel-generator",
-        "version": "5.2.x-dev",
-        "version_normalized": "5.2.9999999.9999999-dev",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/InfyOmLabs/laravel-generator.git",
-            "reference": "88bac1026ed1fb26445f38ed7b9a17b9b4e6df6c"
+            "reference": "a2038b2ae6c72987e79e830896cc6d12c06e4ee7"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/InfyOmLabs/laravel-generator/zipball/88bac1026ed1fb26445f38ed7b9a17b9b4e6df6c",
-            "reference": "88bac1026ed1fb26445f38ed7b9a17b9b4e6df6c",
+            "url": "https://api.github.com/repos/InfyOmLabs/laravel-generator/zipball/a2038b2ae6c72987e79e830896cc6d12c06e4ee7",
+            "reference": "a2038b2ae6c72987e79e830896cc6d12c06e4ee7",
             "shasum": ""
         },
         "require": {
@@ -4476,11 +4476,7 @@
             "php": ">=5.5.9",
             "prettus/l5-repository": "~2.1"
         },
-        "require-dev": {
-            "mockery/mockery": "~0.9",
-            "phpunit/phpunit": "~5.0"
-        },
-        "time": "2017-03-04 03:29:34",
+        "time": "2016-08-18 14:19:50",
         "type": "library",
         "installation-source": "dist",
         "autoload": {

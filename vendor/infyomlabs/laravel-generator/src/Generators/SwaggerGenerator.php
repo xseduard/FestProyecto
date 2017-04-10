@@ -2,17 +2,12 @@
 
 namespace InfyOm\Generator\Generators;
 
-use InfyOm\Generator\Common\GeneratorField;
+use InfyOm\Generator\Utils\TemplateUtil;
 
 class SwaggerGenerator
 {
     public static $swaggerTypes = [];
 
-    /**
-     * @param GeneratorField[] $inputFields
-     *
-     * @return array
-     */
     public static function generateTypes($inputFields)
     {
         if (!empty(self::$swaggerTypes)) {
@@ -23,7 +18,7 @@ class SwaggerGenerator
 
         foreach ($inputFields as $field) {
             $fieldFormat = '';
-            switch (strtolower($field->fieldType)) {
+            switch (strtolower($field['fieldType'])) {
                 case 'integer':
                 case 'increments':
                 case 'smallinteger':
@@ -79,16 +74,16 @@ class SwaggerGenerator
 
             if (!empty($fieldType)) {
                 $fieldType = [
-                    'name'   => $field->name,
+                    'name'   => $field['fieldName'],
                     'type'   => $fieldType,
                     'format' => $fieldFormat,
                 ];
 
-//                if (isset($field['description'])) {
-//                    $fieldType['description'] = $field['description'];
-//                } else {
-                $fieldType['description'] = '';
-//                }
+                if (isset($field['description'])) {
+                    $fieldType['description'] = $field['description'];
+                } else {
+                    $fieldType['description'] = '';
+                }
 
                 $fieldTypes[] = $fieldType;
             }
@@ -101,13 +96,13 @@ class SwaggerGenerator
 
     public static function generateSwagger($fields, $fillables, $variables)
     {
-        $template = get_template('model.model', 'swagger-generator');
+        $template = TemplateUtil::getTemplate('model.model', 'swagger-generator');
 
-        $templateData = fill_template($variables, $template);
+        $templateData = TemplateUtil::fillTemplate($variables, $template);
 
-        $templateData = str_replace('$REQUIRED_FIELDS$', '"'.implode('", "', $fillables).'"', $templateData);
+        $templateData = str_replace('$REQUIRED_FIELDS$', implode(', ', $fillables), $templateData);
 
-        $propertyTemplate = get_template('model.property', 'swagger-generator');
+        $propertyTemplate = TemplateUtil::getTemplate('model.property', 'swagger-generator');
 
         $properties = self::preparePropertyFields($propertyTemplate, $fields);
 
@@ -116,12 +111,6 @@ class SwaggerGenerator
         return $templateData;
     }
 
-    /**
-     * @param $template
-     * @param $fields
-     *
-     * @return array
-     */
     public static function preparePropertyFields($template, $fields)
     {
         $templates = [];

@@ -78,3 +78,5 @@ Route::group(['middleware' => ['web']], function () {
 	    'uses' => 'municipioController@destroy',
 	]);
 });
+
+

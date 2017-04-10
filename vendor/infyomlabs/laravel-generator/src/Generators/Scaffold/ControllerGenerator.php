@@ -5,6 +5,7 @@ namespace InfyOm\Generator\Generators\Scaffold;
 use InfyOm\Generator\Common\CommandData;
 use InfyOm\Generator\Generators\BaseGenerator;
 use InfyOm\Generator\Utils\FileUtil;
+use InfyOm\Generator\Utils\TemplateUtil;
 
 class ControllerGenerator extends BaseGenerator
 {
@@ -31,11 +32,11 @@ class ControllerGenerator extends BaseGenerator
     public function generate()
     {
         if ($this->commandData->getAddOn('datatables')) {
-            $templateData = get_template('scaffold.controller.datatable_controller', 'laravel-generator');
+            $templateData = TemplateUtil::getTemplate('scaffold.controller.datatable_controller', 'laravel-generator');
 
             $this->generateDataTable();
         } else {
-            $templateData = get_template('scaffold.controller.controller', 'laravel-generator');
+            $templateData = TemplateUtil::getTemplate('scaffold.controller.controller', 'laravel-generator');
 
             $paginate = $this->commandData->getOption('paginate');
 
@@ -46,7 +47,7 @@ class ControllerGenerator extends BaseGenerator
             }
         }
 
-        $templateData = fill_template($this->commandData->dynamicVars, $templateData);
+        $templateData = TemplateUtil::fillTemplate($this->commandData->dynamicVars, $templateData);
 
         FileUtil::createFile($this->path, $this->fileName, $templateData);
 
@@ -56,19 +57,19 @@ class ControllerGenerator extends BaseGenerator
 
     private function generateDataTable()
     {
-        $templateData = get_template('scaffold.datatable', 'laravel-generator');
+        $templateData = TemplateUtil::getTemplate('scaffold.datatable', 'laravel-generator');
 
-        $templateData = fill_template($this->commandData->dynamicVars, $templateData);
+        $templateData = TemplateUtil::fillTemplate($this->commandData->dynamicVars, $templateData);
 
-        $headerFieldTemplate = get_template('scaffold.views.datatable_column', $this->templateType);
+        $headerFieldTemplate = TemplateUtil::getTemplate('scaffold.views.datatable_column', $this->templateType);
 
         $headerFields = [];
 
-        foreach ($this->commandData->fields as $field) {
-            if (!$field->inIndex) {
+        foreach ($this->commandData->inputFields as $field) {
+            if (!$field['inIndex']) {
                 continue;
             }
-            $headerFields[] = $fieldTemplate = fill_template_with_field_data(
+            $headerFields[] = $fieldTemplate = TemplateUtil::fillTemplateWithFieldData(
                 $this->commandData->dynamicVars,
                 $this->commandData->fieldNamesMapping,
                 $headerFieldTemplate,
@@ -86,7 +87,7 @@ class ControllerGenerator extends BaseGenerator
 
         FileUtil::createFile($path, $fileName, $templateData);
 
-        $this->commandData->commandComment("\nDataTable created: ");
+        $this->commandData->commandComment("\n$fileName created: ");
         $this->commandData->commandInfo($fileName);
     }
 
@@ -94,12 +95,6 @@ class ControllerGenerator extends BaseGenerator
     {
         if ($this->rollbackFile($this->path, $this->fileName)) {
             $this->commandData->commandComment('Controller file deleted: '.$this->fileName);
-        }
-
-        if ($this->commandData->getAddOn('datatables')) {
-            if ($this->rollbackFile($this->commandData->config->pathDataTables, $this->commandData->modelName.'DataTable.php')) {
-                $this->commandData->commandComment('DataTable file deleted: '.$this->fileName);
-            }
         }
     }
 }
