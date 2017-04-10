@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Requests\API\CreatePruebaunoAPIRequest;
-use App\Http\Requests\API\UpdatePruebaunoAPIRequest;
-use App\Models\Pruebauno;
-use App\Repositories\PruebaunoRepository;
+use App\Http\Requests\API\CreatedepartamentoAPIRequest;
+use App\Http\Requests\API\UpdatedepartamentoAPIRequest;
+use App\Models\departamento;
+use App\Repositories\departamentoRepository;
 use Illuminate\Http\Request;
 use InfyOm\Generator\Controller\AppBaseController;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
@@ -14,18 +14,18 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
 /**
- * Class PruebaunoController
+ * Class departamentoController
  * @package App\Http\Controllers\API
  */
 
-class PruebaunoAPIController extends AppBaseController
+class departamentoAPIController extends AppBaseController
 {
-    /** @var  PruebaunoRepository */
-    private $pruebaunoRepository;
+    /** @var  departamentoRepository */
+    private $departamentoRepository;
 
-    function __construct(PruebaunoRepository $pruebaunoRepo)
+    function __construct(departamentoRepository $departamentoRepo)
     {
-        $this->pruebaunoRepository = $pruebaunoRepo;
+        $this->departamentoRepository = $departamentoRepo;
     }
 
     /**
@@ -33,10 +33,10 @@ class PruebaunoAPIController extends AppBaseController
      * @return Response
      *
      * @SWG\Get(
-     *      path="/pruebaunos",
-     *      summary="Get a listing of the Pruebaunos.",
-     *      tags={"Pruebauno"},
-     *      description="Get all Pruebaunos",
+     *      path="/departamentos",
+     *      summary="Get a listing of the departamentos.",
+     *      tags={"departamento"},
+     *      description="Get all departamentos",
      *      produces={"application/json"},
      *      @SWG\Response(
      *          response=200,
@@ -50,7 +50,7 @@ class PruebaunoAPIController extends AppBaseController
      *              @SWG\Property(
      *                  property="data",
      *                  type="array",
-     *                  @SWG\Items(ref="#/definitions/Pruebauno")
+     *                  @SWG\Items(ref="#/definitions/departamento")
      *              ),
      *              @SWG\Property(
      *                  property="message",
@@ -62,29 +62,29 @@ class PruebaunoAPIController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $this->pruebaunoRepository->pushCriteria(new RequestCriteria($request));
-        $this->pruebaunoRepository->pushCriteria(new LimitOffsetCriteria($request));
-        $pruebaunos = $this->pruebaunoRepository->all();
+        $this->departamentoRepository->pushCriteria(new RequestCriteria($request));
+        $this->departamentoRepository->pushCriteria(new LimitOffsetCriteria($request));
+        $departamentos = $this->departamentoRepository->all();
 
-        return $this->sendResponse($pruebaunos->toArray(), "Pruebaunos retrieved successfully");
+        return $this->sendResponse($departamentos->toArray(), "departamentos retrieved successfully");
     }
 
     /**
-     * @param CreatePruebaunoAPIRequest $request
+     * @param CreatedepartamentoAPIRequest $request
      * @return Response
      *
      * @SWG\Post(
-     *      path="/pruebaunos",
-     *      summary="Store a newly created Pruebauno in storage",
-     *      tags={"Pruebauno"},
-     *      description="Store Pruebauno",
+     *      path="/departamentos",
+     *      summary="Store a newly created departamento in storage",
+     *      tags={"departamento"},
+     *      description="Store departamento",
      *      produces={"application/json"},
      *      @SWG\Parameter(
      *          name="body",
      *          in="body",
-     *          description="Pruebauno that should be stored",
+     *          description="departamento that should be stored",
      *          required=false,
-     *          @SWG\Schema(ref="#/definitions/Pruebauno")
+     *          @SWG\Schema(ref="#/definitions/departamento")
      *      ),
      *      @SWG\Response(
      *          response=200,
@@ -97,7 +97,7 @@ class PruebaunoAPIController extends AppBaseController
      *              ),
      *              @SWG\Property(
      *                  property="data",
-     *                  ref="#/definitions/Pruebauno"
+     *                  ref="#/definitions/departamento"
      *              ),
      *              @SWG\Property(
      *                  property="message",
@@ -107,13 +107,13 @@ class PruebaunoAPIController extends AppBaseController
      *      )
      * )
      */
-    public function store(CreatePruebaunoAPIRequest $request)
+    public function store(CreatedepartamentoAPIRequest $request)
     {
         $input = $request->all();
 
-        $pruebaunos = $this->pruebaunoRepository->create($input);
+        $departamentos = $this->departamentoRepository->create($input);
 
-        return $this->sendResponse($pruebaunos->toArray(), "Pruebauno saved successfully");
+        return $this->sendResponse($departamentos->toArray(), "departamento saved successfully");
     }
 
     /**
@@ -121,14 +121,14 @@ class PruebaunoAPIController extends AppBaseController
      * @return Response
      *
      * @SWG\Get(
-     *      path="/pruebaunos/{id}",
-     *      summary="Display the specified Pruebauno",
-     *      tags={"Pruebauno"},
-     *      description="Get Pruebauno",
+     *      path="/departamentos/{id}",
+     *      summary="Display the specified departamento",
+     *      tags={"departamento"},
+     *      description="Get departamento",
      *      produces={"application/json"},
      *      @SWG\Parameter(
      *          name="id",
-     *          description="id of Pruebauno",
+     *          description="id of departamento",
      *          type="integer",
      *          required=true,
      *          in="path"
@@ -144,7 +144,7 @@ class PruebaunoAPIController extends AppBaseController
      *              ),
      *              @SWG\Property(
      *                  property="data",
-     *                  ref="#/definitions/Pruebauno"
+     *                  ref="#/definitions/departamento"
      *              ),
      *              @SWG\Property(
      *                  property="message",
@@ -156,30 +156,30 @@ class PruebaunoAPIController extends AppBaseController
      */
     public function show($id)
     {
-        /** @var Pruebauno $pruebauno */
-        $pruebauno = $this->pruebaunoRepository->find($id);
+        /** @var departamento $departamento */
+        $departamento = $this->departamentoRepository->find($id);
 
-        if(empty($pruebauno)) {
-            return Response::json(ResponseUtil::makeError("Pruebauno not found"), 400);
+        if(empty($departamento)) {
+            return Response::json(ResponseUtil::makeError("departamento not found"), 400);
         }
 
-        return $this->sendResponse($pruebauno->toArray(), "Pruebauno retrieved successfully");
+        return $this->sendResponse($departamento->toArray(), "departamento retrieved successfully");
     }
 
     /**
      * @param int $id
-     * @param UpdatePruebaunoAPIRequest $request
+     * @param UpdatedepartamentoAPIRequest $request
      * @return Response
      *
      * @SWG\Put(
-     *      path="/pruebaunos/{id}",
-     *      summary="Update the specified Pruebauno in storage",
-     *      tags={"Pruebauno"},
-     *      description="Update Pruebauno",
+     *      path="/departamentos/{id}",
+     *      summary="Update the specified departamento in storage",
+     *      tags={"departamento"},
+     *      description="Update departamento",
      *      produces={"application/json"},
      *      @SWG\Parameter(
      *          name="id",
-     *          description="id of Pruebauno",
+     *          description="id of departamento",
      *          type="integer",
      *          required=true,
      *          in="path"
@@ -187,9 +187,9 @@ class PruebaunoAPIController extends AppBaseController
      *      @SWG\Parameter(
      *          name="body",
      *          in="body",
-     *          description="Pruebauno that should be updated",
+     *          description="departamento that should be updated",
      *          required=false,
-     *          @SWG\Schema(ref="#/definitions/Pruebauno")
+     *          @SWG\Schema(ref="#/definitions/departamento")
      *      ),
      *      @SWG\Response(
      *          response=200,
@@ -202,7 +202,7 @@ class PruebaunoAPIController extends AppBaseController
      *              ),
      *              @SWG\Property(
      *                  property="data",
-     *                  ref="#/definitions/Pruebauno"
+     *                  ref="#/definitions/departamento"
      *              ),
      *              @SWG\Property(
      *                  property="message",
@@ -212,20 +212,20 @@ class PruebaunoAPIController extends AppBaseController
      *      )
      * )
      */
-    public function update($id, UpdatePruebaunoAPIRequest $request)
+    public function update($id, UpdatedepartamentoAPIRequest $request)
     {
         $input = $request->all();
 
-        /** @var Pruebauno $pruebauno */
-        $pruebauno = $this->pruebaunoRepository->find($id);
+        /** @var departamento $departamento */
+        $departamento = $this->departamentoRepository->find($id);
 
-        if (empty($pruebauno)) {
-            return Response::json(ResponseUtil::makeError("Pruebauno not found"), 400);
+        if (empty($departamento)) {
+            return Response::json(ResponseUtil::makeError("departamento not found"), 400);
         }
 
-        $pruebauno = $this->pruebaunoRepository->update($input, $id);
+        $departamento = $this->departamentoRepository->update($input, $id);
 
-        return $this->sendResponse($pruebauno->toArray(), "Pruebauno updated successfully");
+        return $this->sendResponse($departamento->toArray(), "departamento updated successfully");
     }
 
     /**
@@ -233,14 +233,14 @@ class PruebaunoAPIController extends AppBaseController
      * @return Response
      *
      * @SWG\Delete(
-     *      path="/pruebaunos/{id}",
-     *      summary="Remove the specified Pruebauno from storage",
-     *      tags={"Pruebauno"},
-     *      description="Delete Pruebauno",
+     *      path="/departamentos/{id}",
+     *      summary="Remove the specified departamento from storage",
+     *      tags={"departamento"},
+     *      description="Delete departamento",
      *      produces={"application/json"},
      *      @SWG\Parameter(
      *          name="id",
-     *          description="id of Pruebauno",
+     *          description="id of departamento",
      *          type="integer",
      *          required=true,
      *          in="path"
@@ -268,15 +268,15 @@ class PruebaunoAPIController extends AppBaseController
      */
     public function destroy($id)
     {
-        /** @var Pruebauno $pruebauno */
-        $pruebauno = $this->pruebaunoRepository->find($id);
+        /** @var departamento $departamento */
+        $departamento = $this->departamentoRepository->find($id);
 
-        if(empty($pruebauno)) {
-            return Response::json(ResponseUtil::makeError("Pruebauno not found"), 400);
+        if(empty($departamento)) {
+            return Response::json(ResponseUtil::makeError("departamento not found"), 400);
         }
 
-        $pruebauno->delete();
+        $departamento->delete();
 
-        return $this->sendResponse($id, "Pruebauno deleted successfully");
+        return $this->sendResponse($id, "departamento deleted successfully");
     }
 }

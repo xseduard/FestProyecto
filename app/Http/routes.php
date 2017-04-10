@@ -54,3 +54,27 @@ Route::post('generator_builder/generate', '\InfyOm\GeneratorBuilder\Controllers\
 
 
 
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("departamentos", "departamentoController");
+
+	Route::get('departamentos/delete/{id}', [
+	    'as' => 'departamentos.delete',
+	    'uses' => 'departamentoController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("municipios", "municipioController");
+
+	Route::get('municipios/delete/{id}', [
+	    'as' => 'municipios.delete',
+	    'uses' => 'municipioController@destroy',
+	]);
+});
