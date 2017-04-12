@@ -1,8 +1,68 @@
 php artisan tinker
 
-$variable = App\Models\Nombre_modelo::
+$variable = App\Models\Nombre_modelo
 
 all()
 get()
 find(#)
 first()
+
+ 			
+::::::::::::::::  DB Type :::::::::::::::
+
+string,25
+text
+integer
+string:unique
+
+::::::::::::::::  Validations :::::::::::::::
+
+required
+
+::::::::::::::::  Migrations type :::::::::::::::
+
+			$table->integer('area_id')->unsigned();
+            $table->foreign('area_id')->references('id')->on('areas');
+
+
+
+$table->boolean('confirmed');
+
+$table->enum('choices', ['foo', 'bar']);
+
+$table->timestamp('added_on');
+
+$table->string('field_name', 25)
+
+
+::::::::::::::::  modificadores :::::::::::::::
+
+->comment('my comment')
+
+->default($value)
+
+->nullable()
+
+->nullable()
+
+
+::::::::::::::::  Relaciones :::::::::::::::
+
+in mmodel municipio
+
+    public function departamento(){
+        return $this->belongsTo(Departamento::class, 'id_departamento');
+    }
+
+
+
+    return $this->hasOne('App\Phone', 'foreign_key', 'local_key');
+
+
+    return $this->belongsTo('App\User', 'foreign_key');
+
+    return $this->hasMany('App\Comment', 'foreign_key');
+
+	return $this->hasMany('App\Comment', 'foreign_key', 'local_key');
+
+

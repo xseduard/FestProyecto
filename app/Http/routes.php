@@ -104,3 +104,51 @@ Route::group(['middleware' => ['web']], function () {
 	    'uses' => 'programaController@destroy',
 	]);
 });
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("regionals", "RegionalController");
+
+	Route::get('regionals/delete/{id}', [
+	    'as' => 'regionals.delete',
+	    'uses' => 'RegionalController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("sedes", "SedeController");
+
+	Route::get('sedes/delete/{id}', [
+	    'as' => 'sedes.delete',
+	    'uses' => 'SedeController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("estados", "EstadoController");
+
+	Route::get('estados/delete/{id}', [
+	    'as' => 'estados.delete',
+	    'uses' => 'EstadoController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("lineaInvestigacions", "Linea_InvestigacionController");
+
+	Route::get('lineaInvestigacions/delete/{id}', [
+	    'as' => 'lineaInvestigacions.delete',
+	    'uses' => 'Linea_InvestigacionController@destroy',
+	]);
+});

@@ -6,7 +6,7 @@
               <!-- general form elements -->
               <div class="box box-success">
                 <div class="box-header with-border">
-                  <h2 class="box-title">Edit programa</h2>
+                  <h2 class="box-title">Editar programas</h2>
                 </div><!-- /.box-header -->
 
         {!! Form::model($programa, ['route' => ['programas.update', $programa->id], 'method' => 'patch']) !!}

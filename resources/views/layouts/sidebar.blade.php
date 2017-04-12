@@ -50,7 +50,11 @@
                         <li ruta="departamentos"><a href="{{ url('/departamentos') }}"><span>Departamentos</span></a></li>
                         <li ruta="municipios"><a href="{{ url('/municipios') }}"><span>Municipios</span></a></li>                        
                         <li ruta="areas"><a href="{{ url('/areas') }}"><span>Facultades (Áreas)</span></a></li>              
-                        <li ruta="programas"><a href="{{ url('/programas') }}"><span>programas</span></a></li>                        
+                        <li ruta="programas"><a href="{{ url('/programas') }}"><span>programas</span></a></li>   
+                        <li ruta="regionals"><a href="{{ url('/regionals') }}"><span>Regionales</span></a></li>   
+                        <li ruta="sedes"><a href="{{ url('/sedes') }}"><span>Sedes</span></a></li> 
+                        <li ruta="estados"><a href="{{ url('/estados') }}"><span>Estados</span></a></li> 
+                        <li ruta="lineaInvestigacions"><a href="{{ url('/lineaInvestigacions') }}"><span>Lineas de investigación</span></a></li>                        
                 </ul>
             </li>
 

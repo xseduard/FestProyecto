@@ -6,7 +6,7 @@
               <!-- general form elements -->
               <div class="box box-success">
                 <div class="box-header with-border">
-                  <h2 class="box-title">Edit municipio</h2>
+                  <h2 class="box-title">Editar municipio</h2>
                 </div><!-- /.box-header -->
 
         {!! Form::model($municipio, ['route' => ['municipios.update', $municipio->id], 'method' => 'patch']) !!}

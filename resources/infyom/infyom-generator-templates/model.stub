@@ -17,7 +17,8 @@ $PRIMARY$
     ];
 
     /**
-     * The attributes that should be casted to native types.
+     * The attributes that should be casted to native types. 
+     * (señala el tipo de atributo)
      *
      * @var array
      */

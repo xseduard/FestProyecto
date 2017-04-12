@@ -60,6 +60,16 @@ class municipio extends Model
     public static $rules = [
         
     ];
+
+    public static function selMunicipio(){
+        $array['']= "seleccione...";
+        $modelo = municipio::all()->toArray();
+            foreach ($modelo as $key => $value) {
+                $array[$value['id']]=$value['nombre'];
+            }
+        return ($array);
+    }
+
     public function departamento(){
         return $this->belongsTo(Departamento::class, 'id_departamento');
     }

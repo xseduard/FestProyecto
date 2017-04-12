@@ -1,8 +1,9 @@
 
 
  function alertEliminar(e) {
-e.preventDefault();
-   swal({   
+  e.preventDefault();
+  var form = $(this).parents('form');
+   swal({
       title: "¿Estas seguro?",   
       text: "Los registros eliminados no podran volver a restaurarse",   
       type: "warning",   
@@ -16,7 +17,7 @@ e.preventDefault();
 function(isConfirm){   
   if (isConfirm) {     
     swal("Eliminado!", "El registro se ha eliminado correctamente.", "success");
-    $( "#formEliminar" ).submit();   } 
+    form.submit();   } 
 else {    
     swal("Cancelado", "", "error");
        } 
@@ -27,9 +28,7 @@ else {
 
 
 function ActivarMenu() {
-
-     var paginaURL = window.location.href.substr(window.location.href
-.lastIndexOf("/")+1);
+     var paginaURL = window.location.href.substr(window.location.href.lastIndexOf("/")+1);
      $("#navegacion ul li").each(function(){
           if($(this).attr("ruta") == paginaURL || $(this).attr("ruta") == '' )
           $(this).addClass("active");
@@ -39,7 +38,9 @@ function ActivarMenu() {
 
 
 function main(){
- $(document).on('click', '#btn-eliminar', alertEliminar);
-ActivarMenu();
+
+  $(document).on('click', '.btn-eliminar', alertEliminar);
+  ActivarMenu();
 }
+
 $(document).on('ready', main);

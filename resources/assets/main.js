@@ -1,4 +1,5 @@
 $(".eliminar-registro").onclick(function() {
+  alert('saasgs');
     alertEliminar();
   });
 
