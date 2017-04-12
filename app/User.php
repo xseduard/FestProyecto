@@ -23,4 +23,18 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * seleccionadores
+     */
+    public static function selUsuario($role){
+        $array['']= "seleccione...";
+        $modelo = User::all()->toArray();
+            foreach ($modelo as $key => $value) {
+                if ($value['role']==$role) {
+                    $array[$value['id']] = $value['nombres'].' '.$value['apellidos'];
+                }                
+            }
+        return ($array);
+    }
 }

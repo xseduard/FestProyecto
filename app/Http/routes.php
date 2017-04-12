@@ -200,3 +200,27 @@ Route::group(['middleware' => ['web']], function () {
 	    'uses' => 'EventoExpoController@destroy',
 	]);
 });
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("estudiantes", "EstudianteController");
+
+	Route::get('estudiantes/delete/{id}', [
+	    'as' => 'estudiantes.delete',
+	    'uses' => 'EstudianteController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("semilleros", "SemilleroController");
+
+	Route::get('semilleros/delete/{id}', [
+	    'as' => 'semilleros.delete',
+	    'uses' => 'SemilleroController@destroy',
+	]);
+});

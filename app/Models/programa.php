@@ -43,6 +43,19 @@ class programa extends Model
         'area_id' => 'required'
     ];
     /**
+     * funciones selectores
+     */
+
+    public static function selPrograma(){
+        $array['']= "seleccione...";
+        $modelo = programa::all()->toArray();
+            foreach ($modelo as $key => $value) {
+                $array[$value['id']]=$value['nombre'];
+            }
+        return ($array);
+    }
+
+    /**
      * relaciones
      */
     public function area(){

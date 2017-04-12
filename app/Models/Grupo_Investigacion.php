@@ -62,7 +62,7 @@ class Grupo_Investigacion extends Model
     ];
 
     public static function selGrupo_Investigacion(){
-        $array['']= "seleccione...";
+        //$array['']= "seleccione...";
         $modelo = Grupo_Investigacion::all()->toArray();
             foreach ($modelo as $key => $value) {
                 $array[$value['id']]=$value['nombre'];

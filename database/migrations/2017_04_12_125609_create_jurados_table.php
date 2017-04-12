@@ -20,7 +20,7 @@ class CreateJuradosTable extends Migration
             $table->string('cedula', 12)->unique();
             
             $table->integer('grupojurado_id')->unsigned();
-            $table->foreign('grupojurado_id')->references('id')->on('grupo_investigacions');
+            $table->foreign('grupojurado_id')->references('id')->on('grupo_jurados');
 
             $table->integer('user_id')->unsigned();
 

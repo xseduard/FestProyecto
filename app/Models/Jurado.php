@@ -56,7 +56,7 @@ class Jurado extends Model
     public static $rules = [
         'nombres' => 'required',
         'apellidos' => 'required',
-        'cedula' => 'required',
+        'cedula' => 'required|numeric',
         'grupojurado_id' => 'required',
         'user_id' => '',
         'linea_investigacion_id' => 'required',

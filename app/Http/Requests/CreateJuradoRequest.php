@@ -34,6 +34,9 @@ class CreateJuradoRequest extends Request {
     }
     public function rules()
     {
-        return Jurado::$rules;
+        $rulescreate = Jurado::$rules;
+        $rulescreate['cedula'] .= '|unique:jurados';
+        
+        return $rulescreate
     }
 }

@@ -92,7 +92,9 @@ class Sede extends Model
         'municipio_id' => 'required',
         'regional_id' => 'required'
     ];
-
+    /**
+     * relaciones
+     */
   
     public function regional(){
         return $this->belongsTo('App\Models\Regional');

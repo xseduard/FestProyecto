@@ -15,11 +15,17 @@ class CreateEventoExposTable extends Migration
     {
         Schema::create('evento_expos', function(Blueprint $table) {
             $table->increments('id');
-            $table->integer('grupojurado_id');
+
+            $table->integer('grupojurado_id')->unsigned();
+            $table->foreign('grupojurado_id')->references('id')->on('grupo_jurados');
+
             $table->string('nombre', 100);
             $table->string('direccion', 100);
             $table->text('informacion');
-            $table->integer('user_id');
+            
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+
             $table->timestamps();
             $table->softDeletes();
         });

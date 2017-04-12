@@ -50,9 +50,9 @@ class JuradoController extends AppBaseController
 
 
         $selectores = [
-        'grupojurados' => GrupoJurado::selGrupoJurado(),
-        'areas'=> area::selArea(),
-        'lineas'=> Linea_Investigacion::selLinea()
+            'grupojurados' => GrupoJurado::selGrupoJurado(),
+            'areas'=> area::selArea(),
+            'lineas'=> Linea_Investigacion::selLinea()
         ];
 
         return view('jurados.create')->with(['selectores' => $selectores]);
@@ -134,6 +134,7 @@ class JuradoController extends AppBaseController
      */
     public function update($id, UpdateJuradoRequest $request)
     {
+        
         $jurado = $this->juradoRepository->findWithoutFail($id);
 
         if (empty($jurado)) {
