@@ -54,7 +54,11 @@
                         <li ruta="regionals"><a href="{{ url('/regionals') }}"><span>Regionales</span></a></li>   
                         <li ruta="sedes"><a href="{{ url('/sedes') }}"><span>Sedes</span></a></li> 
                         <li ruta="estados"><a href="{{ url('/estados') }}"><span>Estados</span></a></li> 
-                        <li ruta="lineaInvestigacions"><a href="{{ url('/lineaInvestigacions') }}"><span>Lineas de investigación</span></a></li>                        
+                        <li ruta="lineaInvestigacions"><a href="{{ url('/lineaInvestigacions') }}"><span>Lineas de investigación</span></a></li> 
+                         <li ruta="grupoInvestigacions"><a href="{{ url('/grupoInvestigacions') }}"><span>Grupo de investigación</span></a></li>
+                         <li ruta="grupoJurados"><a href="{{ url('/grupoJurados') }}"><span>Grupo de Jurados</span></a></li>
+
+                                               
                 </ul>
             </li>
 

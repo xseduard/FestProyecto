@@ -54,3 +54,7 @@ Route::resource("sedes", "SedeAPIController");
 Route::resource("estados", "EstadoAPIController");
 
 Route::resource("lineaInvestigacions", "Linea_InvestigacionAPIController");
+
+Route::resource("grupoInvestigacions", "Grupo_InvestigacionAPIController");
+
+Route::resource("grupoJurados", "GrupoJuradoAPIController");

@@ -66,3 +66,12 @@ in mmodel municipio
 	return $this->hasMany('App\Comment', 'foreign_key', 'local_key');
 
 
+::::::::::::::::  llamar selectores  :::::::::::::::
+
+	$selectores = [
+             'regionals'=> Regional::selRegional()
+        ];
+
+        return view('grupoJurados.create')->with(['selectores' => $selectores]);
+
+

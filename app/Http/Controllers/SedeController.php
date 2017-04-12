@@ -51,7 +51,7 @@ class SedeController extends AppBaseController
         'regionals'=> Regional::selRegional()
         ];
 
-        return view('sedes.create')->with(['selectores' => $selectores]);;
+        return view('sedes.create')->with(['selectores' => $selectores]);
         
     }
 

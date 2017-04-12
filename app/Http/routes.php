@@ -152,3 +152,27 @@ Route::group(['middleware' => ['web']], function () {
 	    'uses' => 'Linea_InvestigacionController@destroy',
 	]);
 });
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("grupoInvestigacions", "Grupo_InvestigacionController");
+
+	Route::get('grupoInvestigacions/delete/{id}', [
+	    'as' => 'grupoInvestigacions.delete',
+	    'uses' => 'Grupo_InvestigacionController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("grupoJurados", "GrupoJuradoController");
+
+	Route::get('grupoJurados/delete/{id}', [
+	    'as' => 'grupoJurados.delete',
+	    'uses' => 'GrupoJuradoController@destroy',
+	]);
+});
