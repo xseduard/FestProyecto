@@ -80,3 +80,27 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("areas", "areaController");
+
+	Route::get('areas/delete/{id}', [
+	    'as' => 'areas.delete',
+	    'uses' => 'areaController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("programas", "programaController");
+
+	Route::get('programas/delete/{id}', [
+	    'as' => 'programas.delete',
+	    'uses' => 'programaController@destroy',
+	]);
+});

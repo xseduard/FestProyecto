@@ -41,3 +41,8 @@ Route::resource("departamentos", "departamentoAPIController");
 
 Route::resource("municipios", "municipioAPIController");
 
+
+
+Route::resource("areas", "areaAPIController");
+
+Route::resource("programas", "programaAPIController");

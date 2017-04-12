@@ -44,6 +44,16 @@
             
           
 
+            <li class="treeview active">
+                <a href="#"><span>Ajustes Generales</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">                        
+                        <li ruta="departamentos"><a href="{{ url('/departamentos') }}"><span>Departamentos</span></a></li>
+                        <li ruta="municipios"><a href="{{ url('/municipios') }}"><span>Municipios</span></a></li>                        
+                        <li ruta="areas"><a href="{{ url('/areas') }}"><span>Facultades (Áreas)</span></a></li>              
+                        <li ruta="programas"><a href="{{ url('/programas') }}"><span>programas</span></a></li>                        
+                </ul>
+            </li>
+
             <li class="treeview">
                 <a href="#"><span>Menu anterior</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
@@ -60,8 +70,6 @@
                         <li ruta="subareas"><a href="{{ url('/subareas') }}"><span>Subareas</span></a></li>
                 </ul>
             </li>
-
-            
 
 
 

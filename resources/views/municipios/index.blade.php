@@ -12,7 +12,7 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">municipios</h3>
+                  <h3 class="box-title">Municipios</h3>
                    <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('municipios.create') !!}"><i class="fa fa-plus"></i> Agregar</a>
                 </div><!-- /.box-header -->
                 <div class="box-body">

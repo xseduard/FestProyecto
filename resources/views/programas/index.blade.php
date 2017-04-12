@@ -12,18 +12,18 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Departamentos</h3>
-                   <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('departamentos.create') !!}"><i class="fa fa-plus"></i> Agregar</a>
+                  <h3 class="box-title">programas</h3>
+                   <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('programas.create') !!}"><i class="fa fa-plus"></i> Agregar</a>
                 </div><!-- /.box-header -->
                 <div class="box-body">
 
-        @if($departamentos->isEmpty())
-            <div class="well text-center">No se encontraron registros de departamentos en esta consulta.</div>
+        @if($programas->isEmpty())
+            <div class="well text-center">No se encontraron registros de programas en esta consulta.</div>
         @else
-            @include('departamentos.table')
+            @include('programas.table')
 
         @endif
-         @include('common.paginate', ['records' => $departamentos])
+         @include('common.paginate', ['records' => $programas])
                 </div>
               </div>
             </div>
