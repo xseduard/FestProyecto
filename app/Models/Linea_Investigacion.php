@@ -66,4 +66,19 @@ class Linea_Investigacion extends Model
     public static $rules = [
         'nombre' => 'required'
     ];
+    /**
+     * Funciones
+     */
+    public static function selLinea(){
+        $array['']= "seleccione...";
+        $modelo = Linea_Investigacion::all()->toArray();
+            foreach ($modelo as $key => $value) {
+                $array[$value['id']]=$value['nombre'];
+            }
+        return ($array);
+    }
+
+    /**
+     * RELACIONES
+     */
 }

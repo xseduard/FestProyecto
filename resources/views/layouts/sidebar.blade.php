@@ -56,7 +56,12 @@
                         <li ruta="estados"><a href="{{ url('/estados') }}"><span>Estados</span></a></li> 
                         <li ruta="lineaInvestigacions"><a href="{{ url('/lineaInvestigacions') }}"><span>Lineas de investigación</span></a></li> 
                          <li ruta="grupoInvestigacions"><a href="{{ url('/grupoInvestigacions') }}"><span>Grupo de investigación</span></a></li>
-                         <li ruta="grupoJurados"><a href="{{ url('/grupoJurados') }}"><span>Grupo de Jurados</span></a></li>
+                         <li ruta="grupoJurados"><a href="{{ url('/grupoJurados') }}"><span>Comité de Jurados</span></a></li>
+                         <li ruta="jurados"><a href="{{ url('/jurados') }}"><span>Jurados</span></a></li>
+                         <li ruta="eventoExpos"><a href="{{ url('/eventoExpos') }}"><span>Evento Expo</span></a></li>
+                         <li ruta="estudiantes"><a href="{{ url('/estudiantes') }}"><span>Estudiantes</span></a></li>
+
+                         
 
                                                
                 </ul>

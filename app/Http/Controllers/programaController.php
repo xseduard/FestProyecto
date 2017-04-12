@@ -20,6 +20,7 @@ class programaController extends AppBaseController
 
     function __construct(programaRepository $programaRepo)
     {
+        $this->middleware('auth');
         $this->programaRepository = $programaRepo;
     }
 
@@ -105,7 +106,9 @@ class programaController extends AppBaseController
             return redirect(route('programas.index'));
         }
 
-        return view('programas.edit')->with('programa', $programa);
+        $ar_area = area::selArea();
+        return view('programas.edit')->with(['programa' => $programa, 'ar_area' => $ar_area]);;
+
     }
 
     /**

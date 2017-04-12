@@ -19,6 +19,7 @@ class departamentoController extends AppBaseController
 
     function __construct(departamentoRepository $departamentoRepo)
     {
+        $this->middleware('auth');
         $this->departamentoRepository = $departamentoRepo;
     }
 

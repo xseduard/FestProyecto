@@ -81,6 +81,21 @@ class GrupoJurado extends Model
         'codigo' => 'required',
         'regional_id' => 'required'
     ];
+    /**
+     * Funciones
+     */
+    public static function selGrupoJurado(){
+        $array['']= "seleccione...";
+        $modelo = GrupoJurado::all()->toArray();
+            foreach ($modelo as $key => $value) {
+                $array[$value['id']]=$value['codigo'];
+            }
+        return ($array);
+    }
+
+    /**
+     * RELACIONES
+     */
     public function regional(){
         return $this->belongsTo('App\Models\Regional');
     }

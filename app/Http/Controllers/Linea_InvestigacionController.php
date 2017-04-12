@@ -19,6 +19,7 @@ class Linea_InvestigacionController extends AppBaseController
 
     function __construct(Linea_InvestigacionRepository $lineaInvestigacionRepo)
     {
+        $this->middleware('auth');
         $this->lineaInvestigacionRepository = $lineaInvestigacionRepo;
     }
 

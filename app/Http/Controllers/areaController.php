@@ -19,6 +19,7 @@ class areaController extends AppBaseController
 
     function __construct(areaRepository $areaRepo)
     {
+        $this->middleware('auth');
         $this->areaRepository = $areaRepo;
     }
 

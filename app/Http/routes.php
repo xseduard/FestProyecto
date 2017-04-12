@@ -176,3 +176,27 @@ Route::group(['middleware' => ['web']], function () {
 	    'uses' => 'GrupoJuradoController@destroy',
 	]);
 });
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("jurados", "JuradoController");
+
+	Route::get('jurados/delete/{id}', [
+	    'as' => 'jurados.delete',
+	    'uses' => 'JuradoController@destroy',
+	]);
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("eventoExpos", "EventoExpoController");
+
+	Route::get('eventoExpos/delete/{id}', [
+	    'as' => 'eventoExpos.delete',
+	    'uses' => 'EventoExpoController@destroy',
+	]);
+});

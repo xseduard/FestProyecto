@@ -19,6 +19,7 @@ class Grupo_InvestigacionController extends AppBaseController
 
     function __construct(Grupo_InvestigacionRepository $grupoInvestigacionRepo)
     {
+        $this->middleware('auth');
         $this->grupoInvestigacionRepository = $grupoInvestigacionRepo;
     }
 
@@ -108,7 +109,15 @@ class Grupo_InvestigacionController extends AppBaseController
             return redirect(route('grupoInvestigacions.index'));
         }
 
-        return view('grupoInvestigacions.edit')->with('grupoInvestigacion', $grupoInvestigacion);
+        $i = 1965;
+        $array['']= "seleccione...";
+        while ($i <= date('Y')) {            
+            $array[$i]=$i;
+            $i++;
+        }
+        return view('grupoInvestigacions.edit')->with(['array' => $array, 'grupoInvestigacion' => $grupoInvestigacion]);
+
+
     }
 
     /**

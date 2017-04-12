@@ -19,6 +19,7 @@ class EstadoController extends AppBaseController
 
     function __construct(EstadoRepository $estadoRepo)
     {
+        $this->middleware('auth');
         $this->estadoRepository = $estadoRepo;
     }
 

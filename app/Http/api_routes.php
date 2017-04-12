@@ -58,3 +58,7 @@ Route::resource("lineaInvestigacions", "Linea_InvestigacionAPIController");
 Route::resource("grupoInvestigacions", "Grupo_InvestigacionAPIController");
 
 Route::resource("grupoJurados", "GrupoJuradoAPIController");
+
+Route::resource("jurados", "JuradoAPIController");
+
+Route::resource("eventoExpos", "EventoExpoAPIController");

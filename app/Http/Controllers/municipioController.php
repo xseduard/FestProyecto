@@ -19,6 +19,7 @@ class municipioController extends AppBaseController
 
     function __construct(municipioRepository $municipioRepo)
     {
+        $this->middleware('auth');
         $this->municipioRepository = $municipioRepo;
     }
 

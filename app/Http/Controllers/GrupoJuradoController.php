@@ -20,6 +20,7 @@ class GrupoJuradoController extends AppBaseController
 
     function __construct(GrupoJuradoRepository $grupoJuradoRepo)
     {
+        $this->middleware('auth');
         $this->grupoJuradoRepository = $grupoJuradoRepo;
     }
 
@@ -108,7 +109,12 @@ class GrupoJuradoController extends AppBaseController
             return redirect(route('grupoJurados.index'));
         }
 
-        return view('grupoJurados.edit')->with('grupoJurado', $grupoJurado);
+        $selectores = [
+             'regionals' => Regional::selRegional()
+        ];
+
+        return view('grupoJurados.edit')->with(['grupoJurado' => $grupoJurado, 'selectores' => $selectores]);
+
     }
 
     /**

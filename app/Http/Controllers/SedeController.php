@@ -21,6 +21,7 @@ class SedeController extends AppBaseController
 
     function __construct(SedeRepository $sedeRepo)
     {
+        $this->middleware('auth');
         $this->sedeRepository = $sedeRepo;
     }
 
