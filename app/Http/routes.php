@@ -224,3 +224,15 @@ Route::group(['middleware' => ['web']], function () {
 	    'uses' => 'SemilleroController@destroy',
 	]);
 });
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("proyectos", "ProyectoController");
+
+	Route::get('proyectos/delete/{id}', [
+	    'as' => 'proyectos.delete',
+	    'uses' => 'ProyectoController@destroy',
+	]);
+});
