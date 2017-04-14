@@ -62,6 +62,7 @@
                          <li ruta="estudiantes"><a href="{{ url('/estudiantes') }}"><span>Estudiantes</span></a></li>
                          <li ruta="semilleros"><a href="{{ url('/semilleros') }}"><span>Semilleros</span></a></li>
                          <li ruta="proyectos"><a href="{{ url('/proyectos') }}"><span>Proyectos</span></a></li>
+                         <li ruta="notas"><a href="{{ url('/notas') }}"><span>Notas</span></a></li>
 
 
                          

@@ -236,3 +236,15 @@ Route::group(['middleware' => ['web']], function () {
 	    'uses' => 'ProyectoController@destroy',
 	]);
 });
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("notas", "NotaController");
+
+	Route::get('notas/delete/{id}', [
+	    'as' => 'notas.delete',
+	    'uses' => 'NotaController@destroy',
+	]);
+});

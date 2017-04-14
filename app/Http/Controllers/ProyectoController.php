@@ -86,7 +86,7 @@ class ProyectoController extends AppBaseController
         $input['estado_id'] = '1';
         $input['grupojurado_id'] = '1';
         $input['evento_expo_id'] = '1';       
-        dd($input);
+        
        
 
         $proyecto = $this->proyectoRepository->create($input);

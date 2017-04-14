@@ -68,3 +68,5 @@ Route::resource("estudiantes", "EstudianteAPIController");
 Route::resource("semilleros", "SemilleroAPIController");
 
 Route::resource("proyectos", "ProyectoAPIController");
+
+Route::resource("notas", "NotaAPIController");
