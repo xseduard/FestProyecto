@@ -1,49 +1,51 @@
+<!-- Titulo Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('titulo', 'Titulo:') !!}
+    {!! Form::text('titulo', null, ['class' => 'form-control']) !!}
+</div>
+
+
 <!-- Pais Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('pais', 'Pais:') !!}
-    {!! Form::text('pais', null, ['class' => 'form-control']) !!}
+    {!! Form::text('pais', 'Colombia', ['class' => 'form-control', 'disabled' => 'disabled']) !!}
 </div>
 
 <!-- Universidad Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('universidad', 'Universidad:') !!}
-    {!! Form::text('universidad', null, ['class' => 'form-control']) !!}
+    {!! Form::text('universidad', 'Corporacion Unificada Nacional de Educacion Superior (CUN)', ['class' => 'form-control', 'disabled' => 'disabled']) !!}
 </div>
 
-<!-- Regional Id Field -->
+<!-- Regional Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('regional_id', 'Regional Id:') !!}
-    {!! Form::select('regional_id', ['' => ''], null, ['class' => 'form-control']) !!}
+    {!! Form::label('regional_id', 'Regional:') !!}
+    {!! Form::select('regional_id', $selectores['regional'], null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Semillero Id Field -->
+<!-- Semillero Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('semillero_id', 'Semillero Id:') !!}
-    {!! Form::select('semillero_id', ['' => ''], null, ['class' => 'form-control']) !!}
+    {!! Form::label('semillero_id', 'Semillero:') !!}
+    {!! Form::select('semillero_id', $selectores['semillero'], null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Area Id Field -->
+<!-- Area Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('area_id', 'Area Id:') !!}
-    {!! Form::select('area_id', ['' => ''], null, ['class' => 'form-control']) !!}
+    {!! Form::label('area_id', 'Área:') !!}
+    {!! Form::select('area_id', $selectores['area'], null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Programa Id Field -->
+<!-- Programa Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('programa_id', 'Programa Id:') !!}
-    {!! Form::select('programa_id', ['' => ''], null, ['class' => 'form-control']) !!}
+    {!! Form::label('programa_id', 'Sub Área:') !!}
+    {!! Form::select('programa_id', $selectores['programa'], null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- User Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('user_id', 'User Id:') !!}
-    {!! Form::select('user_id', ['' => ''], null, ['class' => 'form-control']) !!}
-</div>
 
-<!-- Linea Id Field -->
+<!-- Linea Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('linea_id', 'Linea Id:') !!}
-    {!! Form::select('linea_id', ['' => ''], null, ['class' => 'form-control']) !!}
+    {!! Form::label('linea_id', 'Linea:') !!}
+    {!! Form::select('linea_id', $selectores['linea'], null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Tipo Field -->
@@ -52,11 +54,6 @@
     {!! Form::text('tipo', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Titulo Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('titulo', 'Titulo:') !!}
-    {!! Form::text('titulo', null, ['class' => 'form-control']) !!}
-</div>
 
 <!-- Descripcion Field -->
 <div class="form-group col-sm-6">

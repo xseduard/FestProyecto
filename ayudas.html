@@ -77,3 +77,18 @@ in mmodel municipio
         return view('grupoJurados.create')->with(['selectores' => $selectores]);
 
 
+
+::::::::::::::::  control de usuarios  :::::::::::::::
+
+
+Auth::id();
+Auth::guest();
+Auth::check();
+Auth::user()->nombres;
+
+        use Illuminate\Support\Facades\Auth;
+
+        C:\xampp\htdocs\FestProyecto\vendor\laravel\framework\src\Illuminate\Contracts\Auth
+
+middlewards 
+app/http/kernel.php 

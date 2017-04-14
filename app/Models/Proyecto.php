@@ -204,7 +204,7 @@ class Proyecto extends Model
         'semillero_id' => 'required',
         'area_id' => 'required',
         'programa_id' => 'required',
-        'user_id' => 'required',
+        'user_id' => '',
         'linea_id' => 'required',
         'titulo' => 'required'
     ];

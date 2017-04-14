@@ -20,6 +20,7 @@ use App\Models\Estado;
 use App\Models\Linea_Investigacion;
 use App\Models\GrupoJurado;
 use App\Models\EventoExpo;
+use Illuminate\Support\Facades\Auth;
 
 
 class ProyectoController extends AppBaseController
@@ -29,6 +30,7 @@ class ProyectoController extends AppBaseController
 
     function __construct(ProyectoRepository $proyectoRepo)
     {
+        $this->middleware('auth');
         $this->proyectoRepository = $proyectoRepo;
     }
 
@@ -43,6 +45,7 @@ class ProyectoController extends AppBaseController
         $this->proyectoRepository->pushCriteria(new RequestCriteria($request));
         $proyectos = $this->proyectoRepository->paginate(10);
 
+        
         return view('proyectos.index')
             ->with('proyectos', $proyectos);
     }
@@ -54,15 +57,15 @@ class ProyectoController extends AppBaseController
      */
     public function create()
     {
+
         $selectores = [
-            'regionals' => Regional::selRegional(),
-            'estudiantes'=> Semillero::selSe(),
-            'docentes'=> area::selArea('docente'),
-            'grupo_investigacions'=> programa::selGrupo_Investigacion(),
-            'regionals' => User::selRegional(),
-            'estudiantes'=> Estado::selEstudiante(),
-            'docentes'=> Linea_Investigacion::selUsuario('docente'),
-            'grupo_investigacions'=> GrupoJurado::sel()        
+            'regional' => Regional::selRegional(),
+            'semillero'=> Semillero::selSemillero(),
+            'area'=> area::selArea(),
+            'programa'=> programa::selPrograma(),            
+            'estado'=> Estado::selEstado(),
+            'linea'=> Linea_Investigacion::selLinea(),
+            'grupojurado'=> GrupoJurado::selGrupoJurado()        
         ];
 
         return view('proyectos.create')->with(['selectores' => $selectores]);
@@ -79,6 +82,9 @@ class ProyectoController extends AppBaseController
     public function store(CreateProyectoRequest $request)
     {
         $input = $request->all();
+        $input['user_id'] = Auth::id();
+        dd($input);
+       
 
         $proyecto = $this->proyectoRepository->create($input);
 
@@ -123,8 +129,17 @@ class ProyectoController extends AppBaseController
 
             return redirect(route('proyectos.index'));
         }
+        $selectores = [
+            'regional' => Regional::selRegional(),
+            'semillero'=> Semillero::selSemillero(),
+            'area'=> area::selArea(),
+            'programa'=> programa::selPrograma(),            
+            'estado'=> Estado::selEstado(),
+            'linea'=> Linea_Investigacion::selLinea(),
+            'grupojurado'=> GrupoJurado::selGrupoJurado()        
+        ];
 
-        return view('proyectos.edit')->with('proyecto', $proyecto);
+        return view('proyectos.edit')->with(['proyecto' => $proyecto, 'selectores' => $selectores]);
     }
 
     /**
