@@ -30,33 +30,33 @@
 </div>
 
 <!-- Area Field -->
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-4">
     {!! Form::label('area_id', 'Área:') !!}
     {!! Form::select('area_id', $selectores['area'], null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Programa Field -->
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-4">
     {!! Form::label('programa_id', 'Sub Área:') !!}
     {!! Form::select('programa_id', $selectores['programa'], null, ['class' => 'form-control']) !!}
 </div>
 
 
 <!-- Linea Field -->
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-4">
     {!! Form::label('linea_id', 'Linea:') !!}
     {!! Form::select('linea_id', $selectores['linea'], null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Tipo Field -->
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-4">
     {!! Form::label('tipo', 'Tipo:') !!}
     {!! Form::text('tipo', null, ['class' => 'form-control']) !!}
 </div>
 
-
+<div class="clearfix"></div>
 <!-- Descripcion Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('descripcion', 'Descripcion:') !!}
-    {!! Form::text('descripcion', null, ['class' => 'form-control']) !!}
+<div class="form-group col-sm-12">
+    {!! Form::label('descripcion', 'Descripción:') !!}
+    {!! Form::textarea('descripcion', null, ['class' => 'form-control']) !!}
 </div>
