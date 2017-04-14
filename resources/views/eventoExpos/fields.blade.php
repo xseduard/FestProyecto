@@ -1,7 +1,7 @@
 <!-- Grupojurado Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('grupojurado_id', 'Grupojurado Id:') !!}
-    {!! Form::text('grupojurado_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('grupojurado_id', 'Grupo Jurado:') !!}
+    {!! Form::select('grupojurado_id', $selectores['grupojurado'], null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Nombre Field -->
@@ -22,8 +22,3 @@
     {!! Form::textarea('informacion', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- User Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('user_id', 'User Id:') !!}
-    {!! Form::text('user_id', null, ['class' => 'form-control']) !!}
-</div>

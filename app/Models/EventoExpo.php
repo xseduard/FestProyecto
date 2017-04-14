@@ -97,4 +97,15 @@ class EventoExpo extends Model
         'grupojurado_id' => 'required',
         'nombre' => 'required'
     ];
+
+    /**
+     * Relaciones
+     */
+
+    public function grupojurado(){
+        return $this->belongsTo('App\Models\GrupoJurado');
+    }
+        public function usuario(){
+        return $this->belongsTo('App\User', 'user_id');
+    }
 }

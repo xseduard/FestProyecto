@@ -83,6 +83,9 @@ class ProyectoController extends AppBaseController
     {
         $input = $request->all();
         $input['user_id'] = Auth::id();
+        $input['estado_id'] = '1';
+        $input['grupojurado_id'] = '1';
+        $input['evento_expo_id'] = '1';       
         dd($input);
        
 

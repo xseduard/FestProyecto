@@ -11,6 +11,7 @@ use Flash;
 use InfyOm\Generator\Controller\AppBaseController;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\Models\GrupoJurado;
 
 class EventoExpoController extends AppBaseController
 {
@@ -44,7 +45,12 @@ class EventoExpoController extends AppBaseController
      */
     public function create()
     {
-        return view('eventoExpos.create');
+         $selectores = [
+            'grupojurado'=> GrupoJurado::selGrupoJurado()        
+        ];
+
+        return view('eventoExpos.create')->with(['selectores' => $selectores]);
+        
     }
 
     /**
@@ -57,6 +63,7 @@ class EventoExpoController extends AppBaseController
     public function store(CreateEventoExpoRequest $request)
     {
         $input = $request->all();
+        $input['user_id'] = Auth::id();
 
         $eventoExpo = $this->eventoExpoRepository->create($input);
 
@@ -101,8 +108,11 @@ class EventoExpoController extends AppBaseController
 
             return redirect(route('eventoExpos.index'));
         }
+         $selectores = [
+            'grupojurado'=> GrupoJurado::selGrupoJurado()        
+        ];
 
-        return view('eventoExpos.edit')->with('eventoExpo', $eventoExpo);
+        return view('eventoExpos.edit')->with(['eventoExpo' => $eventoExpo,'selectores' => $selectores]);
     }
 
     /**

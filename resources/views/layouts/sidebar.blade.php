@@ -61,6 +61,8 @@
                          <li ruta="eventoExpos"><a href="{{ url('/eventoExpos') }}"><span>Evento Expo</span></a></li>
                          <li ruta="estudiantes"><a href="{{ url('/estudiantes') }}"><span>Estudiantes</span></a></li>
                          <li ruta="semilleros"><a href="{{ url('/semilleros') }}"><span>Semilleros</span></a></li>
+                         <li ruta="proyectos"><a href="{{ url('/proyectos') }}"><span>Proyectos</span></a></li>
+
 
                          
 
