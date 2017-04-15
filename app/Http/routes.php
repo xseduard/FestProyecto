@@ -28,7 +28,8 @@ Route::get('admin', function () {
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth(); //loog in loog out
-    Route::get('/', function () {return view('auth.login');});
+    Route::get('/', function () {return view('auth.login_elementary');});
+    //Route::get('/', function () {return view('auth.login');});
     Route::get('/admin', 'InicialController@index');
     Route::get('/home', 'HomeController@index');
     Route::get('/forma', 'formaController@index');
