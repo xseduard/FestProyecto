@@ -70,3 +70,5 @@ Route::resource("semilleros", "SemilleroAPIController");
 Route::resource("proyectos", "ProyectoAPIController");
 
 Route::resource("notas", "NotaAPIController");
+
+Route::resource("relIntegras", "RelIntegraAPIController");

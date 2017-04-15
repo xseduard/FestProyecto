@@ -248,3 +248,15 @@ Route::group(['middleware' => ['web']], function () {
 	    'uses' => 'NotaController@destroy',
 	]);
 });
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("relIntegras", "RelIntegraController");
+
+	Route::get('relIntegras/delete/{id}', [
+	    'as' => 'relIntegras.delete',
+	    'uses' => 'RelIntegraController@destroy',
+	]);
+});
