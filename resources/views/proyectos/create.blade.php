@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layoutsweb.app')
 
 @section('customcss')
 @endsection
 @section('content')
 
   
-     <div class="col-md-12">
+     <div class="col-md-12 tab-content tab6-cont">
      @include('common.errors')
               <!-- formulario general de create -->
               <div class="box box-primary">
