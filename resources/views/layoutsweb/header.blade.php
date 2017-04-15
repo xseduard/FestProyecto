@@ -6,7 +6,7 @@
 						<!-- LOGO --> 
 						<div class="logo-container-2">
                 <div class="logo-2">
-                  <a href="elementary/index.html" class="clearfix">
+                  <a href="/" class="clearfix">
                     <img src="elementary/images/logo.png" class="logo-img" alt="Logo">
                   </a>
                 </div>
