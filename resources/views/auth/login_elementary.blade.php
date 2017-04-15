@@ -19,7 +19,7 @@
                                     <span class="help-block">
                                         <strong>{{ $errors->first('cedula') }}</strong>
                                     </span>
-                                @endif
+                       @endif
                     </div>
                   </div>
                 </div>

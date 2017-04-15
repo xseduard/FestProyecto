@@ -24,10 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return redirect(route('proyectos.index'));
+        //return redirect(route('proyectos.index'));
         /**
          * backup eduard
          */
         // return view('home');
+           return view('layoutsweb.app');
+
     }
 }
