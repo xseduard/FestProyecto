@@ -19,7 +19,7 @@
             type: "3D",
             origo: "slidercenter",
             speed: 1000,
-            levels: [0, 10, 15, 20 ],
+            levels: [50],
             type: "3D",
             ddd_shadow: "off",
             ddd_bgfreeze: "off",

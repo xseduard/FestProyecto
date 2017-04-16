@@ -1,13 +1,14 @@
 
 
-            <div class="rev_slider_wrapper fullscreen-container" id="rev_slider_280_1_wrapper" style="background-color:#000;padding:0px;">
+            <div class="rev_slider_wrapper fullscreen-container" id="rev_slider_280_1_wrapper" style="background-color:#00A7D4;padding:0px;">
                 <!-- START REVOLUTION SLIDER 5.1.4 fullscreen mode -->
                 <div class="rev_slider fullscreenbanner" data-version="5.1.4" id="rev_slider_280_1" style="display:none;">
                     <ul>
                         <!-- SLIDE -->
                         <li data-description="" data-easein="Power2.easeInOut" data-easeout="default" data-index="rs-898" data-masterspeed="1500" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-title="Slide" data-transition="fade">
                             <!-- MAIN IMAGE -->
-                            <img alt="img" class="rev-slidebg" data-bgparallax="12" data-bgposition="center center" data-duration="30000" data-ease="Linear.easeNone" data-no-retina="" src="elementary/img/background-3.jpg">
+                            <img alt="img" class="rev-slidebg" data-bgparallax="1" data-bgposition="center center" data-duration="30000" data-ease="Linear.easeNone" data-no-retina="" src="elementary/img/background-4.jpg">
+
                             <!-- LAYERS -->
                            <!-- LAYER NR. 1 -->
                             <div class="tp-caption font-poppins font-white tp-resizeme rs-parallaxlevel-6" id="slide-898-layer-1" style="z-index: 8; white-space: nowrap;"
@@ -29,7 +30,7 @@
                             data-x="['left','left','center','center']" 
                             data-hoffset="['40','40','0','0']" 
                             data-y="['center','center','center','center']" 
-                            data-voffset="['-50','-50','-50','-50']"><span class="bold">Creative Agency</span></div> 
+                            data-voffset="['-50','-50','-50','-50']"><span class="bold">Proyectos</span></div> 
 
                             <!-- LAYER NR. 2 -->
                             <div class="tp-caption font-poppins font-white tp-resizeme rs-parallaxlevel-6" id="slide-898-layer-2" style="z-index: 8; white-space: nowrap;"
@@ -52,7 +53,7 @@
                             data-hoffset="['40','40','0','0']" 
                             data-y="['center','center','center','center']" 
                             data-voffset="['20','20','5',-5']">
-                              branding<span class="slash-divider-10">/</span>design<span class="slash-divider-10">/</span>development<span class="slash-divider-10">/</span>photo
+                              Crea<span class="slash-divider-10">/</span>Modifica<span class="slash-divider-10">/</span>Gestiona<span class="slash-divider-10">/</span>Publica
                             </div>
 
                             <!-- LAYER NR. 3 -->
