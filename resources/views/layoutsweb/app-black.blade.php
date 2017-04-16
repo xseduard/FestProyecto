@@ -2,7 +2,7 @@
 
 <html>
  	<head>
-	<title>{{ $page_title or "FestProyecto Dashboard" }}</title>
+		<title>{{ $page_title or "FestProyecto Dashboard" }}</title>
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
@@ -21,13 +21,13 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-	<meta charset=utf-8 >
-	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-	<meta name="robots" content="index, follow" > 
-	<meta name="keywords" content="HTML5 Template" > 
-	<meta name="description" content="Elementy - Responsive HTML5 Template" > 
-	<meta name="author" content="Vladimir Azarushkin">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta charset=utf-8 >
+		<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+		<meta name="robots" content="index, follow" > 
+		<meta name="keywords" content="HTML5 Template" > 
+		<meta name="description" content="Elementy - Responsive HTML5 Template" > 
+		<meta name="author" content="Vladimir Azarushkin">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="theme-color" content="#2a2b2f">
     
     @include('layoutsweb.styles')

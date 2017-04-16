@@ -67,7 +67,6 @@ class ProyectoController extends AppBaseController
             'linea'=> Linea_Investigacion::selLinea(),
             'grupojurado'=> GrupoJurado::selGrupoJurado()        
         ];
-
         return view('proyectos.create')->with(['selectores' => $selectores]);
        
     }

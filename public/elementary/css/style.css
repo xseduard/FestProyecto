@@ -248,14 +248,16 @@ body {
 .bold { font-weight:bold !important;}
 .font-light { font-weight:100 !important;}
 .font-norm { font-weight:normal !important;}
+/*
 ::selection{
-	background-color: #ffea00;
+	background-color: #ffea00; //edit eduard
   color:#2a2b2f;
 }
 ::-moz-selection {
 	background-color: #ffea00;
   color:#2a2b2f;
 }
+*/
 .relative {position: relative;}
 .absolute {position:absolute;}
 
@@ -8664,7 +8666,7 @@ button {
 
 /*****	#ANIMATION BUTTONS	*****/
 .btn-4 {
-	overflow: hidden;
+	// overflow: hidden; xseduard
 	padding-right: 40px !important;
 	padding-left: 40px !important;
 }

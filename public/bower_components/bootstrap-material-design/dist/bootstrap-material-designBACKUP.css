@@ -3,7 +3,13 @@
   font-weight: normal; }
 
 /*! normalize.css v4.0.0 | MIT License | github.com/necolas/normalize.css */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
 
+body {
+  margin: 0; }
 
 article,
 aside,
@@ -210,7 +216,14 @@ textarea {
   tr,
   img {
     page-break-inside: avoid; }
- 
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+  h2,
+  h3 {
+    page-break-after: avoid; }
   .navbar {
     display: none; }
   .btn > .caret, .custom-file-control::before > .caret,
@@ -245,26 +258,25 @@ html {
   font-size: 16px;
   -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: transparent; }
-/*
+
 body {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   color: rgba(0, 0, 0, 0.87);
   background-color: #fafafa; }
-*/
+
 [tabindex="-1"]:focus {
   outline: none !important; }
-/*
+
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: .5rem; }
-*/
-/*
+
 p {
   margin-top: 0;
   margin-bottom: 1rem; }
-*/
+
 abbr[title],
 abbr[data-original-title] {
   cursor: help;
@@ -408,8 +420,31 @@ output {
 [hidden] {
   display: none !important; }
 
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: 0.25rem;
+  font-family: inherit;
+  font-weight: 400;
+  line-height: 1.1;
+  color: inherit; }
 
+h1, .h1 {
+  font-size: 2.5rem; }
 
+h2, .h2 {
+  font-size: 2rem; }
+
+h3, .h3 {
+  font-size: 1.75rem; }
+
+h4, .h4 {
+  font-size: 1.5rem; }
+
+h5, .h5 {
+  font-size: 1.25rem; }
+
+h6, .h6 {
+  font-size: 1rem; }
 
 .lead {
   font-size: 1.25rem;
@@ -9565,7 +9600,7 @@ select, select.form-control, select.custom-file-control {
 
 .nav .nav-item {
   position: relative; }
-/*
+
 .navbar {
   z-index: 1;
   border: 0;
@@ -9601,7 +9636,6 @@ select, select.form-control, select.custom-file-control {
         -ms-flex: 1;
             flex: 1; }
 
-*/
 .alert {
   border: 0;
   border-radius: 0; }

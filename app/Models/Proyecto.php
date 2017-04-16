@@ -166,6 +166,8 @@ class Proyecto extends Model
         'boo_contenido'
     ];
 
+
+
     /**
      * The attributes that should be casted to native types. 
      * (señala el tipo de atributo)
@@ -207,5 +209,25 @@ class Proyecto extends Model
         'user_id' => '',
         'linea_id' => 'required',
         'titulo' => 'required'
+    ];
+
+    public static $name_attributes = [
+        'pais' => 'pais',
+        'universidad' => 'Universidad',
+        'regional_id' => 'Regional',
+        'semillero_id' => 'Semillero',
+        'area_id' => 'Área',
+        'programa_id' => 'Sub Área',
+        'user_id' => 'Usuario',
+        'estado_id' => 'Estado',
+        'linea_id' => 'Linea deinvestigación',
+        'grupojurado_id' => 'Comité de Jurado',
+        'evento_expo_id' => 'Evento de Exposición',
+        'tipo' => 'Tipo de proyecto',
+        'titulo' => 'Titulo',
+        'descripcion' => 'Descripción',
+        'progreso_estimado' => 'Progreso estimado',        
+        'detalles_publicacion' => 'Detalles de publicación',
+        
     ];
 }

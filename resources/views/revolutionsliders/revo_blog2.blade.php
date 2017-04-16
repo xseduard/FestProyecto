@@ -1,4 +1,3 @@
-<div class="relative indent-header">
 
             <div class="rev_slider_wrapper fullwidthbanner-container" id="rev_slider_280_1_wrapper" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
                 <!-- START REVOLUTION SLIDER 5.1.4 fullwidth mode -->
@@ -7,7 +6,7 @@
                         <!-- SLIDE  -->
                         <li data-index="rs-672" data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0" data-saveperformance="off" data-description="">
                             <!-- MAIN IMAGE -->
-                            <img src="../elementary/images/revo-slider/blog.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
+                            <img src="../elementary/img/background-2.png" alt="" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
                             <!-- LAYERS -->
 
                             <!-- LAYER NR. 1 -->
@@ -31,7 +30,7 @@
                             data-hoffset="['0','0','0','0']" 
                             data-y="['center','center','center','center']" 
                             data-voffset="['0','0','0','0']">
-                              Proyectos 
+                               Proyectos
                             </div> 
                             
                             
@@ -41,5 +40,4 @@
                 </div>
             </div>
             <!-- END REVOLUTION SLIDER -->
-          
-        </div>
+      

@@ -1,5 +1,8 @@
-@extends('layouts.app')
-
+@extends('layoutsweb.app')
+@section('head')
+  @include('layoutsweb.header')
+  @include('layoutsweb.revoblog')
+@endsection
 @section('content')
 <div class="container">
     <div class="row">

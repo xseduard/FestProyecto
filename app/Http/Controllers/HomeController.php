@@ -29,7 +29,7 @@ class HomeController extends Controller
          * backup eduard
          */
         // return view('home');
-           return view('layoutsweb.app');
+           return view('home');
 
     }
 }

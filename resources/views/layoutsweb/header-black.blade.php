@@ -1,5 +1,5 @@
 <div class="header-black-bg"></div> <!-- NEED FOR TRANSPARENT HEADER ON MOBILE -->
-<header id="nav" class="header header-1 header-black">
+<header id="nav" class="header header-1 no-transparent mobile-no-transparent">
 				  <div class="header-wrapper">
 					<div class="container-m-30 clearfix">
 					  <div class="logo-row">
@@ -8,7 +8,7 @@
 						<div class="logo-container-2">
                 <div class="logo-2">
                   <a href="/" class="clearfix">
-                    <img src="../elementary/img/logo-white.png" class="logo-img" alt="Logo">
+                    <img src="../elementary/img/logo.png" class="logo-img" alt="Logo">
                   </a>
                 </div>
               </div>

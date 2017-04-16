@@ -18,12 +18,8 @@ class CreateProyectoRequest extends Request {
     }
 
    public function attributes() {
-        return [
-
-         "" => "",
-         "" => "",
     
-        ];
+        return Proyecto::$name_attributes;
 
     /**
      * Reglas de validación importadas desde el modelo Proyecto.

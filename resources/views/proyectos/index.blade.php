@@ -1,8 +1,23 @@
-@extends('layouts.app')
+@extends('layoutsweb.app')
+
+@section('customcss')
+@endsection
+
+@section('head')
+  @include('layoutsweb.header')
+  <div class="relative">
+<!-- menu transparente -->
+<!-- <div class="relative indent-header"> -->
+  @include('revolutionsliders.revo_proyectos')
+  </div>
+
+@endsection
 
 @section('content')
 
- 
+      <!-- SLIDER Revo Hero 4 -->
+    
+<!-- Banner-Educación-Continuada-2.png -->
         <section class="content">
             <div class="clearfix"></div>
                @include('flash::message')
@@ -32,4 +47,8 @@
              
 
 
+@endsection
+
+@section('customjs')
+ @include('revolutionsliders.script_fullscreen')
 @endsection
