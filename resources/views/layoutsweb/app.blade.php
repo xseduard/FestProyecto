@@ -51,15 +51,20 @@
     
     <!--  BOOTSTRAP -->
     {!! Html::style('elementary/css/bootstrap.min.css') !!}
+
 	
     <!-- ICONS ELEGANT FONT & FONT AWESOME & LINEA ICONS  -->	
     {!! Html::style('elementary/css/icons-fonts.css') !!}	
 		
     <!--  CSS THEME -->	
     {!! Html::style('elementary/css/style.css') !!}	
+
+    <!--  CSS THEME --> 
+    {!! Html::style('custom/custom.css') !!} 
 		
     <!-- ANIMATE -->
     {!! Html::style('elementary/css/animate.min.css') !!}	
+
 	
 		
     <!-- IE Warning CSS -->

@@ -19,7 +19,7 @@
 
 <!-- Regional Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('regional_id', 'Regional:') !!}
+    {!! Form::label('regional_id', 'Regional:', ['class'=> 'bar']) !!}
     {!! Form::select('regional_id', $selectores['regional'], null, ['class' => 'form-control']) !!}
 </div>
 
