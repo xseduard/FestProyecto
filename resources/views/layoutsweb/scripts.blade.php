@@ -52,6 +52,8 @@
 
     {!! Html::script('/bower_components/bootstrap-material-design/dist/bootstrap-material-design.umd.js') !!}
 
+    {!! Html::script('bower_components/sweetalert/dist/sweetalert.min.js') !!}
+
      {!! Html::script('/custom/main.js') !!}
 
     

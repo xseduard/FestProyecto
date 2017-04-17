@@ -77,7 +77,10 @@
                               data-responsive_offset="on" 
                               data-responsive="off"
                               
-                              style="z-index: 8; white-space: nowrap;outline:none;"><a class="tp-button1 button medium full-rounded hover-dark white scroll-down smooth-scroll" href="#about">ver proyectos</a><a class="tp-button1 button medium full-rounded thin white ml-20 " href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">READ MORE</a>
+                              style="z-index: 8; white-space: nowrap;outline:none;">
+                              <a class="tp-button1 button medium full-rounded thin white ml-20  scroll-down smooth-scroll" href="#misproyectos">Mis Proyectos</a>
+                              <a class="tp-button1 button medium full-rounded hover-dark white scroll-down smooth-scroll" href="{!! route('proyectos.create') !!}">Crear Proyecto</a>
+
                             </div>           
                         </li>
                     </ul>

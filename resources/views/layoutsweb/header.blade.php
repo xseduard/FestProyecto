@@ -8,7 +8,7 @@
 						<div class="logo-container-2">
                 <div class="logo-2">
                   <a href="/" class="clearfix">
-                    <img src="../elementary/img/logo-white.png" class="logo-img" alt="Logo">
+                    <img src="../../elementary/img/logo-white.png" class="logo-img" alt="Logo">
                   </a>
                 </div>
               </div>

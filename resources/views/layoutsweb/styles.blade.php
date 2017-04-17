@@ -28,6 +28,8 @@
     <!--  CSS Materialize boostrap --> 
     {!! Html::style('/bower_components/bootstrap-material-design/dist/bootstrap-material-design.css') !!}
 
+    {!! Html::style('/bower_components/sweetalert/dist/sweetalert.css') !!}
+
 
 
 	

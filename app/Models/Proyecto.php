@@ -230,4 +230,35 @@ class Proyecto extends Model
         'detalles_publicacion' => 'Detalles de publicación',
         
     ];
+    /**
+     * Relaciones
+     */
+    public function regional(){
+        return $this->belongsTo('App\Models\Regional');
+    }
+    public function area(){
+        return $this->belongsTo(Area::class);
+    }
+    public function programa(){
+        return $this->belongsTo(programa::class);
+    }
+    public function grupojurado(){
+        return $this->belongsTo('App\Models\GrupoJurado');
+    }
+    public function usuario(){
+        return $this->belongsTo('App\User', 'user_id');
+    }
+    public function semillero(){
+        return $this->belongsTo('App\Models\Semillero');
+    }
+    public function linea(){
+        return $this->belongsTo('App\Models\Linea_Investigacion');
+    }
+    public function estado(){
+        return $this->belongsTo('App\Models\Estado');
+    }
+    public function evento(){
+        return $this->belongsTo('App\Models\EventoExpo', 'evento_expo_id');
+    }
+
 }

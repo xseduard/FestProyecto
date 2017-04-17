@@ -6,7 +6,7 @@
                         <!-- SLIDE  -->
                         <li data-index="rs-672" data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0" data-saveperformance="off" data-description="">
                             <!-- MAIN IMAGE -->
-                            <img src="../elementary/img/background-2.png" alt="" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
+                            <img src="../../elementary/img/background-2.png" alt="" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
                             <!-- LAYERS -->
 
                               <!-- LAYER NR. 1 -->

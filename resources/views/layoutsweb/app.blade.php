@@ -67,7 +67,7 @@
         
 				<!-- BACK TO TOP -->
 				<p id="back-top">
-          <a href="elementary/#top" title="Back to Top"><span class="icon icon-arrows-up"></span></a>
+          <a href="#top" title="Volver arriba"><span class="icon icon-arrows-up"></span></a>
         </p>
         
 			</div><!-- End BG -->	

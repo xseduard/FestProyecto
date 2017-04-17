@@ -5,7 +5,7 @@
               <div class="col-md-3 col-sm-3 widget">
                 <div class="logo-footer-cont">
                   <a href="elementary/index.html">
-                    <img class="logo-footer" src="../elementary/img/logo-footer-white.png" alt="logo">
+                    <img class="logo-footer" src="../../elementary/img/logo-footer-white.png" alt="logo">
                   </a>
                 </div>
                 <div class="footer2-text-cont">

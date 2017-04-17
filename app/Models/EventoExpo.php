@@ -105,7 +105,7 @@ class EventoExpo extends Model
     public function grupojurado(){
         return $this->belongsTo('App\Models\GrupoJurado');
     }
-        public function usuario(){
+    public function usuario(){
         return $this->belongsTo('App\User', 'user_id');
     }
 }
