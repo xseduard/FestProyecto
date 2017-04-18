@@ -49,7 +49,29 @@ class ProyectoController extends AppBaseController
         return view('proyectos.index')
             ->with('proyectos', $proyectos);
     }
+/**
+ * revision proyectos funcion
+ */
 
+    public function revision_proyectos(request $request)
+    {
+
+        $proyectos = $this->proyectoRepository->paginate(10);
+
+        $selectores = [
+            'regional' => Regional::selRegional(),
+            'semillero'=> Semillero::selSemillero(),
+            'area'=> area::selArea(),
+            'programa'=> programa::selPrograma(),
+            'evento' => EventoExpo::selEvento(),            
+            'estado'=> Estado::selEstado(),
+            'linea'=> Linea_Investigacion::selLinea(),
+            'grupojurado'=> GrupoJurado::selGrupoJurado()        
+        ];
+        return view('proyectos.index_revision')->with(['proyectos' => $proyectos, 'selectores' => $selectores]);
+        
+       
+    }
     /**
      * Show the form for creating a new Proyecto.
      *
@@ -191,5 +213,44 @@ class ProyectoController extends AppBaseController
         Flash::success('Proyecto eliminado correctamente.');
 
         return redirect(route('proyectos.index'));
+    }
+
+    public function solicitarRevision($id)
+    {
+        $proyecto = $this->proyectoRepository->findWithoutFail($id);
+
+        if (empty($proyecto)) {
+            Flash::error('Proyecto No se encuentra en encuentra registrado');
+
+            return redirect(route('proyectos.index'));
+        }
+        
+        $nuevo['boo_solicitud_revision']='1';
+
+        $proyecto = $this->proyectoRepository->update($nuevo, $id);
+
+        Flash::success('Proyecto actualizado correctamente.');
+
+        return redirect(route('proyectos.index'));
+    }
+
+    public function asignar(request $request)
+    {
+       
+        $proyecto = $this->proyectoRepository->findWithoutFail($request->id);
+
+        if (empty($proyecto)) {
+            Flash::error('Proyecto No se encuentra en encuentra registrado');
+
+            return redirect(route('proyectos.revision_proyectos'));
+        }
+        
+        
+
+        $proyecto = $this->proyectoRepository->update($request->all(), $request->id);
+
+        Flash::success('Proyecto actualizado correctamente.');
+
+        return redirect(route('proyectos.revision_proyectos'));
     }
 }

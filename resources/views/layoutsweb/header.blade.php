@@ -265,7 +265,7 @@
                                               
                         <!-- MENU ITEM -->
                         <li id="menu-contact-info-big" class="parent megamenu">
-                          <a href="elementary/#" class="open-sub"><div class="main-menu-title">Contact</div></a>
+                          <a href="#" class="open-sub"><div class="main-menu-title">Contacto</div></a>
                           <ul class="sub">
                             <li class="clearfix" >
                               <div class="menu-sub-container">
@@ -314,6 +314,56 @@
                               </div>
                             </li>
                           </ul>
+                        </li>
+                        <li>
+                          <li class="dropdown user user-menu">
+                    <!-- Menu Toggle Button -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <!-- The user image in the navbar-->
+                        <img src="                        
+                            @if (Auth::user()->role=='administrador')
+                                {{asset('/bower_components/admin-lte/dist/img/userADMIN.jpg')}}
+                            @else
+                                {{asset('/bower_components/admin-lte/dist/img/user4-128x128.jpg')}}
+                            @endif
+
+                        " class="user-image" alt="User Image"/>
+                        <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                        <span class="hidden-xs">{{ Auth::user()->nombres  }}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- The user image in the menu -->
+                        <li class="user-header">
+                            
+                            <p>
+                                {{ Auth::user()->nombres, Auth::user()->apellidos }} - {{ Auth::user()->role }} 
+                                {{ Auth::user()->email }}
+                                <small>Miembro desde {{ Auth::user()->created_at }}.</small>
+                            </p>
+                        </li>
+                        <!-- Menu Body -->
+                        <li class="user-body">
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Seguidores</a>
+                            </div>
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Sales</a>
+                            </div>
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Amigos</a>
+                            </div>
+                        </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="{{ url('/logout') }}" class="btn btn-default btn-flat">Cerrar session</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
                         </li>
                       
                       </ul>

@@ -255,6 +255,22 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'proyectos.delete',
 	    'uses' => 'ProyectoController@destroy',
 	]);
+
+	Route::get('revision_proyectos', [
+	    'as' => 'proyectos.revision_proyectos',
+	    'uses' => 'ProyectoController@revision_proyectos',
+	]);
+
+	
+	Route::get('proyectos/rev/{id}', [
+	    'as' => 'proyectos.rev',
+	    'uses' => 'ProyectoController@solicitarRevision',
+	]);
+	Route::post('proyectos/asignar', [
+	    'as' => 'proyectos.asignar',
+	    'uses' => 'ProyectoController@asignar',
+	]);
+   // Route::get('/index2', 'HomeController@index');
 });
 
 

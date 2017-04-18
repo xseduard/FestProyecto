@@ -97,6 +97,14 @@ class EventoExpo extends Model
         'grupojurado_id' => 'required',
         'nombre' => 'required'
     ];
+    public static function selEvento(){
+        //$array['']= "seleccione...";
+        $modelo = EventoExpo::all()->toArray();
+            foreach ($modelo as $key => $value) {
+                $array[$value['id']]=$value['nombre'];
+            }
+        return ($array);
+    }
 
     /**
      * Relaciones

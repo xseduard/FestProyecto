@@ -18,7 +18,7 @@
                 parallax: {
             type: "3D",
             origo: "slidercenter",
-            speed: 1000,
+            speed: 4500,
             levels: [50],
             type: "3D",
             ddd_shadow: "off",

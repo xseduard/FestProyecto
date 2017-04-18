@@ -26,14 +26,14 @@
         <div id="misproyectos" class="page-section">
 
 
-              <div class="col-lg-10 col-md-10">
-                <div class="fes1-main-title-cont wow fadeInUp">
+              <div class="col-lg-8 col-md-8 wow fadeInUp" style="">
+                <div class="fes1-main-title-cont ">
                   <div class="fes15-title-32">
-                    Mis<br>Proyectos
+                    Mis Proyectos
                   </div>
                 </div>
               </div>
-              <div class="col-lg-2 col-md-2">
+              <div class="col-lg-4 col-md-4">
                   <div class="fes1-main-title-cont wow fadeInUp">
                 <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('proyectos.create') !!}"><i class="fa fa-plus"></i> Agregar</a>
               </div>
@@ -80,7 +80,7 @@
               <!-- SEARCH -->
               <div class="widget">
                 <form class="form-search widget-search-form" action="page-search-results.html" method="get">
-                  <input type="text" name="q" class="input-search-widget" placeholder="Search">
+                  <input type="text" name="q" class="input-search-widget" placeholder="Buscar">
                   <button  type="submit" title="Start Search">
                     <span aria-hidden="true" class="icon_search"></span>
                   </button>
@@ -90,7 +90,7 @@
               <!-- WIDGET -->
               <div class="widget">
                 
-                <h5 class="widget-title2">Categories</h5>
+                <h5 class="widget-title2">Áreas</h5>
                 
                 <div class="widget-body">
                   <ul class="clearlist widget-menu font-poppins">
