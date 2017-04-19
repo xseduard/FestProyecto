@@ -40,9 +40,6 @@
                     <span class="button-text-anim">Cancelar</span>                  
                     <div class="button-icon-anim icon icon-arrows-deny"></div>
                   </a>
-
-
-                 
                   
               </div>
             </div>

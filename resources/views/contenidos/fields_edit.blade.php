@@ -6,7 +6,6 @@
     {!! Form::textarea('a1', null, ['class' => 'form-control']) !!}
 </div>
 
-<h3>{!! $titulo['a2']['capitulo'] !!}</h3>
 <!-- A2 Field -->
 <div class=" col-sm-12 col-lg-12" id="a2">
     {!! Form::label('a2', $titulo['a2']['titulo']) !!}
@@ -19,8 +18,6 @@
     {!! Form::textarea('a3', null, ['class' => 'form-control']) !!}
 </div>
 
-
-<h3>{!! $titulo['a4']['capitulo'] !!}</h3>
 <!-- A4 Field -->
 <div class=" col-sm-12 col-lg-12" id="a4">
     {!! Form::label('a4', $titulo['a4']['titulo']) !!}
@@ -45,7 +42,6 @@
     {!! Form::textarea('a7', null, ['class' => 'form-control']) !!}
 </div>
 
-<h3>{!! $titulo['a8']['capitulo'] !!}</h3>
 <!-- A8 Field -->
 <div class=" col-sm-12 col-lg-12" id="a8">
     {!! Form::label('a8', $titulo['a8']['titulo']) !!}
@@ -76,7 +72,6 @@
     {!! Form::textarea('a12', null, ['class' => 'form-control']) !!}
 </div>
 
-<h3>{!! $titulo['a13']['capitulo'] !!}</h3>
 <!-- A13 Field -->
 <div class=" col-sm-12 col-lg-12" id="a13">
     {!! Form::label('a13', $titulo['a13']['titulo']) !!}
@@ -125,7 +120,6 @@
     {!! Form::textarea('a20', null, ['class' => 'form-control']) !!}
 </div>
 
-<h3>{!! $titulo['a21']['capitulo'] !!}</h3>
 <!-- A21 Field -->
 <div class="form-group col-sm-12 col-lg-12" id="a21">
     {!! Form::label('a21', $titulo['a21']['titulo']) !!}
@@ -138,7 +132,6 @@
     {!! Form::textarea('a22', null, ['class' => 'form-control']) !!}
 </div>
 
-<h3>{!! $titulo['a23']['capitulo'] !!}</h3>
 <!-- A23 Field -->
 <div class="form-group col-sm-12 col-lg-12" id="a23">
     {!! Form::label('a23', $titulo['a23']['titulo']) !!}

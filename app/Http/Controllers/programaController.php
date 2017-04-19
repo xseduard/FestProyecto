@@ -48,7 +48,7 @@ class programaController extends AppBaseController
     public function create()
     {   
          $ar_area = area::selArea();
-        return view('programas.create')->with(['ar_area' => $ar_area]);;
+        return view('programas.create')->with(['ar_area' => $ar_area]);
     }
 
     /**

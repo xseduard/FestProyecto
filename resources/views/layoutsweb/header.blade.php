@@ -35,14 +35,15 @@
                       <ul class="nav navbar-nav">
                         
                         <!-- MENU ITEM -->
+                        @if(Auth::user()->role=='estudiante' || Auth::user()->role=='administrador')
                         <li class="parent current">
-                          <a href="elementary/#" class="open-sub"><div class="main-menu-title">Estudiantes</div></a>
+                          <a href="#" class="open-sub"><div class="main-menu-title">Estudiantes</div></a>
                           <ul class="sub">                         
                             <a href="{!! route('proyectos.create') !!}">Crear Proyecto</a>
                             <a href="{!! route('proyectos.index') !!}" >Ver Proyectos</a>
-
-                             <li class="parent">
-                            <a href="elementary/#" class="open-sub">Headers</a>
+                            
+                            <li class="parent">
+                            <a href="/#" class="open-sub">Headers</a>
                             <ul class="sub">
                               <li><a href="elementary/index7.html">Boxed</a></li>
                               <li><a href="elementary/one-page-index8.html">Bottom</a></li>
@@ -54,10 +55,21 @@
                           </li>                         
                           </ul>
                         </li>
+                        @endif
+                        <!-- MENU ITEM -->
+                        @if(Auth::user()->role=='coordinador')
+                          <li class="parent">
+                          <a href="#" class="open-sub"><div class="main-menu-title">Coordinador</div></a>
+                          <ul class="sub">                         
+                            <a href="{!! route('proyectos.revision_proyectos') !!}">Revisar Proyectos</a>
+                                                                      
+                          </ul>
+                        </li>
+                        @endif
 
-                        
 
                         <!-- MEGA MENU ITEM -->
+                        @if(Auth::user()->role=='administrador')
                         <li class="parent megamenu">
                           <a href="elementary/#" class="open-sub"><div class="main-menu-title">Administrador</div></a>
                           <ul class="sub">
@@ -96,172 +108,13 @@
                           </ul>
                         </li>					
                         
-                        <!-- MENU ITEM -->
-                        <li class="parent">
-                          <a href="elementary/#" class="open-sub"><div class="main-menu-title">Portfolio</div></a>
-                          <ul class="sub">
-                            <li><a href="elementary/index-portfolio.html">Home - Portfolio 1</a></li>
-                            <li><a href="elementary/index-photo.html">Home - Portfolio 2</a></li>
-                            <li><a href="elementary/portfolio-grid.html">Portfolio Grid</a></li>
-                            <li class="parent">
-                              <a href="elementary/#" class="open-sub">Boxed</a>
-                              <ul class="sub">
-                                <li><a href="elementary/portfolio-boxed-2col.html">2 Columns</a></li>
-                                <li><a href="elementary/portfolio-boxed-3col.html">3 Columns</a></li>
-                                <li><a href="elementary/portfolio-boxed-4col.html">4 Columns</a></li>
-                                <li><a href="elementary/portfolio-boxed-5col.html">5 Columns</a></li>
-                              </ul>
-                            </li>
-                            <li class="parent">
-                              <a href="elementary/#" class="open-sub">Boxed bordered</a>
-                              <ul class="sub">
-                                <li><a href="elementary/portfolio-boxed-gut-2col.html">2 Columns</a></li>
-                                <li><a href="elementary/portfolio-boxed-gut-3col.html">3 Columns</a></li>
-                                <li><a href="elementary/portfolio-boxed-gut-4col.html">4 Columns</a></li>
-                                
-                              </ul>
-                            </li>
-                            <li class="parent">
-                              <a href="elementary/#" class="open-sub">Wide</a>
-                              <ul class="sub">
-                                <li><a href="elementary/portfolio-wide-2col.html">2 Columns</a></li>
-                                <li><a href="elementary/portfolio-wide-3col.html">3 Columns</a></li>
-                                <li><a href="elementary/portfolio-wide-4col.html">4 Columns</a></li>
-                                <li><a href="elementary/portfolio-wide-5col.html">5 Columns</a></li>
-                              </ul>
-                            </li>
-                            <li class="parent">
-                              <a href="elementary/#" class="open-sub">Wide bordered</a>
-                              <ul class="sub">
-                                <li><a href="elementary/portfolio-wide-gut-2col.html">2 Columns</a></li>
-                                <li><a href="elementary/portfolio-wide-gut-3col.html">3 Columns</a></li>
-                                <li><a href="elementary/portfolio-wide-gut-4col.html">4 Columns</a></li>
-                                <li><a href="elementary/portfolio-wide-gut-5col.html">5 Columns</a></li>
-                              </ul>
-                            </li>
-                            <li class="parent">
-                              <a href="elementary/#" class="open-sub">Masonry</a>
-                              <ul class="sub">
-                                <li><a href="elementary/portfolio-masonry-2col.html">2 Columns</a></li>
-                                <li><a href="elementary/portfolio-masonry-3col.html">3 Columns</a></li>
-                                <li><a href="elementary/portfolio-masonry-4col.html">4 Columns</a></li>
-                                
-                              </ul>
-                            </li>
-                            <li class="parent">
-                              <a href="elementary/#" class="open-sub">Portfolio Single</a>
-                              <ul class="sub">
-                                <li><a href="elementary/portfolio-single1.html">Single 1</a></li>
-                                <li><a href="elementary/portfolio-single2.html">Single 2</a></li>
-                                <li><a href="elementary/portfolio-single3.html">Single 3</a></li>
-                                <li><a href="elementary/portfolio-single4.html">Single 4</a></li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </li>					
+                       				
+                        @endif
+                       
                         
-                        <!-- MENU ITEM -->
-                        <li class="parent">
-                          <a href="elementary/#" class="open-sub"><div class="main-menu-title">Blog</div></a>
-                          <ul class="sub">
-                            <li><a href="elementary/index-blog.html">Home - Blog 1</a></li>
-                            <li><a href="elementary/index-blog2.html">Home - Blog 2</a></li>
-                            <li class="parent">
-                              <a href="elementary/#" class="open-sub">Blog Masonry</a>
-                              <ul class="sub">
-                                <li><a href="elementary/blog-masonry-2col.html">2 Columns</a></li>
-                                <li><a href="elementary/blog-masonry-3col.html">3 Columns</a></li>
-                                <li><a href="elementary/blog-masonry-4col.html">4 Columns</a></li>
-                              </ul>
-                            </li>
-                            <li><a href="elementary/blog-full-width.html">Blog Full Width</a></li>
-                            <li><a href="elementary/blog-small-image.html">Blog Small Image</a></li>
-                            <li><a href="elementary/blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                            <li><a href="elementary/blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                            <li class="parent">
-                              <a href="elementary/#" class="open-sub">Blog Single</a>
-                              <ul class="sub">
-                              <li><a href="elementary/blog-single-disqus.html">Disqus Comments</a></li>
-                              <li><a href="elementary/blog-single-facebook.html">Facebook Comment</a></li>
-                              <li><a href="elementary/blog-single-sidebar-right.html">Right Sidebar</a></li>
-                              <li><a href="elementary/blog-single-sidebar-left.html">Left Sidebar</a></li>
-                              <li><a href="elementary/blog-single-fullwidth.html">Fullwidth</a></li>
-                              <li><a href="elementary/blog-single-fullwidth2.html">Fullwidth 2</a></li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </li>	
+                       
                         
-                        <!-- MENU ITEM -->
-                        <li class="parent">
-                          <a href="elementary/#" class="open-sub"><div class="main-menu-title">Shop</div></a>
-                          <ul class="sub">
-                            <li><a href="elementary/index-shop.html">Home - Shop</a></li>
-                            <li><a href="elementary/shop-2-col.html">2 Columns</a></li>
-                            <li><a href="elementary/shop-3-col.html">3 Columns</a></li>
-                            <li><a href="elementary/shop-4-col.html">4 Columns</a></li>
-                            <li><a href="elementary/shop-single.html">Shop Single</a></li>
-                            <li><a href="elementary/shop-shoping-cart.html">Shoping Cart</a></li>
-                            <li><a href="elementary/shop-checkout.html">Checkout</a></li>
-                          </ul>
-                        </li>
-                        
-                        <!-- MEGA MENU ITEM -->
-                        <li class="parent megamenu">
-                          <a href="elementary/#" class="open-sub"><div class="main-menu-title">Pages</div></a>
-                          <ul class="sub">
-                            <li>
-                            
-                              <div class="menu-sub-container">
-                                
-                                <div class="box col-md-3 nofloat closed">
-                                  <h5 class="title open-sub">Pages 01</h5>
-                                  <ul>
-                                    <li><a href="elementary/typography.html">Typography</a></li>
-                                    <li><a href="elementary/grid-system.html">Grid System</a></li>
-                                    <li><a href="elementary/services.html">Services</a></li>
-                                    <li><a href="elementary/services2.html">Services 2</a></li>
-                                    <li><a href="elementary/login.html">Login / Register</a></li>
-                                  </ul>
-                                </div>
-                                
-                                <div class="box col-md-3 nofloat closed">
-                                  <h5 class="title open-sub">Pages 02</h5>
-                                  <ul>
-                                    <li><a href="elementary/shortcodes.html">Shortcodes</a></li>
-                                    <li><a href="elementary/coming-soon.html">Coming Soon</a></li>
-                                    <li><a href="elementary/coming-soon2.html">Coming Soon 2</a></li>
-                                    <li><a href="elementary/404.html">404 Error</a></li>
-                                    <li><a href="elementary/maintenance-page.html">Maintenance Page</a></li>
-                                  </ul>
-                                </div>
-                                
-                                <div class="box col-md-3 nofloat closed">
-                                  <h5 class="title open-sub">Pages 03</h5>
-                                  <ul>
-                                    <li><a href="elementary/about-us.html">About Us</a></li>
-                                    <li><a href="elementary/about-us-2.html">About Us 2</a></li>
-                                    <li><a href="elementary/about-me.html">About Me</a></li>
-                                    <li><a href="elementary/team.html">Team</a></li>
-                                    <li><a href="elementary/loaders.html">Loaders</a></li>
-                                  </ul>
-                                </div>
-                                
-                                <div class="box col-md-3 nofloat closed">
-                                  <h5 class="title open-sub">Pages 04</h5>
-                                  <ul>
-                                    <li><a href="elementary/faq.html">FAQ</a></li>
-                                    <li><a href="elementary/layout-full-width.html">Layout Full Width</a></li>
-                                    <li><a href="elementary/layout-left-sidebar.html">Layout Left Sidebar</a></li>
-                                    <li><a href="elementary/layout-right-sidebar.html">Layout Right Sidebar</a></li>
-                                  </ul>
-                                </div>
-       
-                              </div>
-
-                            </li>
-                          </ul>
-                        </li>					
+                       	
                                               
                         <!-- MENU ITEM -->
                         <li id="menu-contact-info-big" class="parent megamenu">
@@ -271,10 +124,10 @@
                               <div class="menu-sub-container">
 
                                 <div class="box col-md-3 menu-demo-info closed">
-                                  <h5 class="title open-sub">Contact Pages</h5>
+                                  <h5 class="title open-sub">Contacta con nosotros</h5>
                                   <ul>
-                                  <li><a href="elementary/contact.html">Contact Version 1</a></li>
-                                  <li><a href="elementary/contact2.html">Contact Version 2</a></li>
+                                  <li><a href="elementary/contact.html">Regional CUN monteria</a></li>
+                                  <li><a href="elementary/contact2.html">Regional CUN Bogota Central</a></li>
                                   </ul>
                                 </div>
                                 
@@ -284,20 +137,20 @@
                                       <div class="loc-icon-container">
                                         <div class="icon icon-basic-map main-menu-contact-icon"></div>
                                       </div>
-                                      <div class="menu-contact-text-container">555 California str, Suite 100</div>
+                                      <div class="menu-contact-text-container"> Monteria, cl 30</div>
                                     </li>
                                     <li class="contact-phone clearfix">
                                       <div class="loc-icon-container">
                                         <div class="icon icon-basic-smartphone main-menu-contact-icon"></div>
                                       </div>	
-                                      <div class="menu-contact-text-container">1-80-100-10, 1-80-300-10</div>
+                                      <div class="menu-contact-text-container">01-800-000000, 01-800-000000</div>
                                     </li>
                                     <li class="contact-mail clearfix" >
                                       <div class="loc-icon-container">
                                         <div class="icon icon-basic-mail main-menu-contact-icon"></div>
                                       </div>
                                       <div class="menu-contact-text-container">							
-                                        <a class="a-mail" href="elementary/mailto:info@haswell.com">info@haswell.com</a>
+                                        <a class="a-mail" href="elementary/mailto:contacto@cun.edu.co">contacto@cun.edu.co</a>
                                       </div>	
                                     </li>
                                   </ul>
@@ -306,7 +159,7 @@
                                 <div class="col-md-6 menu-map-container hide-max-960 ">
                                   <!-- Google Maps -->
                                   <div class="google-map-container">
-                                    <img src="elementary/images/map-line.png" alt="alt">
+                                    <img src="../elementary/images/map-line.png" alt="alt">
                                   </div>
                                   <!-- Google Maps / End -->	
                                 </div>
@@ -315,6 +168,87 @@
                             </li>
                           </ul>
                         </li>
+
+<!-- menu user -->
+
+                <li id="menu-contact-info-big" class="parent megamenu">
+                          <a href="#" class="open-sub"><div class="main-menu-title">
+                          <img src="                        
+                            @if (Auth::user()->role=='administrador')
+                                {{asset('/bower_components/admin-lte/dist/img/userADMIN.jpg')}}
+                            @else
+                                {{asset('/bower_components/admin-lte/dist/img/user4-128x128.jpg')}}
+                            @endif
+
+                        " class="user-image" alt="User Image"/>
+                        <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                        <span class="hidden-xs">{{ Auth::user()->nombres  }}</span>
+                          </div></a>
+                          <ul class="sub">
+                            <li class="clearfix" >
+                              <div class="menu-sub-container">
+
+                                <div class="box col-md-3 menu-demo-info closed">
+                                  <h5 class="title open-sub">Acciones de usuario</h5>
+                                  <ul>
+
+                                  
+                              <li><a href="#" class="btn btn-default btn-flat">Perfil</a></li>                            
+                            
+                                <li><a href="{{ url('/logout') }}" class="btn btn-default btn-flat">Cerrar session</a></li>
+                          
+                                  </ul>
+                                </div>
+                                
+                                <div class="col-md-3 menu-contact-info">
+                                  <ul class="contact-list">
+                                    <li class="contact-loc clearfix">
+                                      <div class="loc-icon-container">
+                                        <div class="icon icon-basic-map main-menu-contact-icon"></div>
+                                      </div>
+                                      <div class="menu-contact-text-container"> Monteria, cl 30</div>
+                                    </li>
+                                    <li class="contact-phone clearfix">
+                                      <div class="loc-icon-container">
+                                        <div class="icon icon-basic-smartphone main-menu-contact-icon"></div>
+                                      </div>  
+                                      <div class="menu-contact-text-container">01-800-000000, 01-800-000000</div>
+                                    </li>
+                                    <li class="contact-mail clearfix" >
+                                      <div class="loc-icon-container">
+                                        <div class="icon icon-basic-mail main-menu-contact-icon"></div>
+                                      </div>
+                                      <div class="menu-contact-text-container">             
+                                        <a class="a-mail" href="elementary/mailto:contacto@cun.edu.co">contacto@cun.edu.co</a>
+                                      </div>  
+                                    </li>
+                                  </ul>
+                                </div>
+                                
+                                <div class="col-md-6 menu-map-container hide-max-960 ">
+                                  <!-- Google Maps -->
+                                  <div class="google-map-container">
+                                   <img src="                        
+                            @if (Auth::user()->role=='administrador')
+                                {{asset('/bower_components/admin-lte/dist/img/userADMIN.jpg')}}
+                            @else
+                                {{asset('/bower_components/admin-lte/dist/img/user4-128x128.jpg')}}
+                            @endif
+
+                        " class="user-image-full" alt="User Image"/>
+
+                                    
+                                  </div>
+                                  <!-- Google Maps / End -->  
+                                </div>
+                                
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+
+              <!-- fin menu user -->
+
                         <li>
                           <li class="dropdown user user-menu">
                     <!-- Menu Toggle Button -->

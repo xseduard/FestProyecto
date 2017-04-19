@@ -307,4 +307,22 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'contenidos.delete',
 	    'uses' => 'ContenidoController@destroy',
 	]);
+
+	Route::get('contenidos/crear/{id}', [
+	    'as' => 'contenidos.crear',
+	    'uses' => 'ContenidoController@crear',
+	]);
+
+});
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("titulos", "TituloController");
+
+	Route::get('titulos/delete/{id}', [
+	    'as' => 'titulos.delete',
+	    'uses' => 'TituloController@destroy',
+	]);
 });

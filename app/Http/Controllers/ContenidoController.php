@@ -6,19 +6,24 @@ use App\Http\Requests;
 use App\Http\Requests\CreateContenidoRequest;
 use App\Http\Requests\UpdateContenidoRequest;
 use App\Repositories\ContenidoRepository;
+use App\Repositories\ProyectoRepository;
 use Illuminate\Http\Request;
 use Flash;
 use InfyOm\Generator\Controller\AppBaseController;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\Models\Titulo;
 
 class ContenidoController extends AppBaseController
 {
     /** @var  ContenidoRepository */
     private $contenidoRepository;
+    private $proyectoRepository;
 
-    function __construct(ContenidoRepository $contenidoRepo)
+    function __construct(ContenidoRepository $contenidoRepo, ProyectoRepository $proyectoRepo)
     {
+        $this->middleware('auth');
+        $this->proyectoRepository = $proyectoRepo;
         $this->contenidoRepository = $contenidoRepo;
     }
 
@@ -42,9 +47,29 @@ class ContenidoController extends AppBaseController
      *
      * @return Response
      */
+     public function crear($id)
+    {
+        $proyecto = $this->proyectoRepository->findWithoutFail($id);
+
+        if (empty($proyecto)) {
+            Flash::error('Proyecto No se encuentra en encuentra registrado');
+
+            return redirect(route('proyectos.index'));
+        }
+
+        $titulo = Titulo::infoTitulos();
+        $selector_titulo = Titulo::selTitulos();
+        
+        return view('contenidos.create')->with(['id' => $id, 'titulo' => $titulo, 'selector_titulo' => $selector_titulo]);
+    }
+
     public function create()
     {
-        return view('contenidos.create');
+        $titulo = Titulo::infoTitulos();
+        $selector_titulo = Titulo::selTitulos();
+
+        return view('contenidos.create')->with(['titulo' => $titulo, 'selector_titulo' => $selector_titulo]);
+        
     }
 
     /**
@@ -58,11 +83,25 @@ class ContenidoController extends AppBaseController
     {
         $input = $request->all();
 
+
         $contenido = $this->contenidoRepository->create($input);
+
+         $proyecto = $this->proyectoRepository->findWithoutFail($request->proyecto_id);
+
+        if (empty($proyecto)) {
+            Flash::error('Proyecto No se encuentra en encuentra registrado');
+
+            return redirect(route('proyectos.index'));
+        }
+        
+        $nuevo['boo_contenido']='1';
+
+        $proyecto = $this->proyectoRepository->update($nuevo, $request->proyecto_id);
+
 
         Flash::success('Contenido registrado correctamente.');
 
-        return redirect(route('contenidos.index'));
+        return redirect(route('proyectos.index'));
     }
 
     /**
@@ -94,7 +133,21 @@ class ContenidoController extends AppBaseController
      */
     public function edit($id)
     {
-        $contenido = $this->contenidoRepository->findWithoutFail($id);
+        $contenido = $this->contenidoRepository->findWithoutFail($id, ['proyecto_id']);
+
+        $proyecto = $this->proyectoRepository->findWithoutFail($id);
+
+        if (empty($proyecto)) {
+            Flash::error('Contenido No se encuentra en encuentra registrado');
+
+            return redirect(route('proyectos.index'));
+        }
+
+        $titulo = Titulo::infoTitulos();
+        $selector_titulo = Titulo::selTitulos();
+        
+        
+
 
         if (empty($contenido)) {
             Flash::error('Contenido No se encuentra en encuentra registrado');
@@ -102,7 +155,9 @@ class ContenidoController extends AppBaseController
             return redirect(route('contenidos.index'));
         }
 
-        return view('contenidos.edit')->with('contenido', $contenido);
+        return view('contenidos.edit')->with(['contenido' => $contenido->first(), 'id' => $id, 'proyecto' => $proyecto, 'titulo' => $titulo, 'selector_titulo' => $selector_titulo]);
+
+       
     }
 
     /**
@@ -127,7 +182,7 @@ class ContenidoController extends AppBaseController
 
         Flash::success('Contenido actualizado correctamente.');
 
-        return redirect(route('contenidos.index'));
+        return redirect(route('proyectos.index'));
     }
 
     /**

@@ -62,7 +62,9 @@
                          <li ruta="estudiantes"><a href="{{ url('/estudiantes') }}"><span>Estudiantes</span></a></li>
                          <li ruta="semilleros"><a href="{{ url('/semilleros') }}"><span>Semilleros</span></a></li>
                          <li ruta="proyectos"><a href="{{ url('/proyectos') }}"><span>Proyectos</span></a></li>
-                         <li ruta="notas"><a href="{{ url('/notas') }}"><span>Notas</span></a></li>
+                         <li ruta="relIntegras"><a href="{{ url('/relIntegras') }}"><span>Relacion integra</span></a></li>
+                         <li ruta="contenidos"><a href="{{ url('/contenidos') }}"><span>Contenidos</span></a></li>
+                         <li ruta="titulos"><a href="{{ url('/titulos') }}"><span>Contenido Titulos</span></a></li>
 
 
                          

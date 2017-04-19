@@ -74,3 +74,5 @@ Route::resource("notas", "NotaAPIController");
 Route::resource("relIntegras", "RelIntegraAPIController");
 
 Route::resource("contenidos", "ContenidoAPIController");
+
+Route::resource("titulos", "TituloAPIController");

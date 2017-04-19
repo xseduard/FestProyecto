@@ -163,7 +163,7 @@ class Proyecto extends Model
         'boo_publicacion',
         'detalles_publicacion',
         'boo_solicitud_revision',
-        'boo_contenido'
+        'boo_contenido',
     ];
 
 
