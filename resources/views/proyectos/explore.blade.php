@@ -47,7 +47,15 @@
     
     <div class="tab-content tab6-cont">
     <div class="tab-pane fade  active in" id="tab_comentarios{!! $proyecto->id !!}">
+        
+      @foreach($proyecto->nota->all() as $nota)
+          <p><i class="fa fa-quote-left"></i> {!! $nota->nota !!} <i class="fa fa-quote-right"></i></p>
+          <p>{!! $nota->usuario->nombres.' '.$nota->usuario->apellidos.' <b>('.ucwords($nota->tipo).')</b>' !!} </p>
+          
+      @endforeach
+      @if(empty($proyecto->nota->toArray()))
         <p>Sin comentarios</p>
+      @endif
       </div>
       <div class="tab-pane fade " id="tab_especificaciones{!! $proyecto->id !!}">
         <table class="table table-bordered mt-30">
@@ -101,7 +109,9 @@
 
        {!! $proyecto->evento->nombre !!}</p>
       </div>
+
       
+     
       <div class="tab-pane fade" id="tab_acciones{!! $proyecto->id !!}">
         {!! Form::open(['route' => ['proyectos.destroy', $proyecto->id], 'method' => 'delete']) !!}
     

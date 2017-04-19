@@ -89,4 +89,19 @@ class Nota extends Model
     public static $rules = [
         'nota' => 'required'
     ];
+
+        public static function notasProyecto($id){
+        
+        $modelo = Nota::all()->toArray();
+            foreach ($modelo as $key => $value) {
+                if ($value['proyecto_id']==$id) {
+                    $array[$value['id']] = ['nota' => $value['nota'], 'tipo' => $value['tipo']];
+                }                
+            }
+        return ($array);
+    }
+
+    public function usuario(){
+        return $this->belongsTo('App\User', 'user_id');
+    }
 }

@@ -113,15 +113,20 @@ class ContenidoController extends AppBaseController
      */
     public function show($id)
     {
-        $contenido = $this->contenidoRepository->findWithoutFail($id);
+        $contenido = $this->contenidoRepository->findWithoutFail($id, ['proyecto_id']);
 
         if (empty($contenido)) {
             Flash::error('Contenido No se encuentra en encuentra registrado');
 
-            return redirect(route('contenidos.index'));
+            return redirect(route('proyectos.revision_proyectos'));
         }
 
-        return view('contenidos.show')->with('contenido', $contenido);
+         $titulo = Titulo::infoTitulos();
+        $selector_titulo = Titulo::selTitulos();
+        
+        return view('contenidos.show')->with(['contenido' => $contenido->first(), 'id' => $id, 'titulo' => $titulo, 'selector_titulo' => $selector_titulo]);
+
+       
     }
 
     /**

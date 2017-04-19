@@ -6,20 +6,25 @@ use App\Http\Requests;
 use App\Http\Requests\CreateNotaRequest;
 use App\Http\Requests\UpdateNotaRequest;
 use App\Repositories\NotaRepository;
+use App\Repositories\ProyectoRepository;
 use Illuminate\Http\Request;
 use Flash;
 use InfyOm\Generator\Controller\AppBaseController;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\Models\Estado;
 
 class NotaController extends AppBaseController
 {
     /** @var  NotaRepository */
     private $notaRepository;
+    private $proyectoRepository;
 
-    function __construct(NotaRepository $notaRepo)
+    function __construct(NotaRepository $notaRepo, ProyectoRepository $proyectoRepo)
     {
+        $this->middleware('auth');
         $this->notaRepository = $notaRepo;
+        $this->proyectoRepository = $proyectoRepo;
     }
 
     /**
@@ -42,6 +47,25 @@ class NotaController extends AppBaseController
      *
      * @return Response
      */
+     public function crear($id)
+    {
+
+        $proyecto = $this->proyectoRepository->findWithoutFail($id);
+
+        if (empty($proyecto)) {
+            Flash::error('Proyecto No se encuentra en encuentra registrado');
+
+            return redirect(route('proyectos.revision_proyectos'));
+        }
+
+        $selectores = [
+                      
+            'estado'=> Estado::selEstado(),
+                
+        ];
+
+        return view('notas.crear')->with(['proyecto'=>$proyecto, 'id'=>$id, 'selectores'=>$selectores]);
+    }
     public function create()
     {
         return view('notas.create');
@@ -56,13 +80,27 @@ class NotaController extends AppBaseController
      */
     public function store(CreateNotaRequest $request)
     {
+        $proyecto = $this->proyectoRepository->findWithoutFail($request->proyecto_id);
+
+        if (empty($proyecto)) {
+            Flash::error('Proyecto No se encuentra en encuentra registrado');
+
+            return redirect(route('proyectos.revision_proyectos'));
+        }
+        
+        $nuevo['boo_solicitud_revision']='0';
+        $nuevo['estado_id']=$request->estado_id;
+
+        $proyecto = $this->proyectoRepository->update($nuevo, $request->proyecto_id);
+
+
         $input = $request->all();
 
         $nota = $this->notaRepository->create($input);
 
-        Flash::success('Nota registrado correctamente.');
+        Flash::success('Revison Enviada correctamente.');
 
-        return redirect(route('notas.index'));
+        return redirect(route('proyectos.revision_proyectos'));
     }
 
     /**

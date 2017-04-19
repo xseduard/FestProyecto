@@ -45,9 +45,17 @@ class ProyectoController extends AppBaseController
         $this->proyectoRepository->pushCriteria(new RequestCriteria($request));
         $proyectos = $this->proyectoRepository->paginate(10);
 
-        
-        return view('proyectos.index')
-            ->with('proyectos', $proyectos);
+        $selectores = [
+            'regional' => Regional::selRegional(),
+            'semillero'=> Semillero::selSemillero(),
+            'area'=> area::selArea(),
+            'programa'=> programa::selPrograma(),            
+            'estado'=> Estado::selEstado(),
+            'linea'=> Linea_Investigacion::selLinea(),
+            'grupojurado'=> GrupoJurado::selGrupoJurado()        
+        ];
+        return view('proyectos.index')->with(['proyectos' => $proyectos, 'selectores' => $selectores]);
+       
     }
 /**
  * revision proyectos funcion

@@ -12,9 +12,9 @@
             <td align="right">
                 {!! Form::open(['route' => ['areas.destroy', $area->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
-                <!--
+                
                     <a href="{!! route('areas.show', [$area->id]) !!}" class='btn btn-default btn-sm'><i class="glyphicon glyphicon-eye-open"></i></a>
-                -->
+               
                     <a href="{!! route('areas.edit', [$area->id]) !!}" class='btn btn-default btn-sm'><i class="glyphicon glyphicon-edit"></i></a>
                     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => '', 'class' => 'btn btn-danger btn-sm btn-eliminar']) !!}
                 </div>

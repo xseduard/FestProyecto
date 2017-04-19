@@ -110,14 +110,11 @@
                         
                        				
                         @endif
-                       
-                        
-                       
-                        
-                       	
-                                              
+                                            
                         <!-- MENU ITEM -->
-                        <li id="menu-contact-info-big" class="parent megamenu">
+
+                        <!-- 
+<li id="menu-contact-info-big" class="parent megamenu">
                           <a href="#" class="open-sub"><div class="main-menu-title">Contacto</div></a>
                           <ul class="sub">
                             <li class="clearfix" >
@@ -142,32 +139,80 @@
                                     <li class="contact-phone clearfix">
                                       <div class="loc-icon-container">
                                         <div class="icon icon-basic-smartphone main-menu-contact-icon"></div>
-                                      </div>	
+                                      </div>  
                                       <div class="menu-contact-text-container">01-800-000000, 01-800-000000</div>
                                     </li>
                                     <li class="contact-mail clearfix" >
                                       <div class="loc-icon-container">
                                         <div class="icon icon-basic-mail main-menu-contact-icon"></div>
                                       </div>
-                                      <div class="menu-contact-text-container">							
+                                      <div class="menu-contact-text-container">             
                                         <a class="a-mail" href="elementary/mailto:contacto@cun.edu.co">contacto@cun.edu.co</a>
-                                      </div>	
+                                      </div>  
                                     </li>
                                   </ul>
                                 </div>
                                 
                                 <div class="col-md-6 menu-map-container hide-max-960 ">
-                                  <!-- Google Maps -->
+                                 
                                   <div class="google-map-container">
                                     <img src="../elementary/images/map-line.png" alt="alt">
                                   </div>
-                                  <!-- Google Maps / End -->	
+                                  
                                 </div>
                                 
                               </div>
                             </li>
                           </ul>
                         </li>
+                        -->
+
+                        <!-- MENU ITEM -->
+                        <li class="parent">
+                          <a href="elementary/#" class="open-sub"><div class="main-menu-title">Conócenos</div></a>
+                          <ul class="sub">
+                            <li><a href="https://www.cun.edu.co/institucional/quienes-somos.html" target="blank">¿QUIÉNES SOMOS?</a></li>
+                            <li><a href="https://www.cun.edu.co/institucional/rectoria.html" target="blank">RECTORIO</a></li>
+                            <li><a href="https://www.cun.edu.co/institucional/mision-y-vision.html" target="blank">CONÓCENOS</a></li>
+                            <li><a href="https://www.cun.edu.co/institucional/estructura-organizacional.html" target="blank">ESTRUCTURA ORGANIZACIONAL</a></li>
+                            <li><a href="https://www.cun.edu.co/institucional/normatividad.html" target="blank">NORMATIVIDAD</a></li>
+                          </ul>
+                        </li>   
+
+                         
+                        
+                          <!-- MENU ITEM -->
+                        <li class="parent">
+                          <a href="elementary/#" class="open-sub"><div class="main-menu-title">Programas</div></a>
+                          <ul class="sub">
+                            <li>
+                          <a href="https://www.cun.edu.co/programas.html" target="blank"><div class="main-menu-title">PROGRAMAS</div></a>
+                          </li>
+                             <li class="parent ">
+                          <a href="http://carreras.cun.edu.co/programas-de-educaci%C3%B3n-continuada-cun" target="blank"><div class="main-menu-title">CONTINUADA</div></a>
+                          </li>
+                            <li class="parent ">
+                          <a href="https://www.cun.edu.co/proyectos-especiales.html" target="blank"><div class="main-menu-title" >PROYECTOS ESPECIALES</div></a>
+                          </li>
+                            
+                          </ul>
+                        </li>  
+
+                          <!-- MENU ITEM -->
+                        <li class="parent">
+                          <a href="elementary/#" class="open-sub"><div class="main-menu-title">Inscripciones</div></a>
+                          <ul class="sub">
+                            <li><a href="http://carreras.cun.edu.co/" target="blank">¡INSCRÍBETE YA!</a></li>
+                            <li><a href="https://www.cun.edu.co/vinculaciones/ciclos-propedeuticos.html" target="blank">CICLOS PROPEDÉUTICOS</a></li>
+                            <li><a href="https://www.cun.edu.co/requisitos-de-inscripcion.html" target="blank">REQUISITOS DE INSCRIPCIÓN</a></li>
+                            <li><a href="https://www.cun.edu.co/informacion-de-matriculas.html" target="blank">INFORMACIÓN DE MATRICULAS</a></li>
+                            <li><a href="https://www.cun.edu.co/convenios.html" target="blank">CONVENIOS</a></li>
+                          </ul>
+                        </li>  
+
+                         <!-- MENU ITEM -->
+                       
+                         
 
 <!-- menu user -->
 
@@ -204,22 +249,23 @@
                                   <ul class="contact-list">
                                     <li class="contact-loc clearfix">
                                       <div class="loc-icon-container">
-                                        <div class="icon icon-basic-map main-menu-contact-icon"></div>
+                                        <i class="glyphicon glyphicon-user main-menu-contact-icon"></i>
                                       </div>
-                                      <div class="menu-contact-text-container"> Monteria, cl 30</div>
+                                      <div class="menu-contact-text-container"> 
+                                      {{ Auth::user()->nombres, Auth::user()->apellidos }} </div>
                                     </li>
                                     <li class="contact-phone clearfix">
                                       <div class="loc-icon-container">
-                                        <div class="icon icon-basic-smartphone main-menu-contact-icon"></div>
+                                        <div class="icon icon_key_alt main-menu-contact-icon"></div>
                                       </div>  
-                                      <div class="menu-contact-text-container">01-800-000000, 01-800-000000</div>
+                                      <div class="menu-contact-text-container">{{ Auth::user()->role }}</div>
                                     </li>
                                     <li class="contact-mail clearfix" >
                                       <div class="loc-icon-container">
                                         <div class="icon icon-basic-mail main-menu-contact-icon"></div>
                                       </div>
                                       <div class="menu-contact-text-container">             
-                                        <a class="a-mail" href="elementary/mailto:contacto@cun.edu.co">contacto@cun.edu.co</a>
+                                        <a class="a-mail" href="elementary/mailto:{{ Auth::user()->email }}">{{ Auth::user()->email }}</a>
                                       </div>  
                                     </li>
                                   </ul>
@@ -249,56 +295,7 @@
 
               <!-- fin menu user -->
 
-                        <li>
-                          <li class="dropdown user user-menu">
-                    <!-- Menu Toggle Button -->
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <!-- The user image in the navbar-->
-                        <img src="                        
-                            @if (Auth::user()->role=='administrador')
-                                {{asset('/bower_components/admin-lte/dist/img/userADMIN.jpg')}}
-                            @else
-                                {{asset('/bower_components/admin-lte/dist/img/user4-128x128.jpg')}}
-                            @endif
-
-                        " class="user-image" alt="User Image"/>
-                        <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                        <span class="hidden-xs">{{ Auth::user()->nombres  }}</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <!-- The user image in the menu -->
-                        <li class="user-header">
-                            
-                            <p>
-                                {{ Auth::user()->nombres, Auth::user()->apellidos }} - {{ Auth::user()->role }} 
-                                {{ Auth::user()->email }}
-                                <small>Miembro desde {{ Auth::user()->created_at }}.</small>
-                            </p>
-                        </li>
-                        <!-- Menu Body -->
-                        <li class="user-body">
-                            <div class="col-xs-4 text-center">
-                                <a href="#">Seguidores</a>
-                            </div>
-                            <div class="col-xs-4 text-center">
-                                <a href="#">Sales</a>
-                            </div>
-                            <div class="col-xs-4 text-center">
-                                <a href="#">Amigos</a>
-                            </div>
-                        </li>
-                        <!-- Menu Footer-->
-                        <li class="user-footer">
-                            <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Perfil</a>
-                            </div>
-                            <div class="pull-right">
-                                <a href="{{ url('/logout') }}" class="btn btn-default btn-flat">Cerrar session</a>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-                        </li>
+                        
                       
                       </ul>
                 
@@ -316,11 +313,11 @@
 					
 					<!-- SEARCH READ DOCUMENTATION -->
 					<ul class="cd-header-buttons">
-						<li><a class="cd-search-trigger" href="elementary/#cd-search"><span></span></a></li>
+						<li><a class="cd-search-trigger" href="#cd-search"><span></span></a></li>
 					</ul> <!-- cd-header-buttons -->
 					<div id="cd-search" class="cd-search">
 						<form class="form-search" id="searchForm" action="page-search-results.html" method="get">
-							<input type="text" value="" name="q" id="q" placeholder="Search...">
+							<input type="text" value="" name="q" id="q" placeholder="Buscar...">
 						</form>
 					</div>
 					

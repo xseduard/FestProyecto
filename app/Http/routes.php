@@ -283,6 +283,11 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'notas.delete',
 	    'uses' => 'NotaController@destroy',
 	]);
+
+	Route::get('notas/crear/{id}', [
+	    'as' => 'notas.crear',
+	    'uses' => 'NotaController@crear',
+	]);
 });
 
 

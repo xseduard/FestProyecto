@@ -260,5 +260,8 @@ class Proyecto extends Model
     public function evento(){
         return $this->belongsTo('App\Models\EventoExpo', 'evento_expo_id');
     }
+    public function nota(){
+        return $this->hasMany('App\Models\Nota', 'proyecto_id', 'id');
+    }
 
 }

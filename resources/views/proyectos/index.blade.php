@@ -94,21 +94,16 @@
                 
                 <div class="widget-body">
                   <ul class="clearlist widget-menu font-poppins">
-                    <li>
-                      <a href="#" title="">Branding</a>
-                    </li>
-                    <li>
-                      <a href="#" title="">Development</a>
-                    </li>
-                    <li>
-                      <a href="#" title="">Technology</a>
-                    </li>
-                    <li>
-                      <a href="#" title="">Social Media</a>
-                    </li>
-                    <li>
-                      <a href="#" title="">Entertainment</a>
-                    </li>
+                  @foreach($selectores['area'] as $area)
+                      @if($area != 'seleccione...')
+                      <li>
+                        <a href="#">
+                          {{ $area }}
+                        </a>
+                      </li>
+                      @endif
+                  @endforeach
+                    
                   </ul>
                 </div>
                 
@@ -117,31 +112,31 @@
               <!-- WIDGET -->
               <div class="widget">
                 
-                <h5 class="widget-title2">Recent posts</h5>
+                <h5 class="widget-title2">Ultimos Proyectos</h5>
                 
                 <div class="widget-body mt-25">
                   <ul class="clearlist widget-posts">
                     <li class="clearfix">
                       <a href=""><img src="elementary/images/blog/recent/1.jpg" alt="" class="widget-posts-img"></a>
                       <div class="widget-posts-descr2">
-                        <a href="#" class="font-poppins lh-18">Time For Minimalism</a>
-                        <div class="lh-18">June 26, 2016</div> 
+                        <a href="#" class="font-poppins lh-18">Tiempo del minimalismo</a>
+                        <div class="lh-18">Abril 26, 2017</div> 
                       </div>
                     </li>
 
                     <li class="clearfix">
                       <a href=""><img src="elementary/images/blog/recent/2.jpg" alt="" class="widget-posts-img"></a>
                       <div class="widget-posts-descr2">
-                        <a href="#" class="font-poppins lh-18">New Trends In Web</a>
-                        <div class="lh-18">June 21, 2016</div> 
+                        <a href="#" class="font-poppins lh-18">Nuevas formas de ver la WEB</a>
+                        <div class="lh-18">Enero 21, 2017</div> 
                       </div>
                     </li>
 
                     <li class="clearfix">
                       <a href=""><img src="elementary/images/blog/recent/3.jpg" alt="" class="widget-posts-img"></a>
                       <div class="widget-posts-descr2">
-                        <a href="#" class="font-poppins lh-18">The Sound Of Life</a>
-                        <div class="lh-18">June 16, 2016</div> 
+                        <a href="#" class="font-poppins lh-18">El sonido del abismo</a>
+                        <div class="lh-18">Febrero 2, 2017</div> 
                       </div>
                     </li>
 
@@ -157,12 +152,12 @@
                 
                 <div class="widget-body mt-25">
                   <div class="tags">
-                    <a href="">design</a>
-                    <a href="">development</a>
-                    <a href="">minimal</a>
-                    <a href="">branding</a>
-                    <a href="">unique</a>
-                    <a href="">clean</a>
+                    <a href="">salud</a>
+                    <a href="">informatica</a>
+                    <a href="">humanidades</a>
+                    <a href="">unico</a>
+                    <a href="">robotica</a>
+                    <a href="">cultura</a>
                     <a href="">UI &amp; UX</a>
                   </div>
                 </div>
@@ -171,28 +166,28 @@
               
               <!-- WIDGET -->
               <div class="widget">
-                <h5 class="widget-title2">Text Widget</h5>
+                <h5 class="widget-title2">Jack Welch (2001)</h5>
 
                 <div class="widget-body">
-                  <p>Lorem ipsum dolor sit amet, cotur adcing elit. Recusandae, nostrum, cumque culpa provident aliquam commodi assumenda</p>
+                  <p>La ventaja de operar como una pequeña empresa: Definir el proyecto, ponerlo en manos de personal cualificado y proveerlo de suficiente dinero es la mejor forma de alcanzar el éxito.</p>
                 </div>
               </div>
               
               <!-- WIDGET -->
               <div class="widget">
                 
-                <h5 class="widget-title2">Archive</h5>
+                <h5 class="widget-title2">Archivo</h5>
                 
                 <div class="widget-body">
                   <ul class="clearlist widget-menu font-poppins">
                     <li>
-                      <a href="#" title="">October 2016</a><small><span class="slash-divider">/</span> 10</small>
+                      <a href="#" title="">Abril 2017</a><small><span class="slash-divider">/</span> 2</small>
                     </li>
                     <li>
-                      <a href="#" title="">July 2016</a><small><span class="slash-divider">/</span> 21</small>
+                      <a href="#" title="">Marzo 2017</a><small><span class="slash-divider">/</span> 21</small>
                     </li>
                     <li>
-                      <a href="#" title="">June 2016</a><small><span class="slash-divider">/</span> 11</small>
+                      <a href="#" title="">Febrero 2017</a><small><span class="slash-divider">/</span> 11</small>
                     </li>
                   </ul>
                 </div>
