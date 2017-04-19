@@ -22,12 +22,10 @@
                       
 <div class="clearfix"></div>
    <div class="col-sm-6">
-
-    <label>Área</label>
-    <p>{!! $proyecto->area->nombre !!}</p>
-               
-    <label>Sub Área</label>
-    <p>{!! $proyecto->programa->nombre !!}</p>
+<label for="">Miembros</label>
+<p>{!! $proyecto->usuario->nombres,' ', $proyecto->usuario->apellidos !!}</p>
+    <label>Área / Sub Área</label>
+    <p>{!! $proyecto->area->nombre !!} / {!! $proyecto->programa->nombre !!}</p>
          
     <label>Tipo de proyecto</label>
     <p>{!! $proyecto->tipo !!}</p>  

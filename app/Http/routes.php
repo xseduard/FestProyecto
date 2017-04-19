@@ -296,3 +296,15 @@ Route::group(['middleware' => ['web']], function () {
 	    'uses' => 'RelIntegraController@destroy',
 	]);
 });
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("contenidos", "ContenidoController");
+
+	Route::get('contenidos/delete/{id}', [
+	    'as' => 'contenidos.delete',
+	    'uses' => 'ContenidoController@destroy',
+	]);
+});
