@@ -23,23 +23,24 @@
         </span>
       </div>                                       
     </div>
-<div class="col-md-8 col-sm-12 wow fadeInUp">         
+<div class="col-md-8 col-sm-12">         
 
-      <h4 class="">Descripción</h4>
-      <div class="mb-40" align="justify">{!! substr($proyecto->descripcion, 0, 650), '...' !!}</div>
+      <h4 class="wow fadeInUp">Descripción</h4>
+      <div class="mb-40 wow fadeInUp" align="justify">{!! substr($proyecto->descripcion, 0, 650), '...' !!}</div>
 
-      <div class="skillbar clearfix " data-percent="{!! $proyecto->progreso_estimado !!}%">
+      <div class="skillbar clearfix wow fadeInUp" data-percent="{!! $proyecto->progreso_estimado !!}%">
         <div class="skillbar-title">Progreso Estimado</div>
         <div class="skillbar-bar bg-purple" style="width: 100%;"></div>
         <div class="skill-bar-percent">{!! $proyecto->progreso_estimado !!}%</div>
       </div>
 
 </div>
-<div class="col-md-12 wow fadeInUp">
 
-<div class="tabs-6">
+<div class="col-md-12">
+
+<div class="tabs-6 wow fadeInUp">
     <ul class="nav nav-tabs bootstrap-tabs mb-0">
-    <li class="active"><a href="#tab_comentarios{!! $proyecto->id !!}" class="a-inv font-poppins" data-toggle="tab" aria-expanded="false"><span class="icon  icon_chat"></span> Comentarios</a></li>
+      <li class="active"><a href="#tab_comentarios{!! $proyecto->id !!}" class="a-inv font-poppins" data-toggle="tab" aria-expanded="false"><span class="icon  icon_chat"></span> Comentarios</a></li>
       <li class=""><a href="#tab_especificaciones{!! $proyecto->id !!}" class="a-inv font-poppins" data-toggle="tab" aria-expanded="true"><span class="icon  icon_tag"></span> Especificaciones</a></li>
       <li class=""><a href="#tab_estado{!! $proyecto->id !!}" class="a-inv font-poppins" data-toggle="tab" aria-expanded="false"><i class="glyphicon glyphicon-stats"></i> Estado</a></li>                  
       <li class=""><a href="#tab_acciones{!! $proyecto->id !!}" class="a-inv font-poppins" data-toggle="tab" aria-expanded="false"><span class="icon icon_cogs"></span> Acciones</a></li>
@@ -49,8 +50,8 @@
     <div class="tab-pane fade  active in" id="tab_comentarios{!! $proyecto->id !!}">
         
       @foreach($proyecto->nota->all() as $nota)
-          <p><i class="fa fa-quote-left"></i> {!! $nota->nota !!} <i class="fa fa-quote-right"></i></p>
-          <p>{!! $nota->usuario->nombres.' '.$nota->usuario->apellidos.' <b>('.ucwords($nota->tipo).')</b>' !!} </p>
+          <p>"{!! $nota->nota !!}"</p>
+          <p><i class="fa fa-user" aria-hidden="true" title="{!! $nota->created_at !!}"></i> {!! $nota->usuario->nombres.' '.$nota->usuario->apellidos.' <b>('.ucwords($nota->tipo).')</b>' !!}</p>
           
       @endforeach
       @if(empty($proyecto->nota->toArray()))
