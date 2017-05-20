@@ -42,17 +42,6 @@
                             <a href="{!! route('proyectos.create') !!}">Crear Proyecto</a>
                             <a href="{!! route('proyectos.index') !!}" >Ver Proyectos</a>
                             
-                            <li class="parent">
-                            <a href="/#" class="open-sub">Headers</a>
-                            <ul class="sub">
-                              <li><a href="elementary/index7.html">Boxed</a></li>
-                              <li><a href="elementary/one-page-index8.html">Bottom</a></li>
-                              <li><a href="elementary/index.html">Black Transp</a></li>
-                              <li><a href="elementary/index-blog2.html">Black No Transp</a></li>
-                              <li><a href="elementary/index2.html">White Transp</a></li>
-                              <li><a href="elementary/index-blog.html">White No Transp</a></li>                             
-                            </ul>
-                          </li>                         
                           </ul>
                         </li>
                         @endif
@@ -79,29 +68,44 @@
                             
                               <div class="box col-md-3 ">
                                 <ul>
-                                  <li><a href="elementary/shortcodes.html#accordions"><div class="icon icon-basic-map"></div>Comité de jurados</a></li>
-                                  <li><a href="elementary/shortcodes.html#alerts"><div class="icon icon-basic-exclamation"></div>Estados</a></li>
-                                  <li><a href="elementary/animations.html"><div class="icon icon-basic-mixer2"></div> Evento exposición</a></li>
-                                  <li><a href="elementary/typography.html#blockquotes"><div class="icon icon-basic-message-txt"></div>Estudiantes</a></li>
-                                  <li><a href="elementary/shortcodes.html#buttons"><div class="icon icon-basic-link"></div>Facultades (Áreas)</a></li>
-                                  <li><a href="elementary/shortcodes.html#carousels"><div class="icon icon-arrows-expand-horizontal1"></div>Grupo de investigación</a></li>
-                                  <li><a href="elementary/typography.html#code"><div class="icon icon-basic-webpage-txt"></div>Jurados</a></li>
-                                  <li><a href="elementary/shortcodes.html#counters-charts"><div class="icon icon-ecommerce-graph2"></div>Líneas de investigación</a></li>
+                                 <li ruta="municipios"><a href="{{ url('/municipios') }}"><span><div class="icon icon-basic-mixer2"></div>Municipios</span></a></li>                        
+                                <li ruta="areas"><a href="{{ url('/areas') }}"><span><div class="icon icon-basic-mixer2"></div>Facultades (Áreas)</span></a></li>              
+                                <li ruta="programas"><a href="{{ url('/programas') }}"><span><div class="icon icon-basic-mixer2"></div>programas</span></a></li>   
+                                <li ruta="regionals"><a href="{{ url('/regionals') }}"><span><div class="icon icon-basic-mixer2"></div>Regionales</span></a></li>   
                                 </ul>
                               </div>
                             
                               <div class="box col-md-3">
                                 <ul>
-                                  <li><a href="elementary/typography.html#dividers"><div class="icon icon-arrows-minus"></div>Municipios</a></li>
-                                  <li><a href="elementary/typography.html#dropcaps"><div class="icon icon-software-font-smallcaps"></div>Notas</a></li>
-                                  <li><a href="elementary/shortcodes.html#flickr-link"><div class="icon icon-basic-webpage-multiple"></div>Programas</a></li>
-                                  <li><a href="elementary/typography.html#heading"><div class="icon icon-arrows-drag-vert"></div>Proyectos</a></li>
-                                  <li><a href="elementary/typography.html#highlights"><div class="icon icon-ecommerce-sale"></div>Regionales</a></li>
-                                  <li><a href="elementary/icons.html"><div class="icon icon-basic-lightbulb"></div>Sedes</a></li>
-                                  <li><a href="elementary/shortcodes.html#labels"><div class="icon icon-ecommerce-diamond"></div>Semilleros</a></li>
-                                  <li><a href="elementary/shortcodes.html#lightbox"><div class="icon icon-basic-webpage-multiple"></div>Departamentos</a></li>
+                                  
+
+                        
+                        <li ruta="sedes"><a href="{{ url('/sedes') }}"><span><div class="icon icon-basic-mixer2"></div>Sedes</span></a></li> 
+                        <li ruta="estados"><a href="{{ url('/estados') }}"><span><div class="icon icon-basic-mixer2"></div>Estados</span></a></li> 
+                        <li ruta="lineaInvestigacions"><a href="{{ url('/lineaInvestigacions') }}"><span><div class="icon icon-basic-mixer2"></div>Lineas de investigación</span></a></li> 
+                         <li ruta="grupoInvestigacions"><a href="{{ url('/grupoInvestigacions') }}"><span><div class="icon icon-basic-mixer2"></div>Grupo de investigación</span></a></li>
+                         
+                        
+
                                 </ul>
-                              </div>                            
+                              </div>  
+                              <div class="box col-md-3">
+                                <ul>
+                          <li ruta="grupoJurados"><a href="{{ url('/grupoJurados') }}"><span><div class="icon icon-basic-mixer2"></div>Comité de Jurados</span></a></li>
+                         <li ruta="jurados"><a href="{{ url('/jurados') }}"><span><div class="icon icon-basic-mixer2"></div>Jurados</span></a></li>
+                         <li ruta="eventoExpos"><a href="{{ url('/eventoExpos') }}"><span><div class="icon icon-basic-mixer2"></div>Evento Expo</span></a></li>
+                         <li ruta="estudiantes"><a href="{{ url('/estudiantes') }}"><span><div class="icon icon-basic-mixer2"></div>Estudiantes</span></a></li>
+                                </ul>
+                                </div>
+                              <div class="box col-md-3">
+                              <ul>  
+                                 <li ruta="semilleros"><a href="{{ url('/semilleros') }}"><span><div class="icon icon-basic-mixer2"></div>Semilleros</span></a></li>
+                         <li ruta="proyectos"><a href="{{ url('/proyectos') }}"><span><div class="icon icon-basic-mixer2"></div>Proyectos</span></a></li>
+                         <!-- <li ruta="relIntegras"><a href="{{ url('/relIntegras') }}"><span><div class="icon icon-basic-mixer2"></div>Relacion integra</span></a></li> -->
+                         <li ruta="contenidos"><a href="{{ url('/contenidos') }}"><span><div class="icon icon-basic-mixer2"></div>Contenidos</span></a></li>
+                         <li ruta="titulos"><a href="{{ url('/titulos') }}"><span><div class="icon icon-basic-mixer2"></div>Contenido Titulos</span></a></li>
+                              </ul>
+                              </div>                      
                             </div>
 
                           
