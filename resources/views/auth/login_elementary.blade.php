@@ -23,14 +23,14 @@
                     </div>
                   </div>
                 </div>
-                  <!--
+                  
                   <div class="col-md-3 col-sm-6">
                     <div class="input-with-icon mb-20">
                       <span aria-hidden="true" class="icon icon_mail"></span>
                       <input class="form-control-purple" type="email" name="email" placeholder="Email" >
                     </div>
                   </div>
-                  -->
+                  
                   <div class="col-md-4 col-sm-6">
                     <div class="input-with-icon mb-20">
                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
@@ -56,6 +56,7 @@
                             </div>
                         </div>
                   </div>
+                      @include('common.errors')
                   
                 </div>
               </form>
