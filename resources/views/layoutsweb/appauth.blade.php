@@ -40,7 +40,7 @@
         
 <!-- CSS -->
     <!--  GOOGLE FONT -->       
-    <link href='http://fonts.googleapis.com/css?family=Poppins:400,600,300%7COpen+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins:400,600,300%7COpen+Sans:400,300,700' rel='stylesheet' type='text/css'>
     
     <!-- REVOSLIDER CSS SETTINGS -->
     

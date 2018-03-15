@@ -233,6 +233,12 @@ Route::group(['middleware' => ['web']], function () {
 	]);
 });
 
+Route::group(['middleware' => ['web']], function () {
+
+	Route::resource("usuarios", "UsuarioController");
+
+});
+
 
 
 Route::group(['middleware' => ['web']], function () {

@@ -2,7 +2,7 @@
   		
 <!-- CSS -->
     <!--  GOOGLE FONT -->	
-    {!! Html::style('http://fonts.googleapis.com/css?family=Poppins:400,600,300%7COpen+Sans:400,300,700') !!}
+    {!! Html::style('https://fonts.googleapis.com/css?family=Poppins:400,600,300%7COpen+Sans:400,300,700') !!}
       
     <!-- REVOSLIDER CSS SETTINGS -->
     

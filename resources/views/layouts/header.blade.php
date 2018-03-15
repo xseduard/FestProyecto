@@ -118,7 +118,7 @@
                         <!-- The user image in the navbar-->
                         <img src="                        
                             @if (Auth::user()->role=='administrador')
-                                {{asset('/bower_components/admin-lte/dist/img/userADMIN.jpg')}}
+                                {{asset('/bower_components/admin-lte/dist/img/userADMIN.png')}}
                             @else
                                 {{asset('/bower_components/admin-lte/dist/img/user4-128x128.jpg')}}
                             @endif
@@ -132,7 +132,7 @@
                         <li class="user-header">
                             <img src="
                             @if (Auth::user()->role=='administrador')
-                                {{asset('/bower_components/admin-lte/dist/img/userADMIN.jpg')}}
+                                {{asset('/bower_components/admin-lte/dist/img/userADMIN.png')}}
                             @else
                                 {{asset('/bower_components/admin-lte/dist/img/user4-128x128.jpg')}}
                             @endif

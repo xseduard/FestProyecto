@@ -29,4 +29,9 @@ class ProyectoRepository extends BaseRepository
     {
         return Proyecto::class;
     }
+
+    public function proyectosVisibles()
+    {
+        return null;
+    }
 }

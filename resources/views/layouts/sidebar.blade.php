@@ -12,7 +12,7 @@
 
              <img src="
             @if (Auth::user()->role=='administrador')
-                {{asset('/bower_components/admin-lte/dist/img/userADMIN.jpg')}}
+                {{asset('/bower_components/admin-lte/dist/img/userADMIN.png')}}
             @else
                 {{asset('/bower_components/admin-lte/dist/img/user4-128x128.jpg')}}
             @endif
@@ -65,6 +65,7 @@
                          <li ruta="relIntegras"><a href="{{ url('/relIntegras') }}"><span>Relacion integra</span></a></li>
                          <li ruta="contenidos"><a href="{{ url('/contenidos') }}"><span>Contenidos</span></a></li>
                          <li ruta="titulos"><a href="{{ url('/titulos') }}"><span>Contenido Titulos</span></a></li>
+                         <li ruta="usuarios"><a href="{{ url('/usuarios') }}"><span>Cuentas de usuarios</span></a></li>
 
 
                          

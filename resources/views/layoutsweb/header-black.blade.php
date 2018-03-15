@@ -220,7 +220,7 @@
                           <a href="#" class="open-sub"><div class="main-menu-title">
                           <img src="                        
                             @if (Auth::user()->role=='administrador')
-                                {{asset('/bower_components/admin-lte/dist/img/userADMIN.jpg')}}
+                                {{asset('/bower_components/admin-lte/dist/img/userADMIN.png')}}
                             @else
                                 {{asset('/bower_components/admin-lte/dist/img/user4-128x128.jpg')}}
                             @endif
@@ -276,7 +276,7 @@
                                   <div class="google-map-container">
                                    <img src="                        
                             @if (Auth::user()->role=='administrador')
-                                {{asset('/bower_components/admin-lte/dist/img/userADMIN.jpg')}}
+                                {{asset('/bower_components/admin-lte/dist/img/userADMIN.png')}}
                             @else
                                 {{asset('/bower_components/admin-lte/dist/img/user4-128x128.jpg')}}
                             @endif
