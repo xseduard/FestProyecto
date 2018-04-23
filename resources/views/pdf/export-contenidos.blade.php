@@ -9,6 +9,8 @@
 	@foreach ($titulos as $titulo)
 		<h3>{{ $titulo->titulo }}</h3>
 		<p>{!! $contenido[$titulo->codigo] !!}</p>
-		<div class="page-break"></div>
+		@if ($titulo->codigo != 'a4' && $titulo->codigo != 'a5' )
+			<div class="page-break"></div>
+		@endif
 	@endforeach
 </body></html>

@@ -5,22 +5,23 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Requests\CreateProyectoRequest;
 use App\Http\Requests\UpdateProyectoRequest;
-use App\Repositories\ProyectoRepository;
-use Illuminate\Http\Request;
-use Flash;
-use InfyOm\Generator\Controller\AppBaseController;
-use Prettus\Repository\Criteria\RequestCriteria;
-use Response;
+use App\Models\Estado;
+use App\Models\EventoExpo;
+use App\Models\GrupoJurado;
+use App\Models\Linea_Investigacion;
+use App\Models\Proyecto;
 use App\Models\Regional;
 use App\Models\Semillero;
 use App\Models\area;
 use App\Models\programa;
+use App\Repositories\ProyectoRepository;
 use App\User;
-use App\Models\Estado;
-use App\Models\Linea_Investigacion;
-use App\Models\GrupoJurado;
-use App\Models\EventoExpo;
+use Flash;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use InfyOm\Generator\Controller\AppBaseController;
+use Prettus\Repository\Criteria\RequestCriteria;
+use Response;
 
 
 class ProyectoController extends AppBaseController
@@ -42,8 +43,12 @@ class ProyectoController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $this->proyectoRepository->pushCriteria(new RequestCriteria($request));
-        $proyectos = $this->proyectoRepository->paginate(10);
+        if (auth()->user()->role == 'estudiante') {
+            $proyectos = Proyecto::where('user_id', auth()->id())->paginate(10);
+        } else {
+            $this->proyectoRepository->pushCriteria(new RequestCriteria($request));
+            $proyectos = $this->proyectoRepository->paginate(10);
+        }
 
         $selectores = [
             'regional' => Regional::selRegional(),

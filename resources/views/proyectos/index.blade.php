@@ -52,15 +52,10 @@
           
             <!-- CONTENT -->
         <div class="col-sm-8 blog-main-posts">
-                
-                
-                        
-        
-                
-           
+                 
 
         @if($proyectos->isEmpty())
-            <div class="well text-center">No se encontraron registros de Proyectos en esta consulta.</div>
+            <div class="well text-center">No tienes Proyectos registrados.</div>
         @else
             @include('proyectos.explore')
 
