@@ -5,14 +5,17 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Requests\CreateContenidoRequest;
 use App\Http\Requests\UpdateContenidoRequest;
+use App\Models\Contenido;
+use App\Models\Titulo;
 use App\Repositories\ContenidoRepository;
 use App\Repositories\ProyectoRepository;
-use Illuminate\Http\Request;
+use PDF;
 use Flash;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use InfyOm\Generator\Controller\AppBaseController;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
-use App\Models\Titulo;
 
 class ContenidoController extends AppBaseController
 {
@@ -40,6 +43,28 @@ class ContenidoController extends AppBaseController
 
         return view('contenidos.index')
             ->with('contenidos', $contenidos);
+    }
+
+    public function export_pdf($id)
+    {
+        $proyecto = $this->proyectoRepository->findWithoutFail($id);
+        $contenido = Contenido::where('proyecto_id', $id)->first();
+
+        if (empty($proyecto) || empty($contenido)) {
+            Flash::error('Proyecto No se encuentra en encuentra registrado');
+
+            return redirect(route('proyectos.index'));
+        }
+
+        $pdf = PDF::loadView('pdf.export-contenidos', [
+            'proyecto' => $proyecto,
+            'titulos' => Titulo::get(), 
+            'contenido' => $contenido->toArray(),
+        ]);
+
+        return $pdf->stream();
+
+
     }
 
     /**

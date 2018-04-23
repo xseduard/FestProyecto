@@ -85,11 +85,9 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'departamentos.delete',
 	    'uses' => 'departamentoController@destroy',
 	]);
-});
 
 
 
-Route::group(['middleware' => ['web']], function () {
 
 	Route::resource("municipios", "municipioController");
 
@@ -97,13 +95,12 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'municipios.delete',
 	    'uses' => 'municipioController@destroy',
 	]);
-});
 
 
 
 
 
-Route::group(['middleware' => ['web']], function () {
+
 
 	Route::resource("areas", "areaController");
 
@@ -111,11 +108,10 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'areas.delete',
 	    'uses' => 'areaController@destroy',
 	]);
-});
 
 
 
-Route::group(['middleware' => ['web']], function () {
+
 
 	Route::resource("programas", "programaController");
 
@@ -123,11 +119,10 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'programas.delete',
 	    'uses' => 'programaController@destroy',
 	]);
-});
 
 
 
-Route::group(['middleware' => ['web']], function () {
+
 
 	Route::resource("regionals", "RegionalController");
 
@@ -135,11 +130,10 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'regionals.delete',
 	    'uses' => 'RegionalController@destroy',
 	]);
-});
 
 
 
-Route::group(['middleware' => ['web']], function () {
+
 
 	Route::resource("sedes", "SedeController");
 
@@ -147,11 +141,10 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'sedes.delete',
 	    'uses' => 'SedeController@destroy',
 	]);
-});
 
 
 
-Route::group(['middleware' => ['web']], function () {
+
 
 	Route::resource("estados", "EstadoController");
 
@@ -159,11 +152,10 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'estados.delete',
 	    'uses' => 'EstadoController@destroy',
 	]);
-});
 
 
 
-Route::group(['middleware' => ['web']], function () {
+
 
 	Route::resource("lineaInvestigacions", "Linea_InvestigacionController");
 
@@ -171,11 +163,10 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'lineaInvestigacions.delete',
 	    'uses' => 'Linea_InvestigacionController@destroy',
 	]);
-});
 
 
 
-Route::group(['middleware' => ['web']], function () {
+
 
 	Route::resource("grupoInvestigacions", "Grupo_InvestigacionController");
 
@@ -183,11 +174,10 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'grupoInvestigacions.delete',
 	    'uses' => 'Grupo_InvestigacionController@destroy',
 	]);
-});
 
 
 
-Route::group(['middleware' => ['web']], function () {
+
 
 	Route::resource("grupoJurados", "GrupoJuradoController");
 
@@ -195,11 +185,10 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'grupoJurados.delete',
 	    'uses' => 'GrupoJuradoController@destroy',
 	]);
-});
 
 
 
-Route::group(['middleware' => ['web']], function () {
+
 
 	Route::resource("jurados", "JuradoController");
 
@@ -207,11 +196,9 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'jurados.delete',
 	    'uses' => 'JuradoController@destroy',
 	]);
-});
 
 
 
-Route::group(['middleware' => ['web']], function () {
 
 	Route::resource("eventoExpos", "EventoExpoController");
 
@@ -219,11 +206,10 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'eventoExpos.delete',
 	    'uses' => 'EventoExpoController@destroy',
 	]);
-});
 
 
 
-Route::group(['middleware' => ['web']], function () {
+
 
 	Route::resource("estudiantes", "EstudianteController");
 
@@ -231,17 +217,14 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'estudiantes.delete',
 	    'uses' => 'EstudianteController@destroy',
 	]);
-});
 
-Route::group(['middleware' => ['web']], function () {
+
 
 	Route::resource("usuarios", "UsuarioController");
 
-});
 
 
 
-Route::group(['middleware' => ['web']], function () {
 
 	Route::resource("semilleros", "SemilleroController");
 
@@ -249,11 +232,9 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'semilleros.delete',
 	    'uses' => 'SemilleroController@destroy',
 	]);
-});
 
 
 
-Route::group(['middleware' => ['web']], function () {
 
 	Route::resource("proyectos", "ProyectoController");
 
@@ -277,11 +258,10 @@ Route::group(['middleware' => ['web']], function () {
 	    'uses' => 'ProyectoController@asignar',
 	]);
    // Route::get('/index2', 'HomeController@index');
-});
 
 
 
-Route::group(['middleware' => ['web']], function () {
+
 
 	Route::resource("notas", "NotaController");
 
@@ -294,11 +274,7 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'notas.crear',
 	    'uses' => 'NotaController@crear',
 	]);
-});
 
-
-
-Route::group(['middleware' => ['web']], function () {
 
 	Route::resource("relIntegras", "RelIntegraController");
 
@@ -306,11 +282,10 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'relIntegras.delete',
 	    'uses' => 'RelIntegraController@destroy',
 	]);
-});
 
 
+	Route::get('export/pdf/{id}', 'ContenidoController@export_pdf')->name('contenidos.pdf');
 
-Route::group(['middleware' => ['web']], function () {
 
 	Route::resource("contenidos", "ContenidoController");
 
@@ -324,11 +299,7 @@ Route::group(['middleware' => ['web']], function () {
 	    'uses' => 'ContenidoController@crear',
 	]);
 
-});
 
-
-
-Route::group(['middleware' => ['web']], function () {
 
 	Route::resource("titulos", "TituloController");
 
@@ -336,4 +307,8 @@ Route::group(['middleware' => ['web']], function () {
 	    'as' => 'titulos.delete',
 	    'uses' => 'TituloController@destroy',
 	]);
-});
+
+
+
+
+}); //route group moddliware web
