@@ -123,23 +123,30 @@
         <span class="button-text-anim">Editar</span>                  
         <div class="button-icon-anim icon  icon_pencil-edit"></div>
       </a>
+
       @if($proyecto->boo_contenido=='0')
-      <a href="{!! route('contenidos.crear', [$proyecto->id]) !!}" class="button large thin teal btn-4 btn-4cc" title="Crear contenido del proyecto">
-        <span class="button-text-anim">Crear Contenido</span>                  
-        <div class="button-icon-anim icon  icon_pencil-edit"></div>
-      </a>
+        <a href="{!! route('contenidos.crear', [$proyecto->id]) !!}" class="button large thin teal btn-4 btn-4cc" title="Crear contenido del proyecto">
+          <span class="button-text-anim">Crear Contenido</span>                  
+          <div class="button-icon-anim icon  icon_pencil-edit"></div>
+        </a>
       @else
-      <a href="{!! route('contenidos.edit', [$proyecto->id]) !!}" class="button large thin teal btn-4 btn-4cc" title="Editar contenido del proyecto">
-        <span class="button-text-anim">Contenido</span>                  
-        <div class="button-icon-anim icon  icon_pencil-edit"></div>
-      </a>
+
+        <a href="{!! route('contenidos.pdf', [$proyecto->id]) !!}" class="button large thin teal btn-4 btn-4cc" title="Ver PDF" >
+          <span class="button-text-anim">PDF</span>                  
+          <div class="button-icon-anim icon icon_search-2"></div>
+        </a>
+
+        <a href="{!! route('contenidos.edit', [$proyecto->id]) !!}" class="button large thin teal btn-4 btn-4cc" title="Editar contenido del proyecto">
+          <span class="button-text-anim">Contenido</span>                  
+          <div class="button-icon-anim icon icon_pencil-edit"></div>
+        </a>
       @endif
-       @if($proyecto->boo_solicitud_revision=='0')
+      @if($proyecto->boo_solicitud_revision=='0')
         <a href="{!! route('proyectos.rev', [$proyecto->id]) !!}" class="button large thin teal btn-4 btn-4cc" title="Solicitar revision al  director de semillero">
-        <span class="button-text-anim">Revisión</span>
-        <div class="button-icon-anim icon   icon_search-2"></div>
-      </a>                
-       @endif
+          <span class="button-text-anim">Revisión</span>
+          <div class="button-icon-anim icon icon_search-2"></div>
+        </a>                
+      @endif
     
     {!! Form::button('
         <span class="button-text-anim">Eliminar</span>
