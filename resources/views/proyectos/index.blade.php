@@ -112,26 +112,26 @@
                 <div class="widget-body mt-25">
                   <ul class="clearlist widget-posts">
                     <li class="clearfix">
-                      <a href=""><img src="elementary/images/blog/recent/1.jpg" alt="" class="widget-posts-img"></a>
+                      <a href=""><img src="/images/dem1.png" style="width: 70px"  alt="" class="widget-posts-img"></a>
                       <div class="widget-posts-descr2">
                         <a href="#" class="font-poppins lh-18">Tiempo del minimalismo</a>
-                        <div class="lh-18">Abril 26, 2017</div> 
+                        <div class="lh-18">Abril 26, 2018</div> 
                       </div>
                     </li>
 
                     <li class="clearfix">
-                      <a href=""><img src="elementary/images/blog/recent/2.jpg" alt="" class="widget-posts-img"></a>
+                      <a href=""><img src="/images/dem2.png" style="width: 70px"  alt="" class="widget-posts-img"></a>
                       <div class="widget-posts-descr2">
                         <a href="#" class="font-poppins lh-18">Nuevas formas de ver la WEB</a>
-                        <div class="lh-18">Enero 21, 2017</div> 
+                        <div class="lh-18">Enero 21, 2018</div> 
                       </div>
                     </li>
 
                     <li class="clearfix">
-                      <a href=""><img src="elementary/images/blog/recent/3.jpg" alt="" class="widget-posts-img"></a>
+                      <a href=""><img src="/images/dem3.png" style="width: 70px"  alt="" class="widget-posts-img"></a>
                       <div class="widget-posts-descr2">
                         <a href="#" class="font-poppins lh-18">El sonido del abismo</a>
-                        <div class="lh-18">Febrero 2, 2017</div> 
+                        <div class="lh-18">Febrero 2, 2018</div> 
                       </div>
                     </li>
 

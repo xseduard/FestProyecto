@@ -30,7 +30,8 @@ Route::group(['middleware' => 'web'], function () {
 
 
 
-    Route::get('/', function () {return view('auth.login_elementary');});
+    Route::get('/', function () {return redirect('/home');});
+
     //Route::get('/', function () {return view('auth.login');});
     Route::get('/admin', 'InicialController@index');
     Route::get('/home', 'HomeController@index');
