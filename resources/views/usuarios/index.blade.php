@@ -15,13 +15,13 @@
           </div><!-- /.box-header -->
           <div class="box-body">
 
-  @if($usuarios->isEmpty())
-      <div class="well text-center">No se encontraron registros de usuarios en esta consulta.</div>
-  @else
-      @include('usuarios.table')
+            @if($usuarios->isEmpty())
+                <div class="well text-center">No se encontraron registros de usuarios en esta consulta.</div>
+            @else
+                @include('usuarios.table')
 
-  @endif
-   @include('common.paginate', ['records' => $usuarios])
+            @endif
+             @include('common.paginate', ['records' => $usuarios])
           </div>
         </div>
       </div>

@@ -6,16 +6,16 @@
               <!-- general form elements -->
               <div class="box box-success">
                 <div class="box-header with-border">
-                  <h2 class="box-title">Editar Estudiante</h2>
+                  <h2 class="box-title">Editar Usuario</h2>
                 </div><!-- /.box-header -->
 
-        {!! Form::model($estudiante, ['route' => ['estudiantes.update', $estudiante->id], 'method' => 'patch']) !!}
+        {!! Form::model($usuario, ['route' => ['usuarios.update', $usuario->id], 'method' => 'patch']) !!}
             <div class="box-body">
-            @include('estudiantes.fields')
+            @include('usuarios.fields')
             <!-- Submit Field -->
               <div class="form-group col-sm-12">
                   {!! Form::button('<span class="glyphicon glyphicon-floppy-disk" ></span> Actualizar', ['type' => 'submit', 'class' => 'btn btn-success']) !!}
-                  <a href="{!! route('estudiantes.index') !!}" class="btn btn-primary"><i class="fa fa-ban"></i> Cancelar</a>
+                  <a href="{!! route('usuarios.index') !!}" class="btn btn-primary"><i class="fa fa-ban"></i> Cancelar</a>
               </div>
 
             </div>

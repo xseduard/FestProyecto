@@ -17,15 +17,15 @@
             <td>{!! $usuario->email !!}</td>
           
             <td>
-                {{-- {!! Form::open(['route' => ['estudiantes.destroy', $usuario->id], 'method' => 'delete']) !!}
+                 {!! Form::open(['route' => ['usuarios.destroy', $usuario->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
                 
-                    <a href="{!! route('estudiantes.show', [$usuario->id]) !!}" class='btn btn-default btn-sm'><i class="glyphicon glyphicon-eye-open"></i></a>
+                    {{-- <a href="{!! route('usuarios.show', [$usuario->id]) !!}" class='btn btn-default btn-sm'><i class="glyphicon glyphicon-eye-open"></i></a> --}}
                 
-                    <a href="{!! route('estudiantes.edit', [$usuario->id]) !!}" class='btn btn-default btn-sm'><i class="glyphicon glyphicon-edit"></i></a>
-                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm btn-eliminar']) !!}
+                    <a href="{!! route('usuarios.edit', [$usuario->id]) !!}" class='btn btn-default btn-sm'><i class="glyphicon glyphicon-edit"></i> Editar</a>
+                    {{-- {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm btn-eliminar']) !!} --}}
                 </div>
-                {!! Form::close() !!} --}}
+                {!! Form::close() !!}
             </td>
         </tr>
     @endforeach
