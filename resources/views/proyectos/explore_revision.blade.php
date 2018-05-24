@@ -72,7 +72,7 @@
   <col class="clearfix"> 
 <div class="col-sm-12" style="margin-top: 20px;">
 {!! Form::button('<span class="button-text-anim">Guardar Cambios &nbsp &nbsp</span><span class="button-icon-anim icon_floppy"></span>', ['type' => 'submit', 'class' => 'button large thin teal btn-4 btn-4cc']) !!}
-<a href="{!! route('contenidos.show', [$proyecto->id]) !!}" class="button large thin  btn-4 btn-4cc" title="Ver Contenido del proyecto" >
+<a href="{!! route('contenidos.pdf', [$proyecto->id]) !!}" class="button large thin  btn-4 btn-4cc" title="Ver Contenido del proyecto" >
         <span class="button-text-anim">Ver Proyecto</span>                  
         <div class="button-icon-anim icon icon_document_alt"></div>
       </a>
