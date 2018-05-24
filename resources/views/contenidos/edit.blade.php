@@ -38,6 +38,7 @@
     <div class="clearfix">
     </div>
     {!! Form::model($contenido, ['route' => ['contenidos.update', $contenido->id], 'method' => 'patch']) !!}
+
     <div class="box-body" style="margin-top: 50px">
       <div class="form-group col-sm-12" >           
         {!! Form::button('<span class="button-text-anim">Actualizar </span> <span class="button-icon-anim icon_pencil-edit"> </span>', ['type' => 'submit', 'class' => 'button large thin teal btn-4 btn-4cc']) !!} <a href="{!! route('proyectos.index') !!}" class="button large thin btn-4 btn-4cc" >

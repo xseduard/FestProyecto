@@ -7,8 +7,10 @@
 	<br>
 	<br>
 	@foreach ($titulos as $titulo)
-		<h3>{{ $titulo->titulo }}</h3>
+		@if (!empty($contenido[$titulo->codigo]))
+			<h3>{{ $titulo->titulo }}</h3>
 		<p>{!! $contenido[$titulo->codigo] !!}</p>
+		@endif
 		@if ($titulo->codigo != 'a4' && $titulo->codigo != 'a5' )
 			<div class="page-break"></div>
 		@endif

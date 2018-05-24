@@ -163,7 +163,9 @@ class ContenidoController extends AppBaseController
      */
     public function edit($id)
     {
-        $contenido = $this->contenidoRepository->findWithoutFail($id, ['proyecto_id']);
+
+        $contenido = Contenido::where('proyecto_id', $id)->first();
+
 
         $proyecto = $this->proyectoRepository->findWithoutFail($id);
 
@@ -185,7 +187,7 @@ class ContenidoController extends AppBaseController
             return redirect(route('contenidos.index'));
         }
 
-        return view('contenidos.edit')->with(['contenido' => $contenido->first(), 'id' => $id, 'proyecto' => $proyecto, 'titulo' => $titulo, 'selector_titulo' => $selector_titulo]);
+        return view('contenidos.edit')->with(['contenido' => $contenido, 'id' => $id, 'proyecto' => $proyecto, 'titulo' => $titulo, 'selector_titulo' => $selector_titulo]);
 
        
     }
